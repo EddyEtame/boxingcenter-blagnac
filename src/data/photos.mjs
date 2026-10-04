@@ -28,19 +28,19 @@ const entry = (name, source, width, height, alt, caption, credit, extra = {}) =>
 export const photos = {
   hero: entry(
     'entrainement-boxe', '../bc-minimes/public/assets/img/photos/cours-assaut-1200.webp', 1200, 800,
-    'Deux pratiquants gantés travaillent leur garde pendant un cours de boxe.',
+    'Deux pratiquants gantés travaillent leur garde pendant un cours du réseau Boxing Center.',
     'Entraînement dans le réseau Boxing Center.', 'Axel Derewiany',
     { evidence: 'Visible watermark; inherited Minimes gallery identifies the pool as network photography, not a Minimes shoot.' },
   ),
   boxing: entry(
     'travail-technique', '../club-de-boxe-blagnac/public/images/boxe-ados-blagnac-1600.webp', 1600, 1066,
-    'Un entraîneur accompagne un jeune boxeur dans un exercice aux pattes d’ours.',
+    'Un entraîneur Boxing Center accompagne un jeune boxeur dans un exercice aux pattes d’ours.',
     'Travail aux pattes d’ours dans le réseau Boxing Center.', 'Boxing Center',
     { evidence: 'Published unsigned by the Boxing Center network, recorded in the older photo registry.', publishedSource: 'https://boxingcenter.fr/wp-content/uploads/2026/09/valentin-tapia-mitaines-jeune-toulouse.jpeg' },
   ),
   ring: entry(
     'ring-encadrement', '../club-de-boxe-blagnac/public/images/ring-encadrement-1600.webp', 1600, 1048,
-    'Un entraîneur encadre le travail de deux boxeurs sur le ring.',
+    'Sur le ring de Toulouse Minimes, club de boxe proche de Blagnac, un entraîneur encadre deux boxeurs.',
     'Sur le ring du Toulouse Minimes Boxing Club, membre du réseau Boxing Center.', 'Axel Derewiany',
     { evidence: 'Older registry: BC-077, EXIF artist; visible wall inscription names Toulouse Minimes Boxing Club.', shotAt: 'Toulouse Minimes Boxing Club' },
   ),
@@ -52,7 +52,7 @@ export const photos = {
   ),
   kids: entry(
     'boxe-educative', '../club-de-boxe-blagnac/public/images/boxe-educative-blagnac-1600.webp', 1600, 1066,
-    'Deux jeunes boxeurs casqués participent à un assaut de boxe éducative sur un ring.',
+    'Deux jeunes boxeurs casqués participent à un tournoi de boxe éducative du réseau Boxing Center.',
     'Tournoi de boxe éducative du réseau Boxing Center.', 'Boxing Center',
     {
       evidence: 'Published by the network on boxingcenter.fr; no signed photographer identified.',

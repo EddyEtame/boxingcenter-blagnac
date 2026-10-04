@@ -1,4 +1,5 @@
 ---
+import Link from './Link.astro';
 import { disciplines, CLUB } from '../data/site.mjs';
 const { initial = 'boxing' } = Astro.props;
 const selected = disciplines.find(d => d.id === initial) || disciplines[0];
@@ -16,10 +17,10 @@ const mma = selected.id === 'mma';
       <h3 data-ticket-sport>{selected.name}</h3><p class="ticket-time" data-ticket-time>Votre moment reste à définir.</p><div class="ticket-rule"></div>
       <div class="ticket-advice"><span class="eyebrow">VOTRE POINT DE DÉPART</span><p data-ticket-advice>{selected.preparation}</p></div>
       <p class="ticket-destination"><span aria-hidden="true">↗</span> <span data-ticket-destination>{mma ? 'MMA · lieu à confirmer avec le réseau' : 'Toulouse Minimes · 12 rue de Fenouillet'}</span></p>
-      <a class="button button-dark" href={mma ? CLUB.contact : CLUB.planning} data-ticket-cta>{mma ? 'Être orienté vers le bon cours' : 'Vérifier les cours aux Minimes'} <span aria-hidden="true">↗</span></a>
-      <div class="ticket-actions"><button type="button" data-copy-ticket>Copier ma fiche <span aria-hidden="true">+</span></button><a href={`/${selected.slug}/`} data-ticket-detail>Comprendre cette pratique ↗</a></div>
+      <Link class="button button-dark" href={mma ? CLUB.contact : CLUB.planning} data-ticket-cta>{mma ? 'Être orienté vers le bon cours' : 'Vérifier les cours aux Minimes'} <span aria-hidden="true">↗</span></Link>
+      <div class="ticket-actions"><button type="button" data-copy-ticket>Copier ma fiche <span aria-hidden="true">+</span></button><Link href={`/${selected.slug}/`} data-ticket-detail>Comprendre cette pratique ↗</Link></div>
       <p class="ticket-note">Cette fiche prépare votre échange avec le club. Le jour choisi n’est pas une réservation.</p><p class="copy-status" role="status" data-copy-status></p>
     </div>
-    <noscript><style>.session-form,.ticket-actions{display:none}</style><p class="no-js-note">Choisissez une pratique parmi les pages du site, puis consultez le <a href={CLUB.planning}>planning officiel des Minimes</a>. Pour être orienté, <a href={CLUB.contact}>contactez le club</a>.</p></noscript>
+    <noscript><style>.session-form,.ticket-actions{display:none}</style><p class="no-js-note">Choisissez une pratique parmi les pages du site, puis consultez le <Link href={CLUB.planning}>planning officiel des Minimes</Link>. Pour être orienté, <Link href={CLUB.contact}>contactez le club</Link>.</p></noscript>
   </div>
 </section>

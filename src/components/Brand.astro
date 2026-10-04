@@ -1,0 +1,8 @@
+---
+import Link from './Link.astro';
+const { footer = false } = Astro.props;
+---
+<Link class:list={['brand', { 'brand-footer': footer }]} href="/" aria-label="Boxing Center, accueil">
+  <img src="/images/logo-boxing-center.webp" width="426" height="199" alt="Logo officiel Boxing Center" loading={footer ? 'lazy' : 'eager'} decoding="async" />
+  <span class="brand-local">DEPUIS BLAGNAC</span>
+</Link>

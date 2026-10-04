@@ -1,0 +1,5 @@
+---
+const { href, ...attributes } = Astro.props;
+const newTab = href && !href.startsWith('#') && !href.startsWith('tel:');
+---
+<a href={href} {...attributes} target={newTab ? '_blank' : undefined} rel={newTab ? 'noopener noreferrer' : undefined}><slot /></a>

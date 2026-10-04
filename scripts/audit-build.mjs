@@ -2,6 +2,7 @@ import { readFile, readdir, stat } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { pages } from '../src/data/pages.mjs';
 import { home, SITE } from '../src/data/site.mjs';
+import { searchIntents } from '../src/data/search-intents.mjs';
 const fail = [];
 const assert = (condition,message) => { if (!condition) fail.push(message); };
 const records = [home, ...pages, {slug:'confidentialite'}];
@@ -18,11 +19,20 @@ for (const page of records) {
   assert(html.includes(`href="${SITE}/${page.slug ? `${page.slug}/` : ''}"`),`${file}: canonical mismatch`);
   assert(html.includes('index, follow'),`${file}: indexability missing`);
   assert(html.includes('https://boxe-toulouse.com/'),`${file}: commercial destination missing`);
+  assert(html.includes('data-club-prompt'),`${file}: persistent club access missing`);
+  for(const anchor of html.matchAll(/<a\b[^>]*>/g)) {
+    const href=anchor[0].match(/href="([^"]*)"/)?.[1];
+    if(href && !href.startsWith('#') && !href.startsWith('tel:'))
+      assert(anchor[0].includes('target="_blank"') && anchor[0].includes('noopener noreferrer'),`${file}: navigation must open a safe new tab: ${href}`);
+  }
+  assert(html.includes('property="og:image:alt"') && html.includes('name="twitter:image:alt"'),`${file}: social image descriptions missing`);
   const structured = [...html.matchAll(/<script type="application\/ld\+json"[^>]*>(.*?)<\/script>/gs)];
   assert(structured.length>0,`${file}: JSON-LD missing`);
   for(const match of structured) {
     const graph=JSON.parse(match[1])['@graph'];
     assert(!graph.some(n=>['SportsActivityLocation','LocalBusiness','SportsClub'].includes(n['@type'])),`${file}: invented physical club entity`);
+    const venue = graph.find(n => n['@type'] === 'Place');
+    assert(venue?.address?.addressLocality === 'Toulouse' && venue?.address?.postalCode === '31200',`${file}: destination must be Toulouse Minimes`);
     const faq=graph.find(n=>n['@type']==='FAQPage');
     if(page.faqs?.length) assert(faq?.mainEntity.length===page.faqs.length,`${file}: FAQ parity`);
   }
@@ -44,6 +54,12 @@ for (const page of records) {
   const social=await readFile(`dist/social/${page.slug || 'accueil'}.png`);
   const hash=createHash('sha256').update(social).digest('hex');
   assert(!images.has(hash),`${file}: duplicate social image`); images.add(hash);
+}
+const normalize = text => text.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[’']/g,' ').replace(/\s+/g,' ');
+for(const intent of searchIntents) {
+  const html = await readFile(`dist/${intent.slug ? `${intent.slug}/` : ''}index.html`,'utf8');
+  const main = normalize(html.match(/<main\b[^>]*>(.*?)<\/main>/s)?.[1].replace(/<[^>]+>/g,' ') || '');
+  for(const signal of intent.signals) assert(main.includes(signal),`${intent.slug || 'home'}: visible search intent missing: ${signal}`);
 }
 const sitemap=await readFile('dist/sitemap.xml','utf8');
 const robots=await readFile('dist/robots.txt','utf8');

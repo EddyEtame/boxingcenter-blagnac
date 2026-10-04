@@ -11,7 +11,7 @@
 }
 @layer base {
   :root { --paper: #f2f0e8; --ink: #192724; --muted: #52615a; --mint: #6ee3c8; --deep: #143e34; --line: #c3c8bd; --display: 'Barlow Condensed', 'Arial Narrow', sans-serif; --body: 'Manrope Variable', Arial, sans-serif; --pad: clamp(22px, 4.5vw, 88px); }
-  html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+  html { scroll-behavior: smooth; scroll-padding-top: 125px; }
   body { background: var(--paper); color: var(--ink); font: 500 15px/1.65 var(--body); overflow-wrap: break-word; }
   ::selection { color: var(--ink); background: var(--mint); }
   :focus-visible { outline: 3px solid #196954; outline-offset: 5px; }
@@ -48,18 +48,32 @@
   @keyframes fade-in { from { opacity: 0; transform: translateY(8px); } }
 }
 @layer layout {
-  .site-header { position: relative; z-index: 20; display: flex; align-items: center; padding: 22px var(--pad); gap: 30px; border-bottom: 1px solid var(--line); min-height: 106px; }
-  .brand { display: flex; align-items: center; gap: 12px; flex: 0 0 auto; font-family: var(--display); font-weight: 800; line-height: .86; font-size: 25px; letter-spacing: -.035em; }
-  .brand-local { display: block; margin-top: 8px; font-family: var(--body); font-size: 8px; font-weight: 800; letter-spacing: .12em; }
-  .brand-symbol { display: grid; width: 33px; gap: 5px; transform: rotate(-22deg); }
-  .brand-symbol i { display: block; height: 6px; background: var(--ink); }
-  .brand-symbol i:nth-child(2) { background: #2c9477; transform: translateX(7px); }
-  .desktop-nav { display: flex; justify-content: center; gap: 30px; margin-left: auto; font-size: 12px; font-weight: 700; }
+  .site-header { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; padding: 12px var(--pad); gap: 25px; border-bottom: 1px solid var(--line); min-height: 106px; background: var(--paper); }
+  .brand { display: flex; flex-direction: column; align-items: center; gap: 5px; flex: 0 0 auto; }
+  .brand img { width: 142px; height: auto; }
+  .brand-local { display: block; color: #20254b; font-size: 8px; line-height: 1.5; font-weight: 800; letter-spacing: .12em; }
+  .brand-footer { width: fit-content; padding: 15px 18px; background: var(--paper); margin-bottom: 20px; }
+  .desktop-nav { display: flex; justify-content: center; gap: 24px; margin-left: auto; font-size: 12px; font-weight: 700; }
   .desktop-nav a { padding: 8px 0; border-bottom: 1px solid transparent; transition: border .25s; }
-  .desktop-nav a:hover { border-color: var(--ink); }
+  .desktop-nav a:hover, .desktop-nav a[aria-current="page"] { border-color: var(--ink); }
   .header-cta { margin-left: auto; display: flex; align-items: center; gap: 20px; border: 1px solid var(--ink); padding: 13px 17px; font-size: 12px; font-weight: 800; transition: background .2s; }
   .header-cta:hover { background: var(--mint); }
+  .header-cta small { display: block; font-size: 8px; letter-spacing: .09em; margin-top: 2px; color: var(--muted); }
   .mobile-menu { display: none; }
+  .mobile-club-cta { display: none; }
+  .menu-backdrop { display: none; }
+  .club-prompt { position: fixed; right: 22px; bottom: 20px; z-index: 30; display: flex; justify-content: space-between; align-items: center; gap: 18px; width: 210px; max-width: calc(100vw - 36px); min-height: 60px; padding: 13px 17px; background: var(--mint); color: var(--ink); border: 1px solid var(--ink); box-shadow: 3px 3px 0 #19272430; transition: width .25s ease, box-shadow .25s ease; }
+  .club-prompt strong { display: block; font-size: 12px; line-height: 1.3; }
+  .club-prompt small { display: block; font-size: 7px; font-weight: 800; letter-spacing: .07em; margin-top: 4px; }
+  .club-prompt svg { flex: 0 0 auto; width: 20px; height: 20px; }
+  .club-prompt-detail { display: none; font-size: 11px; line-height: 1.5; margin-top: 10px; }
+  .club-prompt.is-expanded { width: 320px; box-shadow: 3px 3px 0 #19272430, 0 0 0 6px #6ee3c840; }
+  .club-prompt.is-expanded .club-prompt-detail { display: block; }
+  footer.site-footer { padding-bottom: 110px; }
+  .practical-connections { padding: 35px var(--pad) 60px; border-top: 1px solid var(--line); }
+  .practical-connections nav { display: flex; flex-wrap: wrap; gap: 16px 35px; margin-top: 20px; }
+  .practical-connections a { display: flex; gap: 20px; align-items: center; min-height: 44px; font-size: 13px; font-weight: 800; }
+  .practical-direct { margin-top: 22px; }
   .hero { padding: 24px var(--pad) 0; }
   .hero-topline { display: flex; justify-content: space-between; gap: 20px; }
   .hero-coordinate { font-size: 10px; font-weight: 800; letter-spacing: .08em; }
@@ -307,16 +321,27 @@
   }
   @media(max-width:800px) {
     .desktop-nav { display: none; }
-    .site-header { padding-top: 20px; padding-bottom: 20px; min-height: 95px; }
-    .header-cta { margin-left: auto; font-size: 11px; }
+    .site-header { padding-top: 10px; padding-bottom: 10px; min-height: 95px; }
+    .header-cta { display: none; }
+    .mobile-club-cta { margin-left: auto; display: flex; align-items: center; gap: 8px; padding: 8px 10px; min-height: 44px; font-size: 11px; font-weight: 800; background: var(--mint); border: 1px solid var(--ink); line-height: 1.3; }
+    .mobile-club-cta small { display: block; font-size: 7px; letter-spacing: .06em; margin-top: 3px; }
+    .mobile-club-cta svg { width: 16px; height: 16px; }
     .mobile-menu { display: block; margin-left: 5px; font-size: 12px; }
     .mobile-menu summary { cursor: pointer; list-style: none; display: flex; align-items: center; gap: 14px; padding: 13px 0 13px 10px; }
     .mobile-menu summary::-webkit-details-marker { display: none; }
     .mobile-menu summary span { font-size: 21px; }
     .mobile-menu[open] summary span { transform: rotate(45deg); }
-    .mobile-menu nav { position: absolute; left: 0; right: 0; top: 100%; padding: 30px var(--pad); background: var(--ink); color: var(--paper); display: grid; gap: 3px; box-shadow: 0 8px 15px #0002; }
-    .mobile-menu nav a { padding: 10px 0; font-size: 15px; }
+    .mobile-menu nav { position: absolute; left: 0; right: 0; top: 100%; padding: 22px var(--pad) 26px; background: var(--ink); color: var(--paper); display: grid; gap: 3px; box-shadow: 0 8px 15px #0002; max-height: calc(100dvh - 110px); overflow-y: auto; overscroll-behavior: contain; }
+    .mobile-menu nav a { padding: 9px 0; min-height: 44px; font-size: 15px; }
+    .mobile-menu nav a[aria-current="page"] { color: var(--mint); }
+    .mobile-menu summary { min-height: 44px; min-width: 74px; }
+    .mobile-menu .menu-trial { display: grid; grid-template-columns: 1fr auto; align-items: center; padding: 15px 18px; margin-top: 13px; background: var(--mint); color: var(--ink); font-weight: 800; }
+    .menu-trial small { grid-column: 1/-1; font-size: 8px; letter-spacing: .07em; margin-top: 3px; }
     .mobile-menu:not([open]) nav { display: none; }
+    body:has(.mobile-menu[open]) { overflow: hidden; }
+    body:has(.mobile-menu[open]) > main, body:has(.mobile-menu[open]) > .site-footer { filter: blur(7px); pointer-events: none; }
+    body:has(.mobile-menu[open]) .club-prompt { display: none; }
+    body:has(.mobile-menu[open]) .menu-backdrop { display: block; position: fixed; inset: 0; z-index: 40; background: #19272440; cursor: pointer; }
     .hero-topline { display: block; }
     .hero-coordinate { display: none; }
     .hero-main-photo { height: 370px; }
@@ -371,14 +396,13 @@
   }
   @media(max-width:600px) {
     :root { --pad: 22px; }
-    html { scroll-padding-top: 25px; }
+    html { scroll-padding-top: 110px; }
     .site-header { gap: 12px; min-height: 90px; }
-    .brand { font-size: 22px; gap: 10px; }
-    .brand-symbol { width: 26px; gap: 4px; }
-    .brand-symbol i { height: 5px; }
+    .brand img { width: 124px; }
     .brand-local { font-size: 7px; }
     .header-cta { display: none; }
-    .mobile-menu { margin-left: auto; }
+    .mobile-menu { margin-left: 0; }
+    .club-prompt { right: 18px; bottom: 16px; }
     .hero { padding-top: 18px; }
     .hero-topline .eyebrow { font-size: 8px; letter-spacing: .07em; }
     .hero-composition { display: flex; flex-direction: column; padding-top: 32px; }
@@ -503,6 +527,9 @@
   }
   @media(max-width:360px) {
     :root { --pad: 18px; }
+    .site-header { gap: 8px; }
+    .brand img { width: 102px; }
+    .mobile-menu summary { min-width: 58px; gap: 8px; padding-left: 4px; }
     .hero-copy h1 { font-size: 25vw; }
     .hero-main-photo { height: 290px; }
     .opening h2 { font-size: 54px; }

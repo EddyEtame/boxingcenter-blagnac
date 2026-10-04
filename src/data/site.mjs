@@ -8,6 +8,7 @@ export const CLUB = {
   trial: 'https://boxe-toulouse.com/premiere-seance/',
   contact: 'https://boxe-toulouse.com/contact/',
   address: '12 rue de Fenouillet, 31200 Toulouse',
+  postalAddress: { '@type': 'PostalAddress', streetAddress: '12 rue de Fenouillet', postalCode: '31200', addressLocality: 'Toulouse', addressCountry: 'FR' },
   phone: '05 62 24 46 82',
   phoneHref: 'tel:+33562244682',
   directions: 'https://www.google.com/maps/dir/?api=1&destination=12+rue+de+Fenouillet+31200+Toulouse'
@@ -21,8 +22,8 @@ export const disciplines = [
 ];
 export const home = {
   slug: '',
-  title: 'Boxe près de Blagnac — Boxing Center Toulouse Minimes',
-  description: 'Vous habitez Blagnac ? Trouvez votre pratique : boxe anglaise, boxing fitness, enfants ou Boxing Lady, puis préparez votre première séance à Toulouse Minimes.',
+  title: 'Boxe Blagnac — Boxing Center proche de Blagnac',
+  description: 'Boxe proche de Blagnac : anglaise, fitness, enfants et femmes à Toulouse Minimes. Découvrez aussi le MMA dans le réseau Boxing Center et préparez votre venue.',
   faqs: [
     { question: 'Où se déroulent les cours pour les habitants de Blagnac ?', answer: 'Les cours présentés pour Toulouse Minimes se déroulent au 12 rue de Fenouillet, 31200 Toulouse. Ce site aide les habitants de Blagnac à choisir leur pratique et à préparer leur venue. Le club est situé à Toulouse, à proximité de Blagnac.' },
     { question: 'Puis-je commencer la boxe sans avoir déjà pratiqué ?', answer: 'Oui. La boxe anglaise loisir et les pratiques de remise en forme permettent de débuter. Indiquez votre expérience au coach et consultez les conditions de première séance sur le site des Minimes. Les échanges en opposition ne sont pas imposés aux débutants.' },
