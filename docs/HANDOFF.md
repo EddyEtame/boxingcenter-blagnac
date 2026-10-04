@@ -62,11 +62,32 @@ Puis ouvrir réellement : accueil, une page discipline, /mma-blagnac/, /planning
 
 Contrôle des phrases du brief (hors audit) : `grep -il "situé à blagnac\|notre salle" dist/*/index.html dist/index.html` doit ne rien retourner.
 
-## 5. État des chantiers
+## 5. État des chantiers et ce qui attend Eddy
 
-Voir `docs/PROJECT-STATE.md` pour la passe du 4 octobre (mots-clés, liens, favicon, MMA, mentions légales, aperçus, lisibilité). Les chantiers suivants sont décrits au fur et à mesure dans ce fichier, section 6.
+Fait et vérifié (journal §6) : mots-clés du brief, liens, favicon, MMA → États-Unis, mentions légales, aperçus noindex, lisibilité, tutoiement, navigation interne, essai 10 €, formulaire relayé, fiche → formulaire, décoration retirée, mouvements informatifs, variante de couleurs, liens entrants préparés.
+
+Attend une action d'Eddy :
+1. Créer le formulaire dans Inlet, définir `INLET_FORM_ID` dans Vercel, tester un envoi réel.
+2. Fusionner `claude/eager-fermat-zt2vah` dans `main` pour mettre à jour la production.
+3. Raccorder le domaine boxingcenter-blagnac.fr (DNS A observé : 213.186.33.5, parking OVH), puis ajouter la redirection `*.vercel.app` → domaine dans `vercel.json`, vérifier Search Console (propriété Domaine, TXT DNS), soumettre le sitemap, lancer `npm run indexnow -- --submit`.
+4. Fusionner les branches `claude/lien-blagnac` des dépôts Minimes et États-Unis une fois le domaine en ligne.
+5. Trancher la variante de couleurs (bouton du pied de page), puis retirer la bascule ; si « Minimes » est retenue, régénérer icônes et vignettes.
+6. Décision MMA avec son responsable (Minimes n'enseigne pas le MMA ; le site oriente vers États-Unis).
 
 ## 6. Journal des chantiers (du plus récent au plus ancien)
+
+### 4 octobre 2026, soir — liens entrants depuis les sites Minimes et États-Unis
+
+**Ce qui a changé (hors de ce dépôt, sur des branches, rien n'est fusionné)**
+
+- `Eddy-etame/bc-minimes`, branche `claude/lien-blagnac` (commit 7395db7) : `public/assets/js/data.js` reçoit `export const DEPARTS = [{ ville, label: "Tu pars de Blagnac ?", url: "https://boxingcenter-blagnac.fr/" }]` ; `public/assets/js/site.js` (pied de page monté au runtime) et `scripts/maillage.mjs` (pied de page écrit dans le HTML livré) ajoutent ces liens à la colonne « Le réseau ». Le satellite n'est pas une salle : il ne figure pas dans « Les autres salles du réseau ». Convention du dépôt respectée : version des assets `?v=b56` → `?v=b57` dans 23 fichiers pour que le nouveau `data.js` soit rechargé (un `site.js` neuf important `DEPARTS` depuis un `data.js` en cache casserait le module). Les fichiers sont en CRLF ; la modification les conserve.
+- `mbosseu/boxing_center_etats_unis` (source du site clubmma.fr, vérifié par les vignettes `og/accueil.jpg` et le jeu d'icônes identiques au site en ligne), branche `claude/lien-blagnac` (commit c5d85f6) : un `<li>` « Tu pars de Blagnac ? » sous « Nos clubs » dans la liste « Accès rapide » des huit pages qui portent le pied de page.
+
+**À faire par Eddy** : fusionner les deux branches dans `main` **quand le domaine boxingcenter-blagnac.fr répond** (sinon le lien mène à une page parking OVH). Après fusion des Minimes, vérifier que le pied de page affiche le lien sans JavaScript (`curl -s https://boxe-toulouse.com/ | grep -c boxingcenter-blagnac`).
+
+### Aperçus Vercel : pourquoi ils ne doivent pas être indexés (question d'Eddy)
+
+Vercel construit une URL `*.vercel.app` par branche et par commit (les « previews »), en plus du déploiement de production. Chaque aperçu sert le site entier, à l'identique. S'il est indexable, Google voit le même contenu sur plusieurs hôtes : il peut retenir une URL d'aperçu comme canonique, diviser l'autorité, et garder en index des versions périmées. Les balises canonical limitent le risque mais ne le suppriment pas. C'est pourquoi la famille de satellites (Colomiers) et ce site mettent `noindex, nofollow` et un `robots.txt` bloquant sur tout déploiement qui n'est pas la production (`VERCEL_ENV !== 'production'`). Le déploiement de production (`main`, aujourd'hui `boxingcenter-blagnac-kappa.vercel.app`) reste indexable ; une fois le domaine raccordé, ajouter une redirection 308 de `*.vercel.app` vers le domaine dans `vercel.json`, comme sur Colomiers.
 
 ### 4 octobre 2026, soir — deuxième passe : tutoiement, formulaire, toggle, motion, liens
 
