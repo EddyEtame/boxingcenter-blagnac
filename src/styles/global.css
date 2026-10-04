@@ -539,6 +539,11 @@
     .departure-card { padding: 22px 19px 18px; }
     .ticket-actions { gap: 10px; }
   }
+  .source-notes { margin: 0 var(--pad) 45px; padding: 20px 0; border-top: 1px solid var(--line); font-size: 12px; line-height: 1.7; }
+  .source-notes > p { color: var(--muted); margin: 0 0 12px; }
+  .source-notes nav { display: flex; flex-wrap: wrap; gap: 8px 26px; }
+  .source-notes a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: underline; text-underline-offset: 4px; }
+  @media(max-width:600px) { .source-notes > p span { display: block; } .source-notes nav { gap: 0 22px; } }
   @media(prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     *, *::before, *::after { animation: none !important; transition: none !important; }

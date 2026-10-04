@@ -1,7 +1,7 @@
 ---
 const { items, label = 'Avant de pousser la porte.' } = Astro.props;
 ---
-<section class="faq section-pad" aria-labelledby="faq-title">
+<section id="faq" class="faq section-pad" aria-labelledby="faq-title">
   <div class="section-heading"><p class="eyebrow">LES QUESTIONS QUI COMPTENT</p><h2 id="faq-title">{label}</h2></div>
-  <div class="faq-list">{items.map((item, i) => <details><summary><span class="faq-number">0{i + 1}</span><span>{item.question}</span><span class="plus" aria-hidden="true"></span></summary><p>{item.answer}</p></details>)}</div>
+  <div class="faq-list">{items.map((item, i) => <details id={`question-${i+1}`}><summary><span class="faq-number">0{i + 1}</span><span>{item.question}</span><span class="plus" aria-hidden="true"></span></summary><p id={`answer-${i+1}`}>{item.answer}</p></details>)}</div>
 </section>

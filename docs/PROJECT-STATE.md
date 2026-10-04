@@ -4,7 +4,9 @@
 
 ## Résultat disponible
 
-**Dernière passe : UI/UX et éditoriale du 4 octobre 2026**, décrite dans `UI-REVIEW.md`. Navigation sticky, menu avec flou et gestion clavier, logo officiel, accès au club hors du menu mobile, bouton flottant sur chaque page, liens dans de nouveaux onglets, pages pratiques raccourcies. Le SEO / GEO / AEO complet et les règles Claude Code sont réservés à une passe séparée, selon la dernière instruction d’Eddy.
+**Dernière passe : SEO, GEO et AEO locale du 4 octobre 2026**, décrite dans `SEO-REVIEW.md`. Attribution d’Eddy Etame Etame centralisée, `humans.txt`, `llms.txt`, `llms-full.txt`, réponses sourcées avec ancres, entité officielle Minimes, sitemap d’images et dates Git, douze vignettes personnalisées, IndexNow préparé. Eddy raccordera Vercel et Search Console ensuite ; aucune indexation distante n’a été demandée. Les règles Claude Code restent une passe ultérieure.
+
+La passe précédente UI/UX et éditoriale est décrite dans `UI-REVIEW.md` : navigation sticky, menu avec flou et gestion clavier, logo officiel, accès au club hors du menu mobile, bouton flottant, nouveaux onglets et pages pratiques courtes.
 
 Site Astro statique comprenant les dix pages du brief, une page de confidentialité et une 404. Interface originale papier/encre/menthe, Barlow Condensed/Manrope, photographies du réseau et archive Fight Event 4. La fiche de départ combine discipline, disponibilité personnelle, conseil de préparation et résumé de conversation à copier. Aucune réservation n’est simulée et aucune donnée n’est transmise.
 
@@ -22,7 +24,7 @@ La salle de destination est **Toulouse Minimes, 12 rue de Fenouillet, 31200 Toul
 - Contraste calculé sur 156 éléments textuels de l’accueil. Le mot décoratif en marge identifié comme peu contrasté a été corrigé. Les numéros sur photographie sont évalués visuellement avec leur ombre ; ce contrôle n’est pas une certification WCAG exhaustive.
 - Réduction des animations prévue via `prefers-reduced-motion`, avec garde JavaScript et CSS. Code inspecté ; aucune émulation native de cette préférence n’a été effectuée avec l’outil navigateur disponible.
 - `npm audit --omit=dev --audit-level=high` : zéro vulnérabilité.
-- JavaScript client de production : 6 520 octets avant compression. CSS principal : environ 40 Ko. 27 variantes WebP : environ 1,75 Mio pour toute la photothèque, sans agrandissement artificiel. Les douze PNG de partage sont hors du chargement courant des pages.
+- JavaScript client de production après la passe SEO : 6 595 octets avant compression. CSS principal : 40 773 octets. 27 variantes WebP : environ 1,75 Mio pour toute la photothèque, sans agrandissement artificiel. Les douze PNG de partage sont hors du chargement courant des pages.
 - Contrôle visuel bureau/mobile : accueil, choix de pratique, fiche, accès, événement, page enfants et contact. Photographies et légendes vérifiées, watermark de l’archive conservé.
 
 Les chiffres ci-dessus décrivent la version locale ; ils ne sont ni un Lighthouse de production ni des données de terrain en 4G.
@@ -55,8 +57,8 @@ git ls-remote origin refs/heads/main
 
 Le serveur local de prévisualisation utilise `http://127.0.0.1:4321/`. La recherche et l’essai sans scripts se trouvent dans `.research/` ; ils ne participent pas au build et ne sont pas nécessaires au site.
 
-Pour reprendre le contenu : `src/data/site.mjs`, `src/data/pages.mjs`, `docs/FACTS.md`. Pour la composition : `src/pages/index.astro`, `src/styles/global.css`, `src/components/SessionCard.astro`. Direction et passe critique : `docs/DESIGN.md`.
+Pour reprendre le contenu : `src/data/site.mjs`, `src/data/pages.mjs`, `docs/FACTS.md`. Attribution et vignettes : `src/data/seo.mjs`. Fichiers IA : `src/lib/discovery.mjs`. Publication et indexation : `docs/SEO-REVIEW.md`, `scripts/submit-indexnow.mjs`. Pour la composition : `src/pages/index.astro`, `src/styles/global.css`, `src/components/SessionCard.astro`. Direction et passe critique : `docs/DESIGN.md`.
 
 ## Crédit et rythme
 
-Après la demande d’économie, aucun nouvel agent ni nouvelle recherche n’a été lancé. Les trois recherches déjà déléguées ont été arrêtées ou terminées, puis le travail et les contrôles ont été poursuivis directement. Pour la suite : une modification ciblée, un contrôle adapté, puis revue ; éviter de répéter des audits réussis sans changement qui le justifie.
+La passe UI a été poursuivie directement après la demande d’économie. La passe SEO a utilisé un seul agent léger (GPT-6 Luna) pour une courte revue du contenu, puis des lectures ciblées des projets voisins et de la documentation officielle. Aucune génération d’image payante ni dépendance ajoutée. Pour la suite : une modification ciblée, un contrôle adapté, puis revue ; éviter de répéter des audits réussis sans changement qui le justifie.

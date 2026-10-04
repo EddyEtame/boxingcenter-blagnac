@@ -36,6 +36,20 @@ Les photographies optimisées sont incluses dans le dépôt. `node scripts/prepa
 
 Le MMA est présenté conformément au brief et orienté vers le réseau Boxing Center via les Minimes. Les horaires, prix et réservation restent sur `boxe-toulouse.com`.
 
+## SEO et découverte IA
+
+`src/data/seo.mjs` centralise l’attribution d’Eddy Etame Etame, les références et les messages des vignettes. `humans.txt`, `llms.txt` et `llms-full.txt` sont générés par Astro depuis les données du site. Le sitemap comprend les images effectivement visibles et des dates Git de modification des contenus ; sans historique disponible, les dates sont omises.
+
+[Revue SEO, GEO, AEO et reprise après déploiement](docs/SEO-REVIEW.md).
+
+IndexNow est préparé pour le domaine canonique. La commande suivante ne fait aucun appel réseau :
+
+```sh
+npm run indexnow -- --dry-run
+```
+
+Après publication, `npm run indexnow -- --submit` contrôle la clé et les pages distantes avant soumission. Les demandes Google se réalisent séparément via Search Console. Le jeton HTML éventuel se configure avec `PUBLIC_GOOGLE_SITE_VERIFICATION` (voir `.env.example`).
+
 ## Mise en ligne
 
 `vercel.json` configure une sortie Astro statique dans `dist/`. Le domaine canonique est `https://boxingcenter-blagnac.fr`. L’association à un hébergement, le DNS de production et la validation Google Search Console restent des opérations à réaliser avec les accès du propriétaire. Un push GitHub ne prouve pas un déploiement ni une indexation Google.

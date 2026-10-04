@@ -4,6 +4,7 @@ import Base from '../layouts/Base.astro';
 import Picture from '../components/Picture.astro';
 import Arrow from '../components/Arrow.astro';
 import FAQ from '../components/FAQ.astro';
+import Sources from '../components/Sources.astro';
 import SessionCard from '../components/SessionCard.astro';
 import { home, disciplines, CLUB } from '../data/site.mjs';
 ---
@@ -20,4 +21,5 @@ import { home, disciplines, CLUB } from '../data/site.mjs';
   <section class="first-visit section-pad" aria-labelledby="first-visit-title"><div class="first-visit-heading"><p class="eyebrow">LA PREMIÈRE FOIS, ÇA SE PRÉPARE.</p><h2 id="first-visit-title">Moins de questions.<br /><em>Plus de mouvement.</em></h2></div><div class="visit-steps"><article><span>01 / AVANT</span><h3>Le cours qui vous correspond.</h3><p>Consultez le planning, puis les conditions d’essai. Un horaire d’ouverture n’est pas un horaire de cours.</p><Link href={CLUB.planning}>Voir les vrais créneaux <Arrow diagonal /></Link></article><article><span>02 / AVEC VOUS</span><h3>L’essentiel dans le sac.</h3><p>Une tenue de sport, des chaussures propres et de l’eau. Vérifiez avec le club le matériel prêté pour votre séance.</p><Link href={CLUB.trial}>Préparer la première séance <Arrow diagonal /></Link></article><article><span>03 / SUR PLACE</span><h3>Vous partez de votre niveau.</h3><p>Dites au coach que vous commencez. La technique se construit progressivement, sans obligation de compétition.</p><Link href="/boxe-anglaise-blagnac/">Comprendre la boxe loisir <Arrow diagonal /></Link></article></div></section>
   <section class="event-story section-pad" aria-labelledby="event-title"><div class="event-text"><p class="eyebrow">UNE CULTURE. PAS UNE OBLIGATION.</p><h2 id="event-title">LE GOÛT<br />DU <em>DÉPASSEMENT.</em></h2><p>Des premiers gestes aux soirées Fight Event, la boxe se vit de plusieurs façons. Vous pouvez venir pour apprendre, vous défouler ou progresser en loisir. La compétition reste un choix.</p><Link class="text-link" href="/boxe-anglaise-blagnac/">Trouver votre place <Arrow diagonal /></Link></div><Picture name="event" sizes="(max-width: 700px) 100vw, 60vw" /></section>
   <FAQ items={home.faqs} />
+  <Sources urls={home.sources} />
 </Base>

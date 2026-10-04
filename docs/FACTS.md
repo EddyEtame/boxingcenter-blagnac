@@ -43,7 +43,7 @@ Les sources publiques présentent du MMA dans d’autres salles du réseau :
 - Toulouse États-Unis : https://clubmma.fr/
 - Ramonville : https://mmatoulouse.com/activites/
 
-La page `/mma-blagnac/` décrit le choix de pratique, distingue MMA, grappling et JJB et invite à contacter les Minimes pour identifier le lieu et le cours adaptés. Son CTA principal pointe vers https://boxe-toulouse.com/contact/. Elle n’affirme pas que les Minimes proposent MMA, JJB, grappling ou une cage. Une précision du propriétaire sur l’orientation commerciale MMA reste attendue ; cette page est révisable sans affecter les autres contenus.
+La page `/mma-blagnac/` décrit le choix de pratique, distingue MMA, grappling et JJB et invite à contacter les Minimes pour identifier le lieu et le cours adaptés. Son CTA principal pointe vers https://boxe-toulouse.com/contact/. Elle n’affirme pas que les Minimes proposent MMA, JJB, grappling ou une cage. Le propriétaire a confirmé que le MMA doit rester présenté conformément au brief ; ce parcours d’orientation applique sa consigne.
 
 ## Contradictions détectées dans les sources existantes
 
@@ -70,7 +70,7 @@ L’identifiant public de l’entité Minimes, vérifié dans le JSON-LD actuel,
 
 Les sources locales `bc-minimes/src/routes.mjs` et `bc-minimes/public/assets/js/data-galerie.js` indiquent explicitement que le pool de photos de salle et de cours vient de Portet, en attendant des photos Minimes. Cela comprend les dérivés récents dans `/assets/img/photos/`.
 
-Ces images peuvent illustrer une activité du réseau lorsque le geste est cohérent. Elles ne prouvent ni un lieu à Blagnac ni l’intérieur exact des Minimes. Les ALT de `src/data/pages.mjs` restent au niveau du réseau et doivent être rapprochés du visuel effectivement sélectionné avant validation finale.
+Ces images peuvent illustrer une activité du réseau lorsque le geste est cohérent. Elles ne prouvent ni un lieu à Blagnac ni l’intérieur exact des Minimes. Les ALT de `src/data/photos.mjs` décrivent les photographies effectivement sélectionnées. Le ring dont le mur porte « Toulouse Minimes Boxing Club » est qualifié comme tel ; les autres scènes restent au niveau du réseau ou de l’événement identifié.
 
 Les archives Fight Event fournies par le propriétaire sont des photos d’événement. Une scène de compétition ne constitue pas une preuve d’un cours hebdomadaire, d’un programme enfant ou d’une localisation. Ne pas modifier le décor pour faire passer une image d’une autre salle pour une salle Minimes ou Blagnac.
 

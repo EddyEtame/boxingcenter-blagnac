@@ -3,7 +3,14 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "trailingSlash": true,
+  "redirects": [
+    { "source": "/:path*", "has": [{ "type": "host", "value": "www.boxingcenter-blagnac.fr" }], "destination": "https://boxingcenter-blagnac.fr/:path*", "permanent": true }
+  ],
   "headers": [
+    {
+      "source": "/indexnow-key.txt",
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }]
+    },
     {
       "source": "/(.*)",
       "headers": [

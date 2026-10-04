@@ -4,6 +4,7 @@ import Base from '../layouts/Base.astro';
 import Picture from '../components/Picture.astro';
 import Arrow from '../components/Arrow.astro';
 import FAQ from '../components/FAQ.astro';
+import Sources from '../components/Sources.astro';
 import SessionCard from '../components/SessionCard.astro';
 import { pages } from '../data/pages.mjs';
 import { CLUB, disciplines } from '../data/site.mjs';
@@ -21,6 +22,7 @@ const headline = page.slug === 'plannings' ? ['Les plannings.', 'Aux Minimes.'] 
   <section class="editorial" aria-label={context}><div class="editorial-index"><p class="eyebrow">{context.toUpperCase()}<br /><br />LES BONS REPÈRES</p></div><div>{page.sections.map((section,i) => <article class="editorial-block"><span>0{i+1}</span><div><h2>{section.title}</h2><p>{section.text}</p></div></article>)}</div></section>
   {discipline && <SessionCard initial={discipline.id} />}</>}
   <FAQ items={page.faqs} label={page.slug==='mma-blagnac' ? 'Votre projet MMA, en clair.' : 'Vos questions. Vos repères.'} />
+  <Sources urls={page.sources} />
   {!practical && <><section class="page-action"><div><h2>De l’envie au premier geste.</h2><p>{page.slug==='mma-blagnac' ? 'Votre niveau, votre envie, vos disponibilités : échangez avec l’équipe pour choisir votre cours.' : 'Les plannings, les tarifs et les conditions de première séance vous attendent sur le site des Minimes.'}</p></div><Link class="button button-dark" href={page.ctaUrl}>{page.ctaLabel}<Arrow diagonal /></Link></section>
   <section class="related section-pad"><p class="eyebrow">POUR CONTINUER VOTRE CHOIX</p><nav aria-label="Pages complémentaires">{page.related.map(slug => { const target=pages.find(p=>p.slug===slug); return target && <Link href={`/${slug}/`}>{target.title.split(' — ')[0]}<Arrow diagonal /></Link>; })}</nav></section></>}
   {practical && <section class="practical-connections"><p class="eyebrow">PRÉPARER VOTRE VENUE AUX MINIMES</p><nav aria-label="Informations du club"><Link href={CLUB.planning}>Voir les plannings <Arrow diagonal /></Link><Link href={CLUB.prices}>Voir les tarifs <Arrow diagonal /></Link><Link href={CLUB.trial}>Préparer mon essai <Arrow diagonal /></Link><Link href={CLUB.contact}>Contact & accès <Arrow diagonal /></Link></nav></section>}

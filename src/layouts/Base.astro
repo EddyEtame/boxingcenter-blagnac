@@ -8,25 +8,30 @@ import Arrow from '../components/Arrow.astro';
 import Brand from '../components/Brand.astro';
 import ClubPrompt from '../components/ClubPrompt.astro';
 import { SITE, CLUB, disciplines } from '../data/site.mjs';
+import { canonicalOf, socialFor, developer, sourceNames } from '../data/seo.mjs';
+import { lastModified } from '../lib/revisions.mjs';
 const { page, noindex = false } = Astro.props;
-const path = page.slug ? `/${page.slug}/` : '/';
-const canonical = `${SITE}${path}`;
-const social = `${SITE}/social/${page.slug || 'accueil'}.png`;
-const socialAlt = `${page.title} — photographie du réseau et logo officiel Boxing Center ; destination Toulouse Minimes.`;
-const destination = `${SITE}/#destination-toulouse-minimes`;
+const canonical = canonicalOf(page.slug);
+const { url: social, alt: socialAlt } = socialFor(page);
+const modified = lastModified(page.slug);
+const verification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
+const destination = CLUB.entityId;
 const schema = [
-  { '@type': 'Place', '@id': destination, name: CLUB.name, url: CLUB.url, address: CLUB.postalAddress, hasMap: CLUB.directions },
-  { '@type': 'WebSite', '@id': `${SITE}/#website`, url: `${SITE}/`, name: 'Boxing Center — depuis Blagnac', inLanguage: 'fr-FR', about: { '@id': destination }, audience: { '@type': 'Audience', geographicArea: { '@type': 'City', name: 'Blagnac' } } },
-  { '@type': 'WebPage', '@id': `${canonical}#webpage`, url: canonical, name: page.title, description: page.description, inLanguage: 'fr-FR', isPartOf: { '@id': `${SITE}/#website` }, about: { '@id': destination }, primaryImageOfPage: { '@type': 'ImageObject', url: social, width: 1200, height: 630, caption: socialAlt } },
-  ...(page.slug ? [{ '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Boxe près de Blagnac', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: page.title.split(' — ')[0], item: canonical }] }] : []),
-  ...(page.faqs?.length ? [{ '@type': 'FAQPage', '@id': `${canonical}#faq`, mainEntity: page.faqs.map((q) => ({ '@type': 'Question', name: q.question, acceptedAnswer: { '@type': 'Answer', text: q.answer } })) }] : [])
+  { '@type': 'Person', '@id': developer.id, name: developer.name, jobTitle: developer.role, url: developer.url, sameAs: developer.profiles, description: developer.contribution },
+  { '@type': 'Place', '@id': destination, name: CLUB.name, url: CLUB.url, address: CLUB.postalAddress, telephone: CLUB.phone, hasMap: CLUB.directions },
+  { '@type': 'WebSite', '@id': `${SITE}/#website`, url: `${SITE}/`, name: 'Boxing Center — depuis Blagnac', inLanguage: 'fr-FR', about: { '@id': destination }, creator: { '@id': developer.id }, audience: { '@type': 'Audience', geographicArea: { '@type': 'City', name: 'Blagnac' } } },
+  { '@type': page.slug === 'contact' ? 'ContactPage' : 'WebPage', '@id': `${canonical}#webpage`, url: canonical, name: page.title, description: page.description, inLanguage: 'fr-FR', isPartOf: { '@id': `${SITE}/#website` }, about: { '@id': destination }, creator: { '@id': developer.id }, ...(modified ? {dateModified: modified} : {}), ...(page.slug ? {breadcrumb: {'@id': `${canonical}#breadcrumb`}} : {}), ...(page.faqs?.length ? {hasPart: {'@id': `${canonical}#faq`}} : {}), ...(page.sources?.length ? {citation: page.sources.map(url => ({'@type':'WebPage',url,name:sourceNames[url]}))} : {}), primaryImageOfPage: { '@type': 'ImageObject', url: social, width: 1200, height: 630, caption: socialAlt } },
+  ...(page.slug ? [{ '@type': 'BreadcrumbList', '@id': `${canonical}#breadcrumb`, itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Boxe près de Blagnac', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: page.title.split(' — ')[0], item: canonical }] }] : []),
+  ...(page.faqs?.length ? [{ '@type': 'FAQPage', '@id': `${canonical}#faq`, mainEntity: page.faqs.map((q, i) => ({ '@type': 'Question', '@id': `${canonical}#question-${i+1}`, name: q.question, acceptedAnswer: { '@type': 'Answer', '@id': `${canonical}#answer-${i+1}`, text: q.answer } })) }] : [])
 ];
 ---
 <!doctype html>
 <html lang="fr">
   <head>
     <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{page.title}</title><meta name="description" content={page.description} /><meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'} /><link rel="canonical" href={canonical} />
+    <title>{page.title}</title><meta name="description" content={page.description} /><meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'} /><link rel="canonical" href={canonical} />
+    <meta name="author" content={developer.name} /><link rel="author" href="/humans.txt" type="text/plain" /><link rel="alternate" href="/llms.txt" type="text/plain" title="Guide du site pour les assistants IA" /><link rel="sitemap" href="/sitemap.xml" type="application/xml" />
+    {verification && <meta name="google-site-verification" content={verification} />}
     <meta name="theme-color" content="#6ee3c8" /><link rel="icon" href="/favicon.svg" type="image/svg+xml" /><link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta property="og:type" content="website" /><meta property="og:locale" content="fr_FR" /><meta property="og:site_name" content="Boxing Center — depuis Blagnac" /><meta property="og:title" content={page.title} /><meta property="og:description" content={page.description} /><meta property="og:url" content={canonical} /><meta property="og:image" content={social} /><meta property="og:image:width" content="1200" /><meta property="og:image:height" content="630" /><meta property="og:image:alt" content={socialAlt} />
     <meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content={page.title} /><meta name="twitter:description" content={page.description} /><meta name="twitter:image" content={social} /><meta name="twitter:image:alt" content={socialAlt} />

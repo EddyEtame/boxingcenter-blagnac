@@ -1,0 +1,6 @@
+---
+import Link from './Link.astro';
+import { sourceNames, reviewedOn } from '../data/seo.mjs';
+const { urls = [] } = Astro.props;
+---
+{urls.length > 0 && <aside class="source-notes" aria-label="Références officielles"><p>Les repères du club <span>· Vérifiés le <time datetime={reviewedOn}>4 octobre 2026</time></span></p><nav aria-label="Sources de cette page">{urls.map(url => <Link href={url}>{sourceNames[url]} ↗</Link>)}</nav></aside>}

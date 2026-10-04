@@ -56,7 +56,7 @@ export const pages = [
     description: 'Apprendre la boxe anglaise près de Blagnac : garde, déplacements et technique aux Minimes. Découvrez la pratique loisir et préparez votre première séance.',
     eyebrow: 'La discipline · Boxe anglaise',
     headline: ['Les poings.', 'Les bons appuis.'],
-    intro: 'La boxe anglaise près de Blagnac commence aux Minimes par des bases concrètes : une garde, des appuis, un déplacement. Les poings viennent avec le reste. Le cours loisir vous laisse apprendre sans objectif de compétition.',
+    intro: 'La boxe anglaise près de Blagnac se découvre chez Boxing Center Toulouse Minimes : garde, appuis et déplacements. Le cours loisir vous laisse apprendre les gestes avec un coach, sans objectif de compétition.',
     image: 'boxing',
     sections: [
       {
@@ -126,7 +126,7 @@ export const pages = [
     faqs: [
       {
         question: 'Comment commencer le MMA près de Blagnac ?',
-        answer: 'Présentez votre envie et votre niveau à l’équipe de Toulouse Minimes. Elle est votre point de contact pour identifier le cours de MMA dans le réseau Boxing Center, vérifier la salle et préparer votre première venue.',
+        answer: 'Pour commencer le MMA près de Blagnac, contactez l’équipe de Toulouse Minimes. Les programmes du réseau présentent le MMA à Toulouse États-Unis et à Ramonville. Vérifiez avec l’équipe le lieu, le cours et le créneau adaptés à votre niveau avant votre première venue.',
       },
       {
         question: 'Quelles informations donner pour être orienté ?',
@@ -148,7 +148,7 @@ export const pages = [
     description: 'Boxing fitness près de Blagnac : découvrez le Boxing Camp encadré et le cardio boxing en accès libre aux Minimes. Choisissez votre façon de vous entraîner.',
     eyebrow: 'Votre énergie · Boxing fitness',
     headline: ['Du souffle.', 'Du geste. Du rythme.'],
-    intro: 'Pour le boxing fitness près de Blagnac, regardez autant le contenu que le nom du cours. Aux Minimes, le Boxing Camp propose un entraînement encadré ; le cardio boxing se travaille sur les sacs en accès libre.',
+    intro: 'Pour le boxing fitness près de Blagnac, Boxing Center Toulouse Minimes propose deux formats : le Boxing Camp, un cours encadré, et le cardio boxing, une pratique sur les sacs en accès libre. Choisissez selon votre envie d’être guidé ou de travailler en autonomie.',
     image: 'fitness',
     sections: [
       {
@@ -240,7 +240,7 @@ export const pages = [
     description: 'Boxe femme près de Blagnac : découvrez le Boxing Lady réservé aux femmes et les cours mixtes de Toulouse Minimes. Les débutantes sont les bienvenues.',
     eyebrow: 'Votre pratique · Boxe femme',
     headline: ['Votre garde.', 'Votre façon de boxer.'],
-    intro: 'Pour la boxe femme près de Blagnac, les Minimes offrent plusieurs entrées : le Boxing Lady entre femmes, ou les autres cours du club. Vous choisissez le cadre qui vous donne envie de revenir.',
+    intro: 'Pour la boxe femme près de Blagnac, Boxing Center Toulouse Minimes propose le Boxing Lady réservé aux femmes et des cours mixtes. Les débutantes sont accueillies : choisissez le cadre qui vous donne envie de revenir.',
     image: 'women',
     sections: [
       {
@@ -356,7 +356,7 @@ export const pages = [
     faqs: [
       {
         question: 'Où consulter les prix actuels ?',
-        answer: 'Sur la page Tarifs de boxe-toulouse.com. Elle présente les formules du club, leurs conditions et les offres en cours.',
+        answer: 'La page Tarifs de Boxing Center Toulouse Minimes présente les montants et les conditions actuels. Comparez la séance d’essai, les formules adultes et l’école de boxe selon votre groupe, puis vérifiez la durée, le paiement et les accès inclus.',
       },
       {
         question: 'La séance d’essai engage-t-elle sur un abonnement ?',

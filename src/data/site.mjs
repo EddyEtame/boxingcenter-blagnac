@@ -2,6 +2,7 @@ export const SITE = 'https://boxingcenter-blagnac.fr';
 export const CLUB = {
   name: 'Boxing Center Toulouse Minimes',
   url: 'https://boxe-toulouse.com/',
+  entityId: 'https://boxe-toulouse.com/#salle',
   activities: 'https://boxe-toulouse.com/activites/',
   planning: 'https://boxe-toulouse.com/plannings/',
   prices: 'https://boxe-toulouse.com/tarifs/',
@@ -23,9 +24,10 @@ export const disciplines = [
 export const home = {
   slug: '',
   title: 'Boxe Blagnac — Boxing Center proche de Blagnac',
-  description: 'Boxe proche de Blagnac : anglaise, fitness, enfants et femmes à Toulouse Minimes. Découvrez aussi le MMA dans le réseau Boxing Center et préparez votre venue.',
+  description: 'Boxe près de Blagnac : anglaise, fitness, enfants et femmes à Toulouse Minimes. Projet MMA dans le réseau Boxing Center. Préparez votre première séance.',
+  sources: [CLUB.activities, CLUB.trial, CLUB.contact],
   faqs: [
-    { question: 'Où se déroulent les cours pour les habitants de Blagnac ?', answer: 'Les cours présentés pour Toulouse Minimes se déroulent au 12 rue de Fenouillet, 31200 Toulouse. Ce site aide les habitants de Blagnac à choisir leur pratique et à préparer leur venue. Le club est situé à Toulouse, à proximité de Blagnac.' },
+    { question: 'Où se déroulent les cours pour les habitants de Blagnac ?', answer: 'Boxing Center Toulouse Minimes accueille les habitants de Blagnac au 12 rue de Fenouillet, 31200 Toulouse. Le club est situé à Toulouse, à proximité de Blagnac. Ce site vous aide à choisir votre pratique et à préparer votre venue dans cette salle.' },
     { question: 'Puis-je commencer la boxe sans avoir déjà pratiqué ?', answer: 'Oui. La boxe anglaise loisir et les pratiques de remise en forme permettent de débuter. Indiquez votre expérience au coach et consultez les conditions de première séance sur le site des Minimes. Les échanges en opposition ne sont pas imposés aux débutants.' },
     { question: 'Comment choisir un cours compatible avec mes horaires ?', answer: 'Commencez par une discipline et notez les moments où vous êtes disponible. La fiche de départ de cette page vous aide à préparer ce choix. Consultez ensuite le planning officiel des Minimes pour vérifier un créneau réel.' },
     { question: 'Comment découvrir le MMA près de Blagnac ?', answer: 'Le MMA associe le travail debout et le travail au sol. Boxing Center propose cette pratique dans son réseau. L’équipe de Toulouse Minimes est votre point de contact pour choisir le cours et le lieu adaptés à votre niveau et à vos disponibilités.' }
