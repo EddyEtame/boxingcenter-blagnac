@@ -1,5 +1,23 @@
 # Reprise — boxingcenter-blagnac
 
+## Passe du 4 octobre 2026 (soir) — revue Baffled Bar et corrections
+
+Revue complète du site déployé (`boxingcenter-blagnac-kappa.vercel.app`, identique au build local) contre le cahier des charges et contre le niveau des autres sites du réseau construits par Eddy (boxe-toulouse.com, satellite Colomiers). Corrections appliquées dans cette passe :
+
+- **Mots-clés du brief (§3, §17)** : les quinze requêtes n'apparaissaient nulle part telles quelles, et les cinq balises Title/meta recommandées avaient toutes été réécrites. Désormais : titres et descriptions de §17 repris mot pour mot, chaque requête rattachée à une page (`src/data/search-intents.mjs`) et présente dans le texte visible et dans le titre, contrôle au build. Le H1 de l'accueil est celui du brief (§6). Aucune formulation ne présente une salle à Blagnac : le club est nommé et situé à Toulouse Minimes dans le même H1, la même intro, la même FAQ.
+- **Contenus demandés et absents** : coordination, maîtrise de soi, confiance en soi, cadre sécurisé (enfants) ; remise en forme, cardio, dépassement de soi, boxe féminine (femmes) ; sans combat, ambiance dynamique (fitness) ; travail debout / au sol, grappling, JJB, préparation physique (MMA) ; coachs diplômés sur l'accueil ; l'intro §6 et la formulation §7 du brief, reprises.
+- **MMA** : le club des Minimes n'enseigne pas le MMA (page Activités). La page MMA, la fiche de départ et l'accueil orientent désormais vers la salle du réseau qui l'enseigne, Boxing Center Toulouse États-Unis (`MMA_CLUB` dans `src/data/site.mjs`, source clubmma.fr), avec le contact des Minimes en second lien. Conforme à §9 (« pages Boxing Center adaptées selon l'organisation réelle »).
+- **Liens** : les liens vers l'extérieur ouvrent un nouvel onglet (décision d'Eddy, conservée) ; les liens internes restaient eux aussi en nouvel onglet (logo, cartes, fil d'Ariane, pied de page : 23/23 sur l'accueil). `Link.astro` ne cible plus que les URL http(s) ; l'audit vérifie les deux sens.
+- **Favicon** : l'icône abstraite (barres sur fond menthe) est remplacée par une pastille dérivée de la marque : fond encre, anneau des cordes du ring, « B » dessiné depuis Barlow Condensed. `favicon.svg`, `favicon.ico` (16/32/48), PNG 32/96/192/512, `apple-touch-icon`, `site.webmanifest`, générés au build (`scripts/favicons.mjs`). `theme-color` aligné sur l'encre.
+- **Images** : fichiers renommés selon §18 (`club-boxe-blagnac-boxing-center`, `boxe-anglaise-blagnac`, `salle-boxe-proche-blagnac`, `boxe-fitness-blagnac`, `cours-boxe-enfants-blagnac`, `boxe-femme-blagnac`, `club-mma-blagnac-boxing-center`, `cours-boxe-collectif-blagnac`) et ALT portant la formulation locale sans situer la salle à Blagnac.
+- **Lisibilité mobile** : 31 textes sous 10 px sur l'accueil (6 px pour l'adresse du tampon, 7 px pour « Depuis Blagnac »). Plancher relevé à 10 px (9 px pour trois micro-labels), bureau inclus.
+- **Mentions légales** : page absente, obligatoire (LCEN). Ajoutée depuis `EDITEUR` (`src/data/site.mjs`), données du registre déjà utilisées par les autres sites du réseau.
+- **Aperçus Vercel** : `noindex, nofollow` et `robots.txt` bloquant sur tout déploiement non production (`src/lib/environment.mjs`). `X-Robots-Tag: noindex` sur `llms.txt`, `llms-full.txt`, `humans.txt`. Cache immuable d'un an sur images, vignettes et assets.
+- **Repères sur l'accueil** : quatre faits publiés par le club (coachs diplômés d'État FFBoxe ; publics ; métro B Barrière de Paris à 3 min ; cinq clubs, un abonnement). Aucun prix, aucune durée de trajet, aucune distance.
+- **Micro-copie** : « Préparer mon essai » → « Réserver mon essai » (brief §4) ; `aria-current` retiré des liens externes de la navigation ; accroche de pied de page remplacée.
+
+Restent ouverts, à trancher par Eddy : la phrase négative demandée par le brief §7 face à la règle « on vend la proximité, jamais l'absence » ; tutoiement ou vouvoiement ; palette menthe/papier contre palette dérivée de la marque ; navigation d'en-tête vers le site du club ou vers les pages de ce site ; chevauchement du rectangle flottant ; attribution développeur dans les pages ; formulaire de contact relayé ; prix ou non sur la page Tarifs.
+
 État vérifié le 4 octobre 2026. Dossier de travail : `C:/Users/Mommy Jayce/Desktop/Boxing Center/Deployment/boxingcenter-blagnac`.
 
 ## Résultat disponible

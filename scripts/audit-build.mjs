@@ -4,10 +4,10 @@ import { pages } from '../src/data/pages.mjs';
 import { home, SITE, CLUB } from '../src/data/site.mjs';
 import { searchIntents } from '../src/data/search-intents.mjs';
 import sharp from 'sharp';
-import { developer, privacy, canonicalOf, socialFor } from '../src/data/seo.mjs';
+import { developer, privacy, legal, canonicalOf, socialFor } from '../src/data/seo.mjs';
 const fail = [];
 const assert = (condition,message) => { if (!condition) fail.push(message); };
-const records = [home, ...pages, privacy];
+const records = [home, ...pages, privacy, legal];
 const machineFiles = ['humans.txt','llms.txt','llms-full.txt','sitemap.xml','robots.txt'];
 const unescape = text => text.replace(/&(?:amp|quot|apos|lt|gt|#39|#x27);/g, entity => ({'&amp;':'&','&quot;':'"','&apos;':"'",'&#39;':"'",'&#x27;':"'",'&lt;':'<','&gt;':'>'}[entity]));
 const plain = html => unescape(html.replace(/<[^>]+>/g,' ')).replace(/\s+/g,' ').trim();
@@ -28,8 +28,9 @@ for (const page of records) {
   assert(html.includes('data-club-prompt'),`${file}: persistent club access missing`);
   for(const anchor of html.matchAll(/<a\b[^>]*>/g)) {
     const href=anchor[0].match(/href="([^"]*)"/)?.[1];
-    if(href && !href.startsWith('#') && !href.startsWith('tel:'))
-      assert(anchor[0].includes('target="_blank"') && anchor[0].includes('noopener noreferrer'),`${file}: navigation must open a safe new tab: ${href}`);
+    if(!href) continue;
+    if(/^https?:\/\//.test(href)) assert(anchor[0].includes('target="_blank"') && anchor[0].includes('noopener noreferrer'),`${file}: external link must open a safe new tab: ${href}`);
+    else assert(!anchor[0].includes('target='),`${file}: internal link must stay in the current tab: ${href}`);
   }
   assert(html.includes('property="og:image:alt"') && html.includes('name="twitter:image:alt"'),`${file}: social image descriptions missing`);
   assert(html.includes(`content="${socialFor(page).url}"`),`${file}: social image URL mismatch`);
@@ -88,8 +89,10 @@ for (const page of records) {
 const normalize = text => text.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[’']/g,' ').replace(/\s+/g,' ');
 for(const intent of searchIntents) {
   const html = await readFile(`dist/${intent.slug ? `${intent.slug}/` : ''}index.html`,'utf8');
-  const main = normalize(html.match(/<main\b[^>]*>(.*?)<\/main>/s)?.[1].replace(/<[^>]+>/g,' ') || '');
-  for(const signal of intent.signals) assert(main.includes(signal),`${intent.slug || 'home'}: visible search intent missing: ${signal}`);
+  const main = normalize(unescape(html.match(/<main\b[^>]*>(.*?)<\/main>/s)?.[1].replace(/<[^>]+>/g,' ') || ''));
+  const title = normalize(unescape(html.match(/<title>(.*?)<\/title>/s)?.[1] || ''));
+  for(const term of intent.terms) assert(main.includes(normalize(term)),`${intent.slug || 'home'}: brief search phrase missing from visible text: ${term}`);
+  assert(title.includes(normalize(intent.terms[0])),`${intent.slug || 'home'}: brief search phrase missing from title: ${intent.terms[0]}`);
 }
 const sitemap=await readFile('dist/sitemap.xml','utf8');
 const robots=await readFile('dist/robots.txt','utf8');
@@ -116,4 +119,4 @@ const full = await readFile('dist/llms-full.txt','utf8');
 for (const page of [home,...pages]) for (const q of page.faqs) assert(full.includes(q.answer),`llms-full: missing FAQ answer for ${page.slug}`);
 assert(/^[a-zA-Z0-9-]{8,128}$/.test((await readFile('dist/indexnow-key.txt','utf8')).trim()),'IndexNow key format');
 if(fail.length) { console.error(fail.join('\n')); process.exit(1); }
-console.log(`Audit passed: ${records.length} indexable pages, ${searchIntents.reduce((n,p)=>n+p.terms.length,0)} brief keywords mapped, unique OG 1200×630, canonical/image sitemap, exact FAQ parity, sources, developer attribution, AI files and IndexNow preparation.`);
+console.log(`Audit passed: ${records.length} indexable pages, ${searchIntents.reduce((n,p)=>n+p.terms.length,0)} brief search phrases present verbatim, unique OG 1200×630, canonical/image sitemap, exact FAQ parity, sources, developer attribution, AI files and IndexNow preparation.`);

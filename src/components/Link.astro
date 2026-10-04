@@ -1,5 +1,9 @@
 ---
+// Les liens vers l'extérieur (le site du club, Google Maps) ouvrent un nouvel onglet :
+// le visiteur garde ce site sous la main pendant qu'il consulte le planning ou les tarifs.
+// Les liens internes restent dans l'onglet : c'est la navigation normale du site,
+// et c'est ce qui permet aux transitions de page de jouer.
 const { href, ...attributes } = Astro.props;
-const newTab = href && !href.startsWith('#') && !href.startsWith('tel:');
+const external = typeof href === 'string' && /^https?:\/\//.test(href);
 ---
-<a href={href} {...attributes} target={newTab ? '_blank' : undefined} rel={newTab ? 'noopener noreferrer' : undefined}><slot /></a>
+<a href={href} {...attributes} target={external ? '_blank' : undefined} rel={external ? 'noopener noreferrer' : undefined}><slot /></a>

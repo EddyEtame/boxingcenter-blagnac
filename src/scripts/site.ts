@@ -1,4 +1,4 @@
-import { disciplines, CLUB } from '../data/site.mjs';
+import { disciplines, CLUB, MMA_CLUB } from '../data/site.mjs';
 
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 if (!reduced && 'IntersectionObserver' in window) {
@@ -26,13 +26,13 @@ document.querySelectorAll<HTMLElement>('[data-session]').forEach((root) => {
     get('[data-ticket-sport]').textContent = sport.name;
     get('[data-ticket-time]').textContent = time ? `Ma disponibilité : ${time}` : 'Votre moment reste à définir.';
     get('[data-ticket-advice]').textContent = sport.preparation;
-    get('[data-ticket-destination]').textContent = sport.id === 'mma' ? 'MMA · lieu à confirmer avec le réseau' : 'Toulouse Minimes · 12 rue de Fenouillet';
+    get('[data-ticket-destination]').textContent = sport.id === 'mma' ? `${MMA_CLUB.short} · ${MMA_CLUB.address.replace(', 31200 Toulouse', '')}` : `${CLUB.short} · 12 rue de Fenouillet`;
     const cta = get<HTMLAnchorElement>('[data-ticket-cta]');
-    cta.href = sport.id === 'mma' ? CLUB.contact : CLUB.planning;
-    cta.innerHTML = `${sport.id === 'mma' ? 'Être orienté vers le bon cours' : 'Vérifier les cours aux Minimes'} <span aria-hidden="true">↗</span>`;
+    cta.href = sport.id === 'mma' ? MMA_CLUB.url : CLUB.planning;
+    cta.innerHTML = `${sport.id === 'mma' ? 'Découvrir le club MMA' : 'Vérifier les cours aux Minimes'} <span aria-hidden="true">↗</span>`;
     get<HTMLAnchorElement>('[data-ticket-detail]').href = `/${sport.slug}/`;
     get('[data-copy-status]').textContent = '';
-    summary = `Ma fiche de départ — Boxing Center\nJe viens de Blagnac.\nPratique : ${sport.name}.\nDisponibilité personnelle : ${time || 'à définir'}.\n${sport.preparation}\nQuel cours correspondrait à mon niveau et à ces disponibilités ? Que dois-je prévoir pour une première séance ?\n${sport.id === 'mma' ? 'Lieu MMA à confirmer auprès du réseau.' : 'Destination : Boxing Center Toulouse Minimes, 12 rue de Fenouillet, 31200 Toulouse.'}\nCette fiche ne constitue pas une réservation.\nInformations : ${cta.href}`;
+    summary = `Ma fiche de départ — Boxing Center\nJe viens de Blagnac.\nPratique : ${sport.name}.\nDisponibilité personnelle : ${time || 'à définir'}.\n${sport.preparation}\nQuel cours correspondrait à mon niveau et à ces disponibilités ? Que dois-je prévoir pour une première séance ?\n${sport.id === 'mma' ? `Destination : ${MMA_CLUB.name}, ${MMA_CLUB.address}.` : `Destination : ${CLUB.name}, ${CLUB.address}.`}\nCette fiche ne constitue pas une réservation.\nInformations : ${cta.href}`;
   };
   form.addEventListener('submit', event => event.preventDefault());
   form.addEventListener('change', update);
@@ -88,7 +88,18 @@ document.querySelectorAll<HTMLDetailsElement>('.mobile-menu').forEach(menu => {
 const clubPrompt = document.querySelector<HTMLElement>('[data-club-prompt]');
 if (clubPrompt) {
   let nextDistance = 240, lastExpanded = -12000, timer: ReturnType<typeof setTimeout>;
+  // Le rectangle s'efface tant qu'une zone de choix (fiche de départ, coordonnées du club)
+  // est à l'écran : il ne doit jamais recouvrir ce que le visiteur est en train de toucher.
+  const clearing = new Set<Element>();
+  if ('IntersectionObserver' in window) {
+    const watcher = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) clearing.add(entry.target); else clearing.delete(entry.target); });
+      clubPrompt.classList.toggle('is-away', clearing.size > 0);
+    }, { threshold: 0 });
+    document.querySelectorAll('[data-prompt-clear]').forEach(zone => watcher.observe(zone));
+  }
   const expand = () => {
+    if (clearing.size > 0) return;
     clubPrompt.classList.add('is-expanded');
     clearTimeout(timer);
     timer = setTimeout(() => clubPrompt.classList.remove('is-expanded'), 3800);

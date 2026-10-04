@@ -1,10 +1,15 @@
-// Intentions du brief : variantes regroupées sur une URL, sans pages satellites.
+/**
+ * Les quinze requêtes du cahier des charges (§3), chacune rattachée à la page qui
+ * y répond. Le contrôle de build exige que chaque expression apparaisse telle
+ * quelle (accents et casse ignorés) dans le texte visible de sa page, et que la
+ * première expression de chaque page figure dans son titre.
+ */
 export const searchIntents = [
-  { slug: '', terms: ['Boxe Blagnac', 'Sport de combat Blagnac', 'Sports de combat Blagnac'], signals: ['boxe', 'sports de combat', 'blagnac', 'toulouse minimes'] },
-  { slug: 'club-boxe-blagnac', terms: ['Club de boxe Blagnac', 'Salle de boxe Blagnac', 'Cours de boxe Blagnac', 'Club de boxe proche Blagnac', 'Salle de boxe proche Blagnac'], signals: ['club', 'salle', 'boxe', 'blagnac', 'minimes'] },
-  { slug: 'boxe-anglaise-blagnac', terms: ['Boxe Anglaise Blagnac'], relatedTerms: ['Cours de boxe anglaise Blagnac', 'Boxe loisir près de Blagnac'], signals: ['boxe anglaise', 'blagnac', 'loisir'] },
-  { slug: 'mma-blagnac', terms: ['Club MMA Blagnac', 'MMA Blagnac'], relatedTerms: ['Cours de MMA près de Blagnac', 'Différence MMA grappling JJB'], signals: ['mma', 'blagnac', 'reseau', 'sol', 'grappling', 'jjb'] },
-  { slug: 'boxe-fitness-blagnac', terms: ['Boxe Fitness Blagnac', 'Boxing Fitness Blagnac'], relatedTerms: ['Fitness boxe Blagnac', 'Boxing Camp près de Blagnac'], signals: ['fitness', 'blagnac', 'cardio', 'boxing camp'] },
-  { slug: 'boxe-enfants-blagnac', terms: ['Boxe Enfants Blagnac'], relatedTerms: ['Cours de boxe enfant Blagnac', 'Baby Boxe près de Blagnac'], signals: ['boxe', 'enfants', 'blagnac', 'educative', 'loisir'] },
-  { slug: 'boxe-femme-blagnac', terms: ['Boxe Femme Blagnac'], relatedTerms: ['Cours de boxe femme Blagnac', 'Boxing Lady près de Blagnac'], signals: ['boxe femme', 'blagnac', 'boxing lady', 'debutantes'] },
+  { slug: '', terms: ['Club de boxe Blagnac', 'Boxe Blagnac', 'Sport de combat Blagnac', 'Sports de combat Blagnac'] },
+  { slug: 'club-boxe-blagnac', terms: ['Club de boxe proche Blagnac', 'Salle de boxe Blagnac', 'Salle de boxe proche Blagnac', 'Cours de boxe Blagnac'] },
+  { slug: 'boxe-anglaise-blagnac', terms: ['Boxe Anglaise Blagnac'] },
+  { slug: 'mma-blagnac', terms: ['Club MMA Blagnac', 'MMA Blagnac'] },
+  { slug: 'boxe-fitness-blagnac', terms: ['Boxe Fitness Blagnac', 'Boxing Fitness Blagnac'] },
+  { slug: 'boxe-enfants-blagnac', terms: ['Boxe Enfants Blagnac'] },
+  { slug: 'boxe-femme-blagnac', terms: ['Boxe Femme Blagnac'] },
 ];

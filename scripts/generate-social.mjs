@@ -1,14 +1,15 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import sharp from 'sharp';
 import { pages } from '../src/data/pages.mjs';
-import { home } from '../src/data/site.mjs';
+import { home, MMA_CLUB } from '../src/data/site.mjs';
 import { photos } from '../src/data/photos.mjs';
 import { socialFont, socialText } from './social-fonts.mjs';
-import { privacy, notFound, socialFor } from '../src/data/seo.mjs';
+import { privacy, legal, notFound, socialFor } from '../src/data/seo.mjs';
+import { generateFavicons } from './favicons.mjs';
 
 await mkdir('public/social', { recursive: true });
 const titleFont = await socialFont(800), labelFont = await socialFont(600);
-const entries = [home, ...pages, privacy, notFound];
+const entries = [home, ...pages, privacy, legal, notFound];
 const logo = (await sharp('public/images/logo-boxing-center.webp').png().toBuffer()).toString('base64');
 for (const page of entries) {
   const p = photos[page.image || 'hero'];
@@ -34,12 +35,12 @@ for (const page of entries) {
     <path d="M42 516h560" stroke="#c3c8bd"/>
     ${socialText(labelFont, 'BLAGNAC', { x:42, y:554, size:21, fill:'#192724', width:84 })}
     <path d="M128 546h22m-6-6 6 6-6 6" fill="none" stroke="#192724" stroke-width="1.5"/>
-    ${socialText(labelFont, 'TOULOUSE MINIMES', { x:162, y:554, size:21, fill:'#192724', width:440 })}
+    ${socialText(labelFont, mma ? MMA_CLUB.short.toLocaleUpperCase('fr-FR') : 'TOULOUSE MINIMES', { x:162, y:554, size:21, fill:'#192724', width:440 })}
     ${socialText(labelFont, 'boxingcenter-blagnac.fr', { x:42, y:588, size:17, fill:'#52615a', width:560 })}
     ${socialText(labelFont, social.promise, { x:680, y:548, size:25, fill:'#6ee3c8', width:480 })}
     ${socialText(labelFont, social.note, { x:680, y:587, size:16, fill:'#f2f0e8', width:480 })}
   </svg>`;
   await writeFile(`public/social/${page.slug || 'accueil'}.png`, await sharp(Buffer.from(svg)).png().toBuffer());
 }
-await sharp('public/favicon.svg').resize(180,180).png().toFile('public/apple-touch-icon.png');
-console.log(`Generated ${entries.length} unique social images and touch icon.`);
+await generateFavicons();
+console.log(`Generated ${entries.length} unique social images and the favicon set.`);

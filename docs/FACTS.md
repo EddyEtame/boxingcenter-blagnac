@@ -34,7 +34,22 @@ Le site du club utilise la boutique du réseau pour ses réservations : https://
 | L’école distingue Baby Boxe, enfants, adolescents et jeunes compétiteurs. | Activités et Plannings Minimes | Les pages de ce site ne figent aucun âge ou horaire. |
 | La compétition des jeunes est facultative et doit venir de l’enfant et des parents. | https://boxingcenter.fr/ | Ne pas suggérer une inscription automatique en compétition. |
 
-## MMA : orientation conditionnelle
+## Faits ajoutés le 4 octobre 2026 (soir)
+
+| Fait | Source | Limite de publication |
+| --- | --- | --- |
+| Les coachs des Minimes sont diplômés d’État et licenciés FFBoxe. | Accueil Minimes (« Nos entraîneurs sont diplômés d’État et licenciés FFBoxe ») | Aucun nom, diplôme ou numéro précis n’est publié. |
+| Le club est à trois minutes à pied du métro B, station Barrière de Paris. | Accueil et Première séance Minimes | Seul fait de trajet publié ; aucune durée depuis Blagnac. |
+| Plusieurs rings, douze sacs, un étage de préparation physique ; ouvert du lundi au samedi de 10h à 21h30. | Accueil, Activités et Contact Minimes | La page réseau annonce d’autres chiffres ; le site du club fait foi. |
+| Un seul abonnement ouvre les cinq clubs du réseau. | Tarifs Minimes, clubmma.fr | Le détail des formules reste sur le site du club. |
+| Le MMA, le grappling et le JJB Boxing Center se pratiquent à Toulouse États-Unis, 388 avenue des États-Unis, 31200 Toulouse (cage officielle, 1 200 m²). | https://clubmma.fr/ | Les Minimes n’enseignent pas le MMA ; la page MMA de ce site le dit et oriente vers États-Unis. |
+| Éditeur : SAS Boxing Center, SIRET 821 817 889 00016, RCS Toulouse B 821 817 889, siège 12 rue de Fenouillet, directeur de la publication Sébastien Dutilh (DG). | registre des entreprises, relevé le 13 septembre 2026 pour les autres sites du réseau | Reproduit sur /mentions-legales/. |
+
+## MMA : orientation vers la salle qui l’enseigne (mise à jour du 4 octobre, soir)
+
+La page `/mma-blagnac/` nomme désormais Boxing Center Toulouse États-Unis comme lieu de pratique du MMA, du grappling et du JJB, avec son adresse et son site, et garde le contact des Minimes en second lien. La section ci-dessous décrit l’état antérieur.
+
+## MMA : orientation conditionnelle (état antérieur)
 
 Le programme et le planning Minimes consultés ne confirment pas de cours de MMA. La mention MMA dans une formule d’abonnement multi-clubs ne constitue pas une preuve d’un cours de MMA sur place.
 

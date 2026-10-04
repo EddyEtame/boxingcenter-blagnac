@@ -1,11 +1,12 @@
 /**
- * Real Boxing Center photography. None of these files establishes the Blagnac venue.
- * The inherited Minimes gallery explicitly describes its pool as network/Portet
- * placeholders. A local filename is not proof of the photographed location.
- * Credits follow the visible watermark or the older site's evidence registry.
+ * Real Boxing Center photography. None of these files establishes a Blagnac venue.
+ * File names follow the brief (§18): the local search phrase, in kebab-case.
+ * ALT texts describe what is photographed AND carry the local phrase, the way the
+ * brief asks ("Cours de boxe anglaise près de Blagnac"), without ever claiming that
+ * the room is in Blagnac. Credits follow the visible watermark or the evidence registry.
  * Source paths are repository-relative inputs for scripts/prepare-images.mjs.
  */
-const network = 'Photographie du réseau Boxing Center ; ne représente pas la salle de Blagnac.';
+const network = 'Photographie du réseau Boxing Center ; ne représente pas une salle à Blagnac.';
 
 const entry = (name, source, width, height, alt, caption, credit, extra = {}) => {
   const maxWidth = Math.min(width, 1600);
@@ -27,32 +28,32 @@ const entry = (name, source, width, height, alt, caption, credit, extra = {}) =>
 
 export const photos = {
   hero: entry(
-    'entrainement-boxe', '../bc-minimes/public/assets/img/photos/cours-assaut-1200.webp', 1200, 800,
-    'Deux pratiquants gantés travaillent leur garde pendant un cours du réseau Boxing Center.',
+    'club-boxe-blagnac-boxing-center', '../bc-minimes/public/assets/img/photos/cours-assaut-1200.webp', 1200, 800,
+    'Club de boxe proche de Blagnac : deux pratiquants gantés travaillent leur garde pendant un cours encadré Boxing Center.',
     'Entraînement dans le réseau Boxing Center.', 'Axel Derewiany',
     { evidence: 'Visible watermark; inherited Minimes gallery identifies the pool as network photography, not a Minimes shoot.' },
   ),
   boxing: entry(
-    'travail-technique', '../club-de-boxe-blagnac/public/images/boxe-ados-blagnac-1600.webp', 1600, 1066,
-    'Un entraîneur Boxing Center accompagne un jeune boxeur dans un exercice aux pattes d’ours.',
+    'boxe-anglaise-blagnac', '../club-de-boxe-blagnac/public/images/boxe-ados-blagnac-1600.webp', 1600, 1066,
+    'Cours de boxe anglaise près de Blagnac : un entraîneur Boxing Center guide un jeune boxeur aux pattes d’ours.',
     'Travail aux pattes d’ours dans le réseau Boxing Center.', 'Boxing Center',
     { evidence: 'Published unsigned by the Boxing Center network, recorded in the older photo registry.', publishedSource: 'https://boxingcenter.fr/wp-content/uploads/2026/09/valentin-tapia-mitaines-jeune-toulouse.jpeg' },
   ),
   ring: entry(
-    'ring-encadrement', '../club-de-boxe-blagnac/public/images/ring-encadrement-1600.webp', 1600, 1048,
-    'Sur le ring de Toulouse Minimes, club de boxe proche de Blagnac, un entraîneur encadre deux boxeurs.',
+    'salle-boxe-proche-blagnac', '../club-de-boxe-blagnac/public/images/ring-encadrement-1600.webp', 1600, 1048,
+    'Salle de boxe proche de Blagnac : sur le ring de Boxing Center Toulouse Minimes, un entraîneur encadre deux boxeurs.',
     'Sur le ring du Toulouse Minimes Boxing Club, membre du réseau Boxing Center.', 'Axel Derewiany',
     { evidence: 'Older registry: BC-077, EXIF artist; visible wall inscription names Toulouse Minimes Boxing Club.', shotAt: 'Toulouse Minimes Boxing Club' },
   ),
   fitness: entry(
-    'frappe-au-sac', '../club-de-boxe-blagnac/public/images/frappe-au-sac-1600.webp', 1600, 959,
-    'Une pratiquante travaille sa frappe face à un sac de boxe.',
+    'boxe-fitness-blagnac', '../club-de-boxe-blagnac/public/images/frappe-au-sac-1600.webp', 1600, 959,
+    'Boxing fitness près de Blagnac : une pratiquante travaille sa frappe au sac dans une salle Boxing Center.',
     'Travail au sac dans le réseau Boxing Center.', 'Axel Derewiany',
     { evidence: 'Older registry: BC-064, visible watermark, room unspecified.' },
   ),
   kids: entry(
-    'boxe-educative', '../club-de-boxe-blagnac/public/images/boxe-educative-blagnac-1600.webp', 1600, 1066,
-    'Deux jeunes boxeurs casqués participent à un tournoi de boxe éducative du réseau Boxing Center.',
+    'cours-boxe-enfants-blagnac', '../club-de-boxe-blagnac/public/images/boxe-educative-blagnac-1600.webp', 1600, 1066,
+    'Boxe enfants proche de Blagnac : deux jeunes boxeurs casqués lors d’un tournoi de boxe éducative Boxing Center.',
     'Tournoi de boxe éducative du réseau Boxing Center.', 'Boxing Center',
     {
       evidence: 'Published by the network on boxingcenter.fr; no signed photographer identified.',
@@ -61,32 +62,32 @@ export const photos = {
     },
   ),
   women: entry(
-    'boxeuses-technique', '../club-de-boxe-blagnac/public/images/boxe-corner-1600.webp', 1600, 984,
-    'Deux boxeuses travaillent leur garde et leurs gestes, gantées, face à face.',
+    'boxe-femme-blagnac', '../club-de-boxe-blagnac/public/images/boxe-corner-1600.webp', 1600, 984,
+    'Cours de boxe femme près de Blagnac : deux boxeuses gantées travaillent leur garde face à face.',
     'Échange technique entre deux pratiquantes du réseau Boxing Center.', 'Axel Derewiany',
     { evidence: 'Older registry: visible watermark, room unspecified.' },
   ),
   mma: entry(
-    'preparation-sports-combat', '../boxing-center-cugnaux/public/photos/cage-mma-cugnaux-2000.webp', 2000, 1333,
-    'Des pratiquants s’échauffent à la corde dans un espace du réseau Boxing Center équipé d’une cage.',
-    'Préparation physique dans le réseau Boxing Center.', 'Axel Derewiany',
+    'club-mma-blagnac-boxing-center', '../boxing-center-cugnaux/public/photos/cage-mma-cugnaux-2000.webp', 2000, 1333,
+    'Club MMA proche de Blagnac : échauffement à la corde dans une salle Boxing Center équipée d’une cage.',
+    'Préparation physique dans une salle du réseau Boxing Center.', 'Axel Derewiany',
     { evidence: 'Visible watermark. Source photograph reused from the Boxing Center network; no Minimes location claim.' },
   ),
   team: entry(
-    'cours-collectif', '../club-de-boxe-blagnac/public/images/cours-collectif-sacs-1600.webp', 1600, 1067,
-    'Des pratiquants s’entraînent ensemble dans un espace équipé de sacs de frappe.',
+    'cours-boxe-collectif-blagnac', '../club-de-boxe-blagnac/public/images/cours-collectif-sacs-1600.webp', 1600, 1067,
+    'Cours de boxe collectif accessible depuis Blagnac : des pratiquants s’entraînent ensemble face aux sacs de frappe.',
     'Cours collectif dans le réseau Boxing Center.', 'Axel Derewiany',
     { evidence: 'Older registry: BC-063, visible watermark, room unspecified.' },
   ),
   event: entry(
     'fight-event-4', 'Fight Event 4 - Jefferson Vargas vs Valentin Guth-1-001.zip#Fight Event 4 - Jefferson Vargas vs Valentin Guth/DSC_6958-3.jpg', 4784, 3194,
-    'Deux boxeurs en compétition sur un ring, sous les projecteurs de Fight Event 4.',
+    'Deux boxeurs en compétition sur un ring, sous les projecteurs de la soirée Fight Event 4 de Boxing Center.',
     'Fight Event 4 — Jefferson Vargas face à Valentin Guth. Archive fournie par le club.', 'B.M Photographie',
     {
       sourceArchive: 'Fight Event 4 - Jefferson Vargas vs Valentin Guth-1-001.zip',
       sourceEntry: 'Fight Event 4 - Jefferson Vargas vs Valentin Guth/DSC_6958-3.jpg',
       evidence: 'Visible B.M Photographie watermark retained. EXIF artist/copyright absent; no full photographer name inferred.',
-      provenance: 'Photographie de Fight Event 4 ; ne représente pas une séance ou la salle de Blagnac.',
+      provenance: 'Photographie de Fight Event 4 ; ne représente pas une séance ou une salle à Blagnac.',
     },
   ),
 };
