@@ -4,7 +4,9 @@
 
 ## Résultat disponible
 
-**Dernière passe : SEO, GEO et AEO locale du 4 octobre 2026**, décrite dans `SEO-REVIEW.md`. Attribution d’Eddy Etame Etame centralisée, `humans.txt`, `llms.txt`, `llms-full.txt`, réponses sourcées avec ancres, entité officielle Minimes, sitemap d’images et dates Git, douze vignettes personnalisées, IndexNow préparé. Eddy raccordera Vercel et Search Console ensuite ; aucune indexation distante n’a été demandée. Les règles Claude Code restent une passe ultérieure.
+**Dernière passe : correction du build Vercel du 4 octobre 2026.** Le premier déploiement de `934c982` s’arrêtait sur la mesure du titre de la vignette d’accueil. L’erreur a été reproduite sous Linux avec Node 22.19.0 : le problème dépendait du rendu natif des polices, pas seulement de Node 24. Le générateur dessine désormais tous les textes depuis les contours Barlow Condensed inclus, contrôle les glyphes, coordonnées et limites, puis produit les douze PNG. Un test du raster vérifie que le titre complet apparaît. La version majeure Node est fixée à `22.x`.
+
+La passe SEO, GEO et AEO locale du 4 octobre 2026 est décrite dans `SEO-REVIEW.md` : attribution d’Eddy Etame Etame centralisée, `humans.txt`, `llms.txt`, `llms-full.txt`, réponses sourcées avec ancres, entité officielle Minimes, sitemap d’images et dates Git, douze vignettes personnalisées, IndexNow préparé. Eddy a lancé le déploiement Vercel ; le domaine et Search Console restent à raccorder et à vérifier. Aucune indexation distante n’a été demandée. Les règles Claude Code restent une passe ultérieure.
 
 La passe précédente UI/UX et éditoriale est décrite dans `UI-REVIEW.md` : navigation sticky, menu avec flou et gestion clavier, logo officiel, accès au club hors du menu mobile, bouton flottant, nouveaux onglets et pages pratiques courtes.
 
@@ -14,6 +16,7 @@ La salle de destination est **Toulouse Minimes, 12 rue de Fenouillet, 31200 Toul
 
 ## Vérifications effectuées
 
+- Correctif Vercel : `npm run build` réussi sous Windows (Node 22.17.1) et Ubuntu/Linux après `npm ci` (Node 22.19.0), avec une configuration Fontconfig sans polices système. Test du raster réussi, douze vignettes relues visuellement, audit final réussi. Installation Linux : zéro vulnérabilité signalée. Ce contrôle local ne constitue pas une confirmation du nouveau déploiement distant.
 - Dernier build : 12 pages générées, audit réussi. Onze pages indexables ; 404 en `noindex`.
 - Titres/descriptions/H1/canonicals uniques, vignettes sociales distinctes, sitemap et robots, FAQ structurées, liens internes et images valides.
 - Dix pages parcourues dans le navigateur à 320, 768 et 1440 px. Le débordement trouvé à 768 px a été corrigé et les dix pages revérifiées à cette largeur. Images chargées et H1 uniques.
@@ -37,7 +40,7 @@ Les archives ZIP, recherches, captures QA, dépendances et fichiers `.env` sont 
 
 ## Ce qui reste pour la production
 
-1. Associer le dépôt à l’hébergement et confirmer le déploiement réel. Le projet fournit `vercel.json`, mais aucun projet distant n’est lié dans ce dossier.
+1. Confirmer que le nouveau déploiement Vercel réussit après le correctif. Le dépôt est utilisé par Vercel selon le journal fourni par Eddy ; aucun projet distant n’est lié dans ce dossier local.
 2. Connecter `boxingcenter-blagnac.fr` à cet hébergement. Le DNS A observé est `213.186.33.5` ; la requête HTTPS a échoué pendant cette session. Il n’existe donc pas de preuve de publication de cette version sur le domaine.
 3. Vérifier le domaine dans le compte Google Search Console du propriétaire, soumettre `https://boxingcenter-blagnac.fr/sitemap.xml`, puis vérifier l’exploration réelle. Aucun accès Google ou jeton de vérification n’a été fourni ici.
 4. Avant ouverture publique, compléter les informations légales de l’éditeur et de l’hébergeur à partir de l’identité confirmée par le propriétaire. Aucun responsable légal, numéro d’entreprise ou hébergeur n’a été inventé.

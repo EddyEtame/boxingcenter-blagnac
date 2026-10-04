@@ -6,7 +6,7 @@ Direction originale : papier chaud, encre et menthe, typographie condensée, pho
 
 ## Développement
 
-Node.js 22.19+ recommandé pour l’ensemble des dépendances. Les vérifications locales ont également fonctionné avec Node 22.17.1.
+Node.js 22.x, version 22.19 ou supérieure recommandée pour l’ensemble des dépendances. La version majeure est fixée dans `package.json` pour Vercel. Les vérifications Windows ont également fonctionné avec Node 22.17.1.
 
 ```sh
 npm ci
@@ -21,6 +21,8 @@ npm run preview
 ```
 
 Le build produit les pages HTML statiques, les visuels de partage propres à chaque page et le sitemap, puis contrôle métadonnées, canonical, H1, liens, images, FAQ et localisation. Aucun service externe n’est nécessaire au rendu des pages.
+
+Les textes des vignettes sont dessinés depuis les contours des polices incluses dans le dépôt, sans recherche de polices système. Un test du rendu réel du titre précède leur génération ; les limites de chaque texte sont aussi contrôlées.
 
 Les photographies optimisées sont incluses dans le dépôt. `node scripts/prepare-images.mjs` permet de les redériver lorsque les fichiers source du réseau ou les archives fournies sont présents ; cette étape est facultative pour une installation depuis GitHub.
 
