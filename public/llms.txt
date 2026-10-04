@@ -1,0 +1,18 @@
+# Boxing Center — pour les habitants de Blagnac
+
+Ce site aide les habitants de Blagnac à choisir une pratique de boxe et à préparer leur venue au club Boxing Center Toulouse Minimes.
+Le lieu d'entraînement est à Toulouse : 12 rue de Fenouillet, 31200 Toulouse. Ce site ne décrit pas une salle physique à Blagnac.
+Les plannings, tarifs et réservations sont gérés par https://boxe-toulouse.com/.
+Pour le MMA, contacter les Minimes afin de vérifier la salle et le cours concernés dans le réseau Boxing Center.
+La fiche interactive exprime les disponibilités du visiteur ; elle ne réserve pas de créneau et ne transmet pas de données.
+
+## Pages
+- [Le club proche de Blagnac](https://boxingcenter-blagnac.fr/club-boxe-blagnac/)
+- [Boxe anglaise](https://boxingcenter-blagnac.fr/boxe-anglaise-blagnac/)
+- [MMA](https://boxingcenter-blagnac.fr/mma-blagnac/)
+- [Boxing fitness](https://boxingcenter-blagnac.fr/boxe-fitness-blagnac/)
+- [Boxe enfants](https://boxingcenter-blagnac.fr/boxe-enfants-blagnac/)
+- [Boxe femme](https://boxingcenter-blagnac.fr/boxe-femme-blagnac/)
+- [Plannings](https://boxingcenter-blagnac.fr/plannings/)
+- [Tarifs](https://boxingcenter-blagnac.fr/tarifs/)
+- [Contact](https://boxingcenter-blagnac.fr/contact/)

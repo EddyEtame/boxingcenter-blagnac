@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.astro/
+.vercel/
+.research/
+.env
+.env.*
+!.env.example
+docs/qa/*.png
+docs/qa/*.json
+*.log
+*.zip
+docs/research/
+.research-*.py
