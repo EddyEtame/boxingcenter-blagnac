@@ -1,12 +1,14 @@
 import { readFile } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
+const OUT = existsSync('.vercel/output/static') ? '.vercel/output/static' : 'dist';
 import { SITE } from '../src/data/site.mjs';
 
 // Préparation hors réseau par défaut. La soumission attend le vrai domaine publié.
 const submit = process.argv.includes('--submit');
 const unknown = process.argv.slice(2).filter(arg => !['--submit', '--dry-run'].includes(arg));
 if (unknown.length) throw new Error(`Unknown arguments: ${unknown.join(', ')}`);
-const sitemap = await readFile('dist/sitemap.xml', 'utf8');
-const key = (await readFile('dist/indexnow-key.txt', 'utf8')).trim();
+const sitemap = await readFile(`${OUT}/sitemap.xml`, 'utf8');
+const key = (await readFile(`${OUT}/indexnow-key.txt`, 'utf8')).trim();
 if (!/^[a-zA-Z0-9-]{8,128}$/.test(key)) throw new Error('Invalid IndexNow key.');
 const urlList = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]);
 if (!urlList.length || new Set(urlList).size !== urlList.length || urlList.some(url => new URL(url).origin !== SITE))

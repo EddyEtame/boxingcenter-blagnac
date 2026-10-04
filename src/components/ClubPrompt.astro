@@ -3,10 +3,10 @@ import Link from './Link.astro';
 import Arrow from './Arrow.astro';
 import { CLUB } from '../data/site.mjs';
 const { slug = '' } = Astro.props;
-const context = slug === 'plannings' ? {href:CLUB.planning,label:'Voir les plannings',detail:'Choisissez votre cours aux Minimes.'}
+const context = slug === 'plannings' ? {href:CLUB.planning,label:'Voir les plannings',detail:'Choisis ton cours aux Minimes.'}
   : slug === 'tarifs' ? {href:CLUB.prices,label:'Voir les tarifs',detail:'Les formules et conditions du club.'}
   : slug === 'contact' ? {href:CLUB.contact,label:'Contacter les Minimes',detail:'Adresse, accès et équipe du club.'}
-  : {href:CLUB.url,label:'Le club des Minimes',detail:'Découvrez le club et préparez votre venue.'};
+  : {href:CLUB.url,label:'Le club des Minimes',detail:'Découvre le club et prépare ta venue.'};
 ---
 <Link class="club-prompt" href={context.href} data-club-prompt aria-label={`${context.label} — site officiel, nouvel onglet`}>
   <span class="club-prompt-copy"><strong>{context.label}</strong><small>BOXE-TOULOUSE.COM</small><span class="club-prompt-detail">{context.detail}</span></span><Arrow diagonal />

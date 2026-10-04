@@ -33,6 +33,10 @@ export const legal = {
   slug: 'mentions-legales', title: 'Mentions légales — Boxing Center depuis Blagnac',
   description: 'Éditeur, hébergeur et informations légales de boxingcenter-blagnac.fr, le site qui oriente les habitants de Blagnac vers Boxing Center Toulouse Minimes.', image: 'ring',
 };
+export const thanks = {
+  slug: 'merci', title: 'Message envoyé — Boxing Center depuis Blagnac',
+  description: 'Ta demande est arrivée au club Boxing Center Toulouse Minimes. Une vraie personne te répond.', image: 'ring',
+};
 export const notFound = { slug: '404', title: 'Page introuvable — Boxing Center depuis Blagnac', image: 'event' };
 
 // Une intention, une composition et une promesse propres à chaque vignette.
@@ -49,6 +53,7 @@ const cards = {
   contact: ['DE BLAGNAC AUX MINIMES.', 'PRÉPARER VOTRE VENUE.', '12 rue de Fenouillet · 05 62 24 46 82.'],
   confidentialite: ['VOS CHOIX RESTENT LES VÔTRES.', 'UNE FICHE QUE VOUS GARDEZ.', 'Vos choix restent dans votre navigateur.'],
   'mentions-legales': ['MENTIONS LÉGALES.', 'ÉDITEUR ET HÉBERGEUR.', 'Les informations légales de boxingcenter-blagnac.fr.'],
+  merci: ['MESSAGE REÇU.', 'ON TE RÉPOND.', 'Le club Boxing Center Toulouse Minimes a ta demande.'],
   '404': ['UN PAS DE CÔTÉ.', 'RETROUVER VOTRE CHEMIN.', 'Les pratiques et les informations du club.'],
 };
 export function socialFor(page) {

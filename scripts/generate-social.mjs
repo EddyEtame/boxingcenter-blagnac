@@ -4,12 +4,12 @@ import { pages } from '../src/data/pages.mjs';
 import { home, MMA_CLUB } from '../src/data/site.mjs';
 import { photos } from '../src/data/photos.mjs';
 import { socialFont, socialText } from './social-fonts.mjs';
-import { privacy, legal, notFound, socialFor } from '../src/data/seo.mjs';
+import { privacy, legal, thanks, notFound, socialFor } from '../src/data/seo.mjs';
 import { generateFavicons } from './favicons.mjs';
 
 await mkdir('public/social', { recursive: true });
 const titleFont = await socialFont(800), labelFont = await socialFont(600);
-const entries = [home, ...pages, privacy, legal, notFound];
+const entries = [home, ...pages, privacy, legal, thanks, notFound];
 const logo = (await sharp('public/images/logo-boxing-center.webp').png().toBuffer()).toString('base64');
 for (const page of entries) {
   const p = photos[page.image || 'hero'];

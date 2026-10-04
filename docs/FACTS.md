@@ -45,6 +45,8 @@ Le site du club utilise la boutique du réseau pour ses réservations : https://
 | Le MMA, le grappling et le JJB Boxing Center se pratiquent à Toulouse États-Unis, 388 avenue des États-Unis, 31200 Toulouse (cage officielle, 1 200 m²). | https://clubmma.fr/ | Les Minimes n’enseignent pas le MMA ; la page MMA de ce site le dit et oriente vers États-Unis. |
 | Éditeur : SAS Boxing Center, SIRET 821 817 889 00016, RCS Toulouse B 821 817 889, siège 12 rue de Fenouillet, directeur de la publication Sébastien Dutilh (DG). | registre des entreprises, relevé le 13 septembre 2026 pour les autres sites du réseau | Reproduit sur /mentions-legales/. |
 
+| La séance d’essai coûte 10 €, gants et protections prêtés, sans engagement ni dossier. | Tarifs et Première séance Minimes | Seul montant publié sur ce site (décision d’Eddy, 4 octobre 2026) ; renvoie vers la page Tarifs du club. |
+
 ## MMA : orientation vers la salle qui l’enseigne (mise à jour du 4 octobre, soir)
 
 La page `/mma-blagnac/` nomme désormais Boxing Center Toulouse États-Unis comme lieu de pratique du MMA, du grappling et du JJB, avec son adresse et son site, et garde le contact des Minimes en second lien. La section ci-dessous décrit l’état antérieur.

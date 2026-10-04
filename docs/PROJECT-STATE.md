@@ -1,5 +1,11 @@
 # Reprise — boxingcenter-blagnac
 
+> Lire d’abord `docs/HANDOFF.md` : directives d’Eddy en vigueur, journal des chantiers, reste à faire. Ce fichier conserve l’historique des passes.
+
+## Passe du 4 octobre 2026 (soir, suite) — tutoiement, formulaire, toggle, motion
+
+Détail complet dans `docs/HANDOFF.md`, journal du 4 octobre (deuxième passe). Résumé : tutoiement généralisé ; navigation d’en-tête vers les pages du site ; séance d’essai à 10 € (seul montant publié) ; formulaire de contact relayé via Inlet avec adaptateur Vercel (`INLET_FORM_ID` à définir) ; fiche de départ envoyée au formulaire ; décoration générique et fondus retirés ; trajet Blagnac → Minimes tracé et sceau du ticket ; variante de couleurs « Minimes » à l’essai, bascule dans le pied de page.
+
 ## Passe du 4 octobre 2026 (soir) — revue Baffled Bar et corrections
 
 Revue complète du site déployé (`boxingcenter-blagnac-kappa.vercel.app`, identique au build local) contre le cahier des charges et contre le niveau des autres sites du réseau construits par Eddy (boxe-toulouse.com, satellite Colomiers). Corrections appliquées dans cette passe :

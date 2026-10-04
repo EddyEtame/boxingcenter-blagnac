@@ -17,8 +17,9 @@ npm run dev
 
 ```sh
 npm run build
-npm run preview
 ```
+
+Le site utilise l’adaptateur Vercel pour sa seule fonction serveur, le relais du formulaire de contact (`/api/contact/`, variable `INLET_FORM_ID`). La sortie est dans `.vercel/output/static` ; pour contrôler le rendu en local, servir ce dossier (`python3 -m http.server 4321`), `astro preview` n’étant pas compatible avec l’adaptateur.
 
 Le build produit les pages HTML statiques, les visuels de partage propres à chaque page et le sitemap, puis contrôle métadonnées, canonical, H1, liens, images, FAQ et localisation. Aucun service externe n’est nécessaire au rendu des pages.
 

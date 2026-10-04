@@ -6,21 +6,21 @@ const selected = disciplines.find(d => d.id === initial) || disciplines[0];
 const mma = selected.id === 'mma';
 ---
 <section class="session section-pad" id="mon-depart" aria-labelledby="session-title" data-session data-prompt-clear data-initial={initial}>
-  <div class="session-intro"><p class="eyebrow">VOTRE FICHE DE DÉPART</p><h2 id="session-title">Une envie.<br />Un moment.<br /><em>Un premier pas.</em></h2><p>Vous n’avez pas besoin d’avoir tout décidé. Commencez par ce qui vous attire et le temps que vous pouvez lui faire.</p><span class="session-doodle" aria-hidden="true">À VOUS<br />DE JOUER <svg viewBox="0 0 130 60" fill="none"><path d="M5 5c60-5 90 8 100 40M87 34l18 11 2-20" stroke="currentColor" stroke-width="2" /></svg></span></div>
+  <div class="session-intro"><p class="eyebrow">TA FICHE DE DÉPART</p><h2 id="session-title">Une envie.<br />Un moment.<br /><em>Un premier pas.</em></h2><p>Tu n’as pas besoin d’avoir tout décidé. Commence par ce qui t’attire et le temps que tu peux lui donner : la fiche te dit où aller, quoi dire au coach, et t’emmène au bon cours.</p></div>
   <div class="session-workspace">
     <form class="session-form" aria-label="Préparer ma première séance" onsubmit="return false">
-      <fieldset><legend><span>01</span> Ce qui vous attire</legend><div class="sport-options">{disciplines.map((d) => <label><input type="radio" name="discipline" value={d.id} checked={d.id === initial} /><span>{d.name}</span></label>)}</div></fieldset>
-      <fieldset><legend><span>02</span> Un moment dans votre semaine</legend><p class="field-note">Vos disponibilités personnelles. Les cours se vérifient ensuite avec le club.</p><div class="time-options"><label>Votre jour<select name="day"><option value="À définir">À définir</option>{['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'].map((d) => <option>{d}</option>)}</select></label><label>Votre préférence<select name="period"><option value="À définir">À définir</option><option>Le matin</option><option>Le midi</option><option>L’après-midi</option><option>En soirée</option></select></label></div></fieldset>
+      <fieldset><legend><span>01</span> Ce qui t’attire</legend><div class="sport-options">{disciplines.map((d) => <label><input type="radio" name="discipline" value={d.id} checked={d.id === initial} /><span>{d.name}</span></label>)}</div></fieldset>
+      <fieldset><legend><span>02</span> Un moment dans ta semaine</legend><p class="field-note">Tes disponibilités. Les cours se vérifient ensuite avec le club.</p><div class="time-options"><label>Ton jour<select name="day"><option value="À définir">À définir</option>{['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'].map((d) => <option>{d}</option>)}</select></label><label>Ta préférence<select name="period"><option value="À définir">À définir</option><option>Le matin</option><option>Le midi</option><option>L’après-midi</option><option>En soirée</option></select></label></div></fieldset>
     </form>
-    <div class="departure-card" aria-live="polite" aria-atomic="true">
-      <div class="ticket-top"><span class="eyebrow">LE PREMIER PAS / BLAGNAC</span><span class="ticket-cross" aria-hidden="true">✳</span></div>
-      <h3 data-ticket-sport>{selected.name}</h3><p class="ticket-time" data-ticket-time>Votre moment reste à définir.</p><div class="ticket-rule"></div>
-      <div class="ticket-advice"><span class="eyebrow">VOTRE POINT DE DÉPART</span><p data-ticket-advice>{selected.preparation}</p></div>
+    <div class="departure-card" aria-live="polite" aria-atomic="true" data-ticket>
+      <div class="ticket-top"><span class="eyebrow">LE PREMIER PAS / BLAGNAC</span><span class="ticket-seal" aria-hidden="true">BC</span></div>
+      <h3 data-ticket-sport>{selected.name}</h3><p class="ticket-time" data-ticket-time>Ton moment reste à définir.</p><div class="ticket-rule"></div>
+      <div class="ticket-advice"><span class="eyebrow">TON POINT DE DÉPART</span><p data-ticket-advice>{selected.preparation}</p></div>
       <p class="ticket-destination"><span aria-hidden="true">↗</span> <span data-ticket-destination>{mma ? `${MMA_CLUB.short} · ${MMA_CLUB.address.replace(', 31200 Toulouse', '')}` : `${CLUB.short} · 12 rue de Fenouillet`}</span></p>
       <Link class="button button-dark" href={mma ? MMA_CLUB.url : CLUB.planning} data-ticket-cta>{mma ? 'Découvrir le club MMA' : 'Vérifier les cours aux Minimes'} <span aria-hidden="true">↗</span></Link>
-      <div class="ticket-actions"><button type="button" data-copy-ticket>Copier ma fiche <span aria-hidden="true">+</span></button><Link href={`/${selected.slug}/`} data-ticket-detail>Comprendre cette pratique →</Link></div>
-      <p class="ticket-note">Cette fiche prépare votre échange avec le club. Le jour choisi n’est pas une réservation.</p><p class="copy-status" role="status" data-copy-status></p>
+      <div class="ticket-actions"><Link href="/contact/#formulaire" data-ticket-send>Envoyer ma fiche au club →</Link><Link href={`/${selected.slug}/`} data-ticket-detail>Comprendre cette pratique →</Link></div>
+      <p class="ticket-note">Cette fiche prépare ton échange avec le club. Le jour choisi n’est pas une réservation.</p>
     </div>
-    <noscript><style>.session-form,.ticket-actions{display:none}</style><p class="no-js-note">Choisissez une pratique parmi les pages du site, puis consultez le <Link href={CLUB.planning}>planning officiel des Minimes</Link>. Pour être orienté, <Link href={CLUB.contact}>contactez le club</Link>.</p></noscript>
+    <noscript><style>.session-form,.ticket-actions{display:none}</style><p class="no-js-note">Choisis une pratique parmi les pages du site, puis consulte le <Link href={CLUB.planning}>planning officiel des Minimes</Link>. Pour être orienté, <Link href={CLUB.contact}>contacte le club</Link>.</p></noscript>
   </div>
 </section>

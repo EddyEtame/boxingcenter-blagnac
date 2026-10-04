@@ -1,0 +1,10 @@
+---
+import Link from '../components/Link.astro';
+import Base from '../layouts/Base.astro';
+import Arrow from '../components/Arrow.astro';
+import { CLUB } from '../data/site.mjs';
+import { thanks as page } from '../data/seo.mjs';
+---
+<Base page={page} noindex>
+  <section class="simple-page merci"><p class="eyebrow">MESSAGE REÇU</p><h1>C’est parti.<br /><em>On te répond.</em></h1><p>Ta demande est arrivée au club Boxing Center Toulouse Minimes. Une vraie personne la lit et te répond avec le cours et le créneau qui correspondent à ce que tu as décrit.</p><p>Pressé ? Appelle le <Link href={CLUB.phoneHref}>{CLUB.phone}</Link>, {CLUB.hours}. En attendant, le planning et la page Première séance répondent déjà à beaucoup de questions.</p><div class="page-action-links"><Link href={CLUB.planning} class="button button-dark">Voir les plannings <Arrow diagonal /></Link><Link href={CLUB.trial} class="text-link">Réserver ma séance d’essai · {CLUB.trialPrice} <Arrow diagonal /></Link></div></section>
+</Base>

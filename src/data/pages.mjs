@@ -5,9 +5,12 @@ import { CLUB, MMA_CLUB } from './site.mjs';
  * Titles and meta descriptions of the five discipline pages are the ones the brief
  * recommends (§17), reproduced verbatim. Every page carries its own search phrases
  * from brief §3 in visible text, checked at build (src/data/search-intents.mjs).
+ * Voice: tutoiement, decided by Eddy on 4 October 2026 (respectful, concrete).
  * Verified facts and their limits are documented in docs/FACTS.md.
  * Commercial links stay on the official club sites.
  */
+const trialCta = { ctaLabel: `Réserver ma séance d’essai · ${CLUB.trialPrice}`, ctaUrl: CLUB.trial };
+
 export const pages = [
   {
     slug: 'club-boxe-blagnac',
@@ -16,20 +19,20 @@ export const pages = [
     eyebrow: 'Le club · Toulouse Minimes',
     headline: ['Club de boxe', 'proche de Blagnac.'],
     context: 'Boxing Center Toulouse Minimes · pour les habitants de Blagnac',
-    intro: 'Vous habitez Blagnac et vous recherchez un club de boxe à proximité ? Boxing Center Toulouse Minimes accueille les pratiquants de Blagnac souhaitant apprendre la boxe, progresser, se défouler ou reprendre une activité sportive dans un cadre sérieux. Le club propose des cours encadrés, une ambiance accessible et un accompagnement adapté aux débutants comme aux pratiquants confirmés.',
+    intro: 'Tu habites Blagnac et tu cherches un club de boxe à proximité ? Boxing Center Toulouse Minimes accueille les pratiquants de Blagnac qui veulent apprendre la boxe, progresser, se défouler ou reprendre une activité sportive dans un cadre sérieux. Le club propose des cours encadrés, une ambiance accessible et un accompagnement adapté aux débutants comme aux confirmés.',
     image: 'ring',
     sections: [
       {
         title: 'Salle de boxe Blagnac : la réponse s’appelle Toulouse Minimes.',
-        text: 'Club de boxe proche Blagnac, salle de boxe proche Blagnac, cours de boxe Blagnac : quel que soit le mot que vous avez tapé, la réponse Boxing Center est la même. Le club n’est pas dans Blagnac même : il accueille les habitants de Blagnac dans sa salle de Toulouse Minimes, 12 rue de Fenouillet, à trois minutes à pied du métro B Barrière de Paris. Une vraie salle de boxe : plusieurs rings, douze sacs, un étage de préparation physique, ouverte du lundi au samedi de 10h à 21h30.',
+        text: 'Club de boxe proche Blagnac, salle de boxe proche Blagnac, cours de boxe Blagnac : quel que soit le mot que tu as tapé, la réponse Boxing Center est la même. Le club n’est pas dans Blagnac même : il accueille les habitants de Blagnac dans sa salle de Toulouse Minimes, 12 rue de Fenouillet, à trois minutes à pied du métro B Barrière de Paris. Une vraie salle de boxe : plusieurs rings, douze sacs, un étage de préparation physique, ouverte du lundi au samedi de 10h à 21h30.',
       },
       {
         title: 'Des cours encadrés par des coachs diplômés.',
-        text: 'Les cours sont encadrés par des coachs diplômés d’État et licenciés FFBoxe : un coach par cours, des consignes, des corrections, une progression suivie. Les débutants comme les pratiquants confirmés y trouvent leur place, et l’accès libre permet ensuite de reprendre son travail en autonomie. Pour découvrir la boxe, commencez par un cours encadré.',
+        text: 'Les cours sont encadrés par des coachs diplômés d’État et licenciés FFBoxe : un coach par cours, des consignes, des corrections, une progression suivie. Débutant ou confirmé, tu y trouves ta place, et l’accès libre te permet ensuite de reprendre ton travail en autonomie. Pour découvrir la boxe, commence par un cours encadré.',
       },
       {
-        title: 'Loisir, enfants, femmes, compétition si vous le voulez.',
-        text: 'Boxe anglaise loisir, Boxing Camp, Boxing Lady, école de boxe pour les enfants et les ados, pieds-poings : chacun choisit sa pratique, et un seul abonnement ouvre les cinq clubs du réseau. Apprendre à boxer ne vous oblige pas à viser la compétition ; elle reste un choix, jamais une condition.',
+        title: 'Loisir, enfants, femmes, compétition si tu le veux.',
+        text: 'Boxe anglaise loisir, Boxing Camp, Boxing Lady, école de boxe pour les enfants et les ados, pieds-poings : chacun choisit sa pratique, et un seul abonnement ouvre les cinq clubs du réseau. Apprendre à boxer ne t’oblige pas à viser la compétition ; elle reste un choix, jamais une condition.',
       },
     ],
     facts: [
@@ -43,12 +46,12 @@ export const pages = [
         answer: 'Il est à Toulouse Minimes, 12 rue de Fenouillet, 31200 Toulouse, à trois minutes à pied du métro B Barrière de Paris. Boxing Center y accueille les habitants de Blagnac : c’est le club de boxe proche de Blagnac que ce site présente.',
       },
       {
-        question: 'Peut-on venir sans avoir déjà boxé ?',
-        answer: 'Oui. Le club accueille les débutants : le premier cours commence par l’échauffement, la garde et le direct, avec un coach qui corrige dès la première séance. Personne ne monte sur le ring sans l’avoir demandé.',
+        question: 'Je peux venir sans avoir jamais boxé ?',
+        answer: 'Oui. Le club accueille les débutants : le premier cours commence par l’échauffement, la garde et le direct, avec un coach qui te corrige dès la première séance. Personne ne monte sur le ring sans l’avoir demandé.',
       },
       {
         question: 'Où vérifier les cours, les tarifs et réserver une séance d’essai ?',
-        answer: 'Sur boxe-toulouse.com, le site officiel de Boxing Center Toulouse Minimes : activités, plannings, tarifs et réservation de la première séance y sont à jour.',
+        answer: `Sur boxe-toulouse.com, le site officiel de Boxing Center Toulouse Minimes : activités, plannings, tarifs et réservation de la première séance (${CLUB.trialPrice}) y sont à jour.`,
       },
     ],
     ctaLabel: 'Voir le club proche de Blagnac',
@@ -63,7 +66,7 @@ export const pages = [
     eyebrow: 'La discipline · Boxe anglaise',
     headline: ['Boxe anglaise', 'près de Blagnac.'],
     context: 'Boxing Center Toulouse Minimes · pour les habitants de Blagnac',
-    intro: 'Boxe anglaise Blagnac : les cours ont lieu chez Boxing Center Toulouse Minimes, le club du réseau qui accueille les habitants de Blagnac. Garde, appuis, déplacements, jab : vous apprenez les gestes avec un coach, en loisir, sans objectif de compétition imposé. Débutants, adolescents, adultes et femmes y sont les bienvenus.',
+    intro: 'Boxe anglaise Blagnac : les cours ont lieu chez Boxing Center Toulouse Minimes, le club du réseau qui accueille les habitants de Blagnac. Garde, appuis, déplacements, jab : tu apprends les gestes avec un coach, en loisir, sans objectif de compétition imposé. Débutants, adolescents, adultes et femmes y sont les bienvenus.',
     image: 'boxing',
     sections: [
       {
@@ -72,22 +75,22 @@ export const pages = [
       },
       {
         title: 'Progresser sérieusement, sans obligation de compétition.',
-        text: 'Vous pouvez venir pour apprendre, vous dépenser et gagner en précision. Aux Minimes, la boxe anglaise loisir a ses propres créneaux, le midi et le soir en semaine, distincts du cours compétiteurs. Choisissez d’abord la pratique que vous voulez suivre ; l’envie de compétition peut venir plus tard, ou jamais.',
+        text: 'Tu peux venir pour apprendre, te dépenser et gagner en précision. Aux Minimes, la boxe anglaise loisir a ses propres créneaux, le midi et le soir en semaine, distincts du cours compétiteurs. Choisis d’abord la pratique que tu veux suivre ; l’envie de compétition peut venir plus tard, ou jamais.',
       },
       {
         title: 'Le premier cours se prépare simplement.',
-        text: 'Une tenue de sport, des chaussures propres et une bouteille d’eau : c’est tout. Gants et protections sont prêtés pendant l’essai, et il n’y a ni dossier ni certificat médical à fournir avant d’avoir essayé. Dites au coach que vous débutez : il place vos pieds, vos poings et votre garde dès la première séance.',
+        text: `Une tenue de sport, des chaussures propres et une bouteille d’eau : c’est tout. Gants et protections sont prêtés pendant l’essai à ${CLUB.trialPrice}, et il n’y a ni dossier ni certificat médical à fournir avant d’avoir essayé. Dis au coach que tu débutes : il place tes pieds, tes poings et ta garde dès la première séance.`,
       },
     ],
     facts: [
       { label: 'La pratique', value: 'Poings, garde et déplacements' },
-      { label: 'Votre entrée', value: 'Boxe anglaise loisir, midi et soir' },
+      { label: 'Ton entrée', value: 'Boxe anglaise loisir, midi et soir' },
       { label: 'L’encadrement', value: 'Un coach diplômé pendant le cours' },
     ],
     faqs: [
       {
         question: 'Faut-il une expérience pour commencer la boxe anglaise ?',
-        answer: 'Non. Les cours loisirs accueillent les débutants : vous pouvez découvrir la boxe anglaise sans connaître les gestes ni avoir déjà porté des gants. Le coach reprend un geste à la fois.',
+        answer: 'Non. Les cours loisirs accueillent les débutants : tu peux découvrir la boxe anglaise sans connaître les gestes ni avoir déjà porté des gants. Le coach reprend un geste à la fois.',
       },
       {
         question: 'Est-on obligé de faire du sparring ?',
@@ -95,11 +98,10 @@ export const pages = [
       },
       {
         question: 'Où choisir son premier créneau depuis Blagnac ?',
-        answer: 'Sur le planning officiel de Toulouse Minimes : repérez « Boxe anglaise (loisirs) », le midi ou le soir en semaine, puis réservez votre séance d’essai sur la page Première séance.',
+        answer: 'Sur le planning officiel de Toulouse Minimes : repère « Boxe anglaise (loisirs) », le midi ou le soir en semaine, puis réserve ta séance d’essai sur la page Première séance.',
       },
     ],
-    ctaLabel: 'Réserver ma séance d’essai',
-    ctaUrl: CLUB.trial,
+    ...trialCta,
     related: ['boxe-fitness-blagnac', 'plannings', 'tarifs'],
     sources: [CLUB.activities, CLUB.trial],
   },
@@ -115,7 +117,7 @@ export const pages = [
     sections: [
       {
         title: 'Découvrir le MMA : debout, au sol, et tout ce qui relie les deux.',
-        text: 'Le MMA associe le travail debout (percussion : poings, pieds) et le travail au sol (contrôles, projections, soumissions). Un cours de découverte vous fait passer par les deux, à un rythme adapté aux débutants, avant d’approfondir ce qui vous attire.',
+        text: 'Le MMA associe le travail debout (percussion : poings, pieds) et le travail au sol (contrôles, projections, soumissions). Un cours de découverte te fait passer par les deux, à un rythme adapté aux débutants, avant d’approfondir ce qui t’attire.',
       },
       {
         title: 'Grappling, JJB, préparation physique : un club, toutes les pièces.',
@@ -123,7 +125,7 @@ export const pages = [
       },
       {
         title: 'Une progression adaptée, un encadrement qualifié.',
-        text: 'Chaque discipline a son coach diplômé et spécialisé. Vous commencez par un cours accessible, vous dites ce que vous voulez apprendre, et la progression suit votre niveau : apprendre le contrôle au sol, commencer par les frappes, ou découvrir le MMA complet. La séance d’essai se réserve en ligne.',
+        text: 'Chaque discipline a son coach diplômé et spécialisé. Tu commences par un cours accessible, tu dis ce que tu veux apprendre, et la progression suit ton niveau : apprendre le contrôle au sol, commencer par les frappes, ou découvrir le MMA complet. La séance d’essai se réserve en ligne.',
       },
     ],
     facts: [
@@ -138,16 +140,16 @@ export const pages = [
       },
       {
         question: 'Le MMA est-il accessible aux débutants ?',
-        answer: 'Oui. Les cours accueillent les débutants : vous commencez par les bases debout et au sol, sans combat imposé. Précisez votre niveau et vos envies au coach lors de la première séance.',
+        answer: 'Oui. Les cours accueillent les débutants : tu commences par les bases debout et au sol, sans combat imposé. Précise ton niveau et tes envies au coach lors de la première séance.',
       },
       {
         question: 'Quelle différence entre MMA, grappling et JJB ?',
-        answer: 'Le MMA mêle percussion et combat au sol. Le grappling travaille les contrôles et les soumissions sans frappes. Le jiu-jitsu brésilien approfondit le sol, souvent en kimono. Les trois se pratiquent à Toulouse États-Unis ; choisissez le cours qui correspond à l’expérience que vous cherchez.',
+        answer: 'Le MMA mêle percussion et combat au sol. Le grappling travaille les contrôles et les soumissions sans frappes. Le jiu-jitsu brésilien approfondit le sol, souvent en kimono. Les trois se pratiquent à Toulouse États-Unis ; choisis le cours qui correspond à l’expérience que tu cherches.',
       },
     ],
     ctaLabel: 'Découvrir le club MMA Boxing Center',
     ctaUrl: MMA_CLUB.url,
-    secondary: { label: 'Poser ma question à Toulouse Minimes', url: CLUB.contact },
+    secondary: { label: 'Poser ma question à Toulouse Minimes', url: '/contact/#formulaire' },
     related: ['boxe-anglaise-blagnac', 'club-boxe-blagnac', 'contact'],
     sources: [MMA_CLUB.url, CLUB.activities, CLUB.contact],
   },
@@ -155,23 +157,23 @@ export const pages = [
     slug: 'boxe-fitness-blagnac',
     title: 'Boxe Fitness Blagnac — Boxing Fitness proche Blagnac',
     description: 'Boxing fitness près de Blagnac : Boxing Camp encadré et cardio boxing sans contact à Boxing Center Toulouse Minimes. Se défouler, retrouver la forme, sans combat.',
-    eyebrow: 'Votre énergie · Boxing fitness',
+    eyebrow: 'Ton énergie · Boxing fitness',
     headline: ['Boxe fitness', 'près de Blagnac.'],
     context: 'Boxing Center Toulouse Minimes · pour les habitants de Blagnac',
-    intro: 'Boxe fitness Blagnac ou boxing fitness Blagnac : quel que soit le nom que vous cherchez, la pratique se trouve chez Boxing Center Toulouse Minimes. Deux formats : le Boxing Camp, un cours collectif encadré au rythme soutenu, et le cardio boxing sans contact sur les sacs, en accès libre. Pour se défouler, améliorer son cardio et se remettre en forme, sans combat.',
+    intro: 'Boxe fitness Blagnac ou boxing fitness Blagnac : quel que soit le nom que tu cherches, la pratique se trouve chez Boxing Center Toulouse Minimes. Deux formats : le Boxing Camp, un cours collectif encadré au rythme soutenu, et le cardio boxing sans contact sur les sacs, en accès libre. Pour te défouler, améliorer ton cardio et te remettre en forme, sans combat.',
     image: 'fitness',
     sections: [
       {
         title: 'Le Boxing Camp : un cours encadré, une ambiance dynamique.',
-        text: 'Plusieurs rendez-vous par semaine, le midi, le soir et le samedi matin : le Boxing Camp enchaîne exercices physiques et mouvements de boxe, avec un coach qui donne le rythme. Il s’adresse aux adultes sans aucun bagage technique. On vient pour transpirer, on repart avec la sensation d’avoir vraiment travaillé.',
+        text: 'Plusieurs rendez-vous par semaine, le midi, le soir et le samedi matin : le Boxing Camp enchaîne exercices physiques et mouvements de boxe, avec un coach qui donne le rythme. Il s’adresse aux adultes sans aucun bagage technique. Tu viens pour transpirer, tu repars avec la sensation d’avoir vraiment travaillé.',
       },
       {
         title: 'Le cardio boxing : tout le geste, aucun coup reçu.',
-        text: 'Vous frappez le sac, personne ne vous frappe. Le cardio boxing sans contact donne tout le geste et toute la sueur de la boxe, sans combat ni opposition. Il se pratique en accès libre, dès que la salle est ouverte : vous organisez votre séance à votre rythme.',
+        text: 'Tu frappes le sac, personne ne te frappe. Le cardio boxing sans contact donne tout le geste et toute la sueur de la boxe, sans combat ni opposition. Il se pratique en accès libre, dès que la salle est ouverte : tu organises ta séance à ton rythme.',
       },
       {
         title: 'Reprise sportive, remise en forme, premiers gestes de boxe.',
-        text: 'Débutant, femme, adulte en reprise ou personne qui ne veut pas de compétition : commencez par ce qui vous motive. Si la technique vous attire ensuite, la boxe anglaise loisir vous attend dans la même salle, avec le même abonnement.',
+        text: 'Débutant, femme, adulte en reprise ou personne qui ne veut pas de compétition : commence par ce qui te motive. Si la technique t’attire ensuite, la boxe anglaise loisir t’attend dans la même salle, avec le même abonnement.',
       },
     ],
     facts: [
@@ -182,19 +184,18 @@ export const pages = [
     faqs: [
       {
         question: 'Faut-il savoir boxer pour le Boxing Camp ?',
-        answer: 'Non. Le Boxing Camp ne demande aucune technique préalable : c’est un circuit de préparation physique autour des gestes de boxe, encadré par un coach. Venez en tenue de sport, le reste est prêté.',
+        answer: 'Non. Le Boxing Camp ne demande aucune technique préalable : c’est un circuit de préparation physique autour des gestes de boxe, encadré par un coach. Viens en tenue de sport, le reste est prêté.',
       },
       {
         question: 'Peut-on faire du boxing fitness sans combat ?',
-        answer: 'Oui. Le cardio boxing se pratique sans contact, sur les sacs, et le Boxing Camp ne comporte pas d’opposition. Vous travaillez le cardio et le geste, jamais contre quelqu’un.',
+        answer: 'Oui. Le cardio boxing se pratique sans contact, sur les sacs, et le Boxing Camp ne comporte pas d’opposition. Tu travailles le cardio et le geste, jamais contre quelqu’un.',
       },
       {
         question: 'Quel format choisir pour retrouver la forme ?',
-        answer: 'Pour être guidé et porté par un groupe, le Boxing Camp. Pour organiser vous-même vos séances, le cardio boxing en accès libre. Les deux sont compris dans l’abonnement, et la séance d’essai permet de tester.',
+        answer: `Pour être guidé et porté par un groupe, le Boxing Camp. Pour organiser toi-même tes séances, le cardio boxing en accès libre. Les deux sont compris dans l’abonnement, et la séance d’essai à ${CLUB.trialPrice} permet de tester.`,
       },
     ],
-    ctaLabel: 'Réserver ma séance d’essai',
-    ctaUrl: CLUB.trial,
+    ...trialCta,
     related: ['boxe-anglaise-blagnac', 'boxe-femme-blagnac', 'plannings'],
     sources: [CLUB.activities, CLUB.planning, CLUB.trial],
   },
@@ -210,7 +211,7 @@ export const pages = [
     sections: [
       {
         title: 'La boxe éducative : on touche, on ne frappe pas.',
-        text: 'La règle de la boxe éducative est fédérale et stricte : l’opposition se fait en touche contrôlée, casque et gants fournis. Votre enfant apprend à écouter une consigne, à contrôler un geste et à respecter son partenaire. Il arrive en courant partout, il repart en marchant droit.',
+        text: 'La règle de la boxe éducative est fédérale et stricte : l’opposition se fait en touche contrôlée, casque et gants fournis. Ton enfant apprend à écouter une consigne, à contrôler un geste et à respecter son partenaire. Il arrive en courant partout, il repart en marchant droit.',
       },
       {
         title: 'Confiance en soi, coordination, maîtrise de soi.',
@@ -218,7 +219,7 @@ export const pages = [
       },
       {
         title: 'Le loisir est un parcours à part entière.',
-        text: 'Votre enfant peut pratiquer uniquement en loisir, progresser à son rythme et découvrir la boxe dans un cadre sérieux, éducatif et encadré. La compétition reste un choix de l’enfant et de ses parents ; elle n’est jamais une condition pour entrer à l’école de boxe.',
+        text: 'Ton enfant peut pratiquer uniquement en loisir, progresser à son rythme et découvrir la boxe dans un cadre sérieux, éducatif et encadré. La compétition reste un choix de l’enfant et de ses parents ; elle n’est jamais une condition pour entrer à l’école de boxe.',
       },
     ],
     facts: [
@@ -229,7 +230,7 @@ export const pages = [
     faqs: [
       {
         question: 'À partir de quel âge mon enfant peut-il commencer ?',
-        answer: 'Dès 3 ans avec la Baby Boxe, puis les groupes enfants et adolescents. Donnez son âge et son expérience au club : il vous indique le groupe et le créneau du mercredi ou du samedi.',
+        answer: 'Dès 3 ans avec la Baby Boxe, puis les groupes enfants et adolescents. Donne son âge et son expérience au club : il t’indique le groupe et le créneau du mercredi ou du samedi.',
       },
       {
         question: 'Mon enfant devra-t-il faire de la compétition ?',
@@ -237,11 +238,12 @@ export const pages = [
       },
       {
         question: 'Que prévoir pour une première séance ?',
-        answer: 'Une tenue de sport, des chaussures propres et de l’eau. Gants et protections sont fournis pour l’essai. Vérifiez le groupe et le créneau sur le planning officiel avant de venir depuis Blagnac.',
+        answer: `Une tenue de sport, des chaussures propres et de l’eau. Gants et protections sont fournis pour l’essai à ${CLUB.trialPrice}. Vérifie le groupe et le créneau sur le planning officiel avant de venir depuis Blagnac.`,
       },
     ],
     ctaLabel: 'Trouver le groupe de mon enfant',
-    ctaUrl: CLUB.contact,
+    ctaUrl: '/contact/#formulaire',
+    secondary: { label: 'Voir le planning de l’école', url: CLUB.planning },
     related: ['plannings', 'tarifs', 'contact'],
     sources: [CLUB.activities, CLUB.planning, 'https://boxingcenter.fr/'],
   },
@@ -249,10 +251,10 @@ export const pages = [
     slug: 'boxe-femme-blagnac',
     title: 'Boxe femme Blagnac — Cours de boxe féminine proche Blagnac',
     description: 'Cours de boxe femme près de Blagnac avec Boxing Center. Débutantes bienvenues, boxe loisir, remise en forme, confiance et encadrement sérieux.',
-    eyebrow: 'Votre pratique · Boxe femme',
+    eyebrow: 'Ta pratique · Boxe femme',
     headline: ['Boxe femme', 'près de Blagnac.'],
     context: 'Boxing Center Toulouse Minimes · pour les habitantes de Blagnac',
-    intro: 'Boxe femme Blagnac : chez Boxing Center Toulouse Minimes, le Boxing Lady est un cours 100 % féminin, deux soirs par semaine, et tous les autres cours vous sont ouverts. Boxe féminine en loisir, remise en forme, cardio, confiance en soi, dépassement de soi : vous pouvez débuter sans aucune expérience et progresser dans un cadre accessible et encadré.',
+    intro: 'Boxe femme Blagnac : chez Boxing Center Toulouse Minimes, le Boxing Lady est un cours 100 % féminin, deux soirs par semaine, et tous les autres cours te sont ouverts. Boxe féminine en loisir, remise en forme, cardio, confiance en soi, dépassement de soi : tu peux débuter sans aucune expérience et progresser dans un cadre accessible et encadré.',
     image: 'women',
     sections: [
       {
@@ -261,11 +263,11 @@ export const pages = [
       },
       {
         title: 'Cardio, confiance, dépassement de soi.',
-        text: 'Le sac prend tout, et vous gagnez en souffle, en précision et en assurance séance après séance. Aucune opposition n’est obligatoire : vous décidez si et quand vous voulez un échange. Le même abonnement ouvre aussi la boxe anglaise loisir et le Boxing Camp.',
+        text: 'Le sac prend tout, et tu gagnes en souffle, en précision et en assurance séance après séance. Aucune opposition n’est obligatoire : tu décides si et quand tu veux un échange. Le même abonnement ouvre aussi la boxe anglaise loisir et le Boxing Camp.',
       },
       {
         title: 'Débuter sans expérience, dans un cadre encadré.',
-        text: 'Dites au coach que vous découvrez la boxe : il reprend la garde, le direct et le déplacement avec vous. Gants et protections sont prêtés pour la première séance, il n’y a rien à acheter pour venir voir. Une tenue de sport, des chaussures propres, de l’eau : vous êtes prête.',
+        text: 'Dis au coach que tu découvres la boxe : il reprend la garde, le direct et le déplacement avec toi. Gants et protections sont prêtés pour la première séance, il n’y a rien à acheter pour venir voir. Une tenue de sport, des chaussures propres, de l’eau : tu es prête.',
       },
     ],
     facts: [
@@ -276,19 +278,18 @@ export const pages = [
     faqs: [
       {
         question: 'Y a-t-il un cours de boxe réservé aux femmes ?',
-        answer: 'Oui, le Boxing Lady de Toulouse Minimes, deux soirs par semaine, réservé aux femmes. Consultez le planning officiel pour les créneaux de la saison.',
+        answer: 'Oui, le Boxing Lady de Toulouse Minimes, deux soirs par semaine, réservé aux femmes. Consulte le planning officiel pour les créneaux de la saison.',
       },
       {
-        question: 'Peut-on choisir un cours mixte ?',
-        answer: 'Oui. Les autres disciplines du club restent ouvertes aux femmes : boxe anglaise loisir, Boxing Camp, cardio boxing. Le choix dépend de votre objectif et de l’ambiance que vous préférez.',
+        question: 'Je peux choisir un cours mixte ?',
+        answer: 'Oui. Les autres disciplines du club restent ouvertes aux femmes : boxe anglaise loisir, Boxing Camp, cardio boxing. Le choix dépend de ton objectif et de l’ambiance que tu préfères.',
       },
       {
         question: 'Faut-il déjà être sportive ou savoir boxer ?',
-        answer: 'Non. Le club accueille les débutantes complètes : ni condition physique, ni technique, ni matériel ne sont demandés pour la première séance. Vous venez en tenue de sport, on vous prête le reste.',
+        answer: 'Non. Le club accueille les débutantes complètes : ni condition physique, ni technique, ni matériel ne sont demandés pour la première séance. Tu viens en tenue de sport, on te prête le reste.',
       },
     ],
-    ctaLabel: 'Découvrir le Boxing Lady',
-    ctaUrl: CLUB.activities,
+    ...trialCta,
     related: ['boxe-anglaise-blagnac', 'boxe-fitness-blagnac', 'plannings'],
     sources: [CLUB.activities, CLUB.trial],
   },
@@ -296,23 +297,23 @@ export const pages = [
     slug: 'plannings',
     title: 'Plannings des cours de boxe Blagnac — Toulouse Minimes',
     description: 'Les plannings des cours de boxe pour les habitants de Blagnac sont sur le site de Boxing Center Toulouse Minimes : anglaise, Boxing Lady, Boxing Camp, enfants.',
-    eyebrow: 'Votre semaine · Plannings',
+    eyebrow: 'Ta semaine · Plannings',
     headline: ['Les plannings.', 'Aux Minimes.'],
     context: 'Cours de boxe Blagnac · le planning officiel est sur boxe-toulouse.com',
-    intro: 'Les plannings des cours Boxing Center proches de Blagnac sont disponibles sur le site du club Boxing Center Toulouse Minimes. Retrouvez votre discipline, votre groupe et les horaires de la saison avant de prévoir votre venue.',
+    intro: 'Les plannings des cours Boxing Center proches de Blagnac sont disponibles sur le site du club Boxing Center Toulouse Minimes. Retrouve ta discipline, ton groupe et les horaires de la saison avant de prévoir ta venue.',
     image: 'boxing',
     sections: [
       {
         title: 'Commencer par le nom du cours.',
-        text: 'Anglaise loisirs, Boxing Lady, Boxing Camp, pieds-poings ou école de boxe : le planning précise ce qui se pratique à chaque créneau. Pour un enfant, regardez aussi le groupe indiqué. Pour un premier cours, lisez la page Première séance.',
+        text: 'Anglaise loisirs, Boxing Lady, Boxing Camp, pieds-poings ou école de boxe : le planning précise ce qui se pratique à chaque créneau. Pour un enfant, regarde aussi le groupe indiqué. Pour un premier cours, lis la page Première séance.',
       },
       {
         title: 'L’ouverture de la salle n’est pas un horaire de cours.',
-        text: 'Le planning distingue les cours avec un coach et les périodes d’accès libre. Une salle ouverte ne signifie pas qu’un cours collectif commence. Cette différence compte si vous venez pour être guidé dès le premier entraînement.',
+        text: 'Le planning distingue les cours avec un coach et les périodes d’accès libre. Une salle ouverte ne signifie pas qu’un cours collectif commence. Cette différence compte si tu viens pour être guidé dès le premier entraînement.',
       },
       {
         title: 'Garder le planning officiel comme repère.',
-        text: 'Les horaires évoluent au fil de la saison. Consultez la version publiée par les Minimes avant votre déplacement et appelez le club si votre sport ou votre groupe demande une précision.',
+        text: 'Les horaires évoluent au fil de la saison. Consulte la version publiée par les Minimes avant ton déplacement et appelle le club si ton sport ou ton groupe demande une précision.',
       },
     ],
     facts: [
@@ -326,12 +327,12 @@ export const pages = [
         answer: 'Sur la page Plannings du site boxe-toulouse.com. Elle présente les cours de Toulouse Minimes et constitue le repère à consulter avant de venir.',
       },
       {
-        question: 'Puis-je venir à n’importe quelle heure pour un cours ?',
+        question: 'Je peux venir à n’importe quelle heure pour un cours ?',
         answer: `Les cours ont des créneaux précis, le midi et le soir en semaine, le samedi pour l’école de boxe et le Boxing Camp. L’accès libre aux sacs et au cross training est possible dès que la salle est ouverte, ${CLUB.hours}.`,
       },
       {
         question: 'Où choisir un créneau pour débuter ?',
-        answer: 'Lisez la page Première séance, puis le planning des Minimes. En cas de doute sur le groupe ou la discipline, appelez le club avant votre venue.',
+        answer: 'Lis la page Première séance, puis le planning des Minimes. En cas de doute sur le groupe ou la discipline, appelle le club avant ta venue.',
       },
     ],
     ctaLabel: 'Voir les plannings',
@@ -343,38 +344,38 @@ export const pages = [
     slug: 'tarifs',
     title: 'Tarifs boxe Blagnac — Boxing Center Toulouse Minimes',
     description: 'Les tarifs et abonnements Boxing Center pour les pratiquants de Blagnac sont sur le site de Toulouse Minimes : séance d’essai, formules adultes, école de boxe.',
-    eyebrow: 'Votre choix · Tarifs',
+    eyebrow: 'Ton choix · Tarifs',
     headline: ['Les tarifs.', 'Aux Minimes.'],
     context: 'Boxe Blagnac · les montants de la saison sont sur boxe-toulouse.com',
-    intro: 'Les tarifs et offres d’abonnement Boxing Center pour les pratiquants de Blagnac sont disponibles sur le site du club Boxing Center Toulouse Minimes. Séance d’essai, abonnements adultes et école de boxe : consultez les montants et les conditions de la saison.',
+    intro: `Les tarifs et offres d’abonnement Boxing Center pour les pratiquants de Blagnac sont disponibles sur le site du club Boxing Center Toulouse Minimes. La séance d’essai est à ${CLUB.trialPrice}, gants et protections prêtés, sans engagement. Abonnements adultes et école de boxe : les montants et les conditions de la saison sont sur la page Tarifs du club.`,
     image: 'ring',
     sections: [
       {
         title: 'L’essai répond à une première question.',
-        text: 'Le cours vous plaît-il ? Avant de choisir un abonnement, la page Première séance présente le déroulé de l’essai, son tarif et le matériel prêté. C’est le bon point de départ pour découvrir le club.',
+        text: `Le cours te plaît ? Avant de choisir un abonnement, la page Première séance présente le déroulé de l’essai à ${CLUB.trialPrice} et le matériel prêté. C’est le bon point de départ pour découvrir le club.`,
       },
       {
         title: 'Une formule se lit avec ses conditions.',
-        text: 'Regardez la durée, la périodicité du paiement, les accès inclus et les modalités d’arrêt. Pour une offre promotionnelle, vérifiez aussi ce qui se passe ensuite. La page Tarifs des Minimes rassemble les formules de la saison.',
+        text: 'Regarde la durée, la périodicité du paiement, les accès inclus et les modalités d’arrêt. Pour une offre promotionnelle, vérifie aussi ce qui se passe ensuite. La page Tarifs des Minimes rassemble les formules de la saison.',
       },
       {
         title: 'Pour un enfant, partir du groupe.',
-        text: 'Les formules de l’école se distinguent des abonnements adultes. Une fois le groupe identifié, consultez les conditions qui lui correspondent et demandez au club ce qu’il faut prévoir pour l’inscription.',
+        text: 'Les formules de l’école se distinguent des abonnements adultes. Une fois le groupe identifié, consulte les conditions qui lui correspondent et demande au club ce qu’il faut prévoir pour l’inscription.',
       },
     ],
     facts: [
-      { label: 'Découvrir', value: 'La séance d’essai' },
+      { label: 'Découvrir', value: `La séance d’essai, ${CLUB.trialPrice}` },
       { label: 'Comparer', value: 'Durée, paiement et accès' },
       { label: 'Le prix de la saison', value: 'Sur le site des Minimes' },
     ],
     faqs: [
       {
         question: 'Où consulter les prix de la saison ?',
-        answer: 'Sur la page Tarifs de Boxing Center Toulouse Minimes : séance d’essai, formules adultes et école de boxe y sont présentées avec leurs conditions. Comparez la durée, le paiement et les accès inclus.',
+        answer: 'Sur la page Tarifs de Boxing Center Toulouse Minimes : séance d’essai, formules adultes et école de boxe y sont présentées avec leurs conditions. Compare la durée, le paiement et les accès inclus.',
       },
       {
         question: 'La séance d’essai engage-t-elle sur un abonnement ?',
-        answer: 'Non. La séance d’essai est sans engagement : vous payez votre séance, vous boxez, vous décidez après. Rien à signer, pas de dossier.',
+        answer: `Non. La séance d’essai est à ${CLUB.trialPrice}, sans engagement : tu paies ta séance, tu boxes, tu décides après. Rien à signer, pas de dossier.`,
       },
       {
         question: 'Les formules sont-elles valables dans les autres salles Boxing Center ?',
@@ -390,23 +391,23 @@ export const pages = [
     slug: 'contact',
     title: 'Contact — Club de boxe proche de Blagnac | Toulouse Minimes',
     description: `Contactez Boxing Center Toulouse Minimes, le club de boxe proche de Blagnac : ${CLUB.address}, ${CLUB.phone}. Plannings, tarifs, essai.`,
-    eyebrow: 'Votre venue · Contact et accès',
+    eyebrow: 'Ta venue · Contact et accès',
     headline: ['Depuis Blagnac.', 'Aux Minimes.'],
-    context: 'Boxing Center Toulouse Minimes · un coach vous répond',
-    intro: `Pour la boxe près de Blagnac, votre interlocuteur est Boxing Center Toulouse Minimes, ${CLUB.address}. Un coach répond au ${CLUB.phone}, ${CLUB.hours}, pour une question sur un créneau, un niveau ou l’inscription d’un enfant.`,
+    context: 'Boxing Center Toulouse Minimes · un coach te répond',
+    intro: `Pour la boxe près de Blagnac, ton interlocuteur est Boxing Center Toulouse Minimes, ${CLUB.address}. Un coach répond au ${CLUB.phone}, ${CLUB.hours}, pour une question sur un créneau, un niveau ou l’inscription d’un enfant. Tu peux aussi écrire au club depuis cette page.`,
     image: 'team',
     sections: [
       {
-        title: 'Votre question, avec les bons repères.',
-        text: 'Indiquez la pratique recherchée, votre expérience et les périodes auxquelles vous pouvez venir. Pour un enfant, ajoutez son âge. Ces informations permettent de discuter d’un cours précis, plutôt que de choisir au hasard dans le planning.',
+        title: 'Ta question, avec les bons repères.',
+        text: 'Indique la pratique recherchée, ton expérience et les périodes auxquelles tu peux venir. Pour un enfant, ajoute son âge. Ces informations permettent de discuter d’un cours précis, plutôt que de choisir au hasard dans le planning.',
       },
       {
-        title: 'Un trajet depuis votre point de départ.',
-        text: `Le lieu d’entraînement est à Toulouse Minimes, ${CLUB.transit}. En voiture, utilisez l’adresse du club comme destination et votre adresse réelle comme départ : le bouton « Préparer mon trajet » ouvre l’itinéraire.`,
+        title: 'Un trajet depuis ton point de départ.',
+        text: `Le lieu d’entraînement est à Toulouse Minimes, ${CLUB.transit}. En voiture, utilise l’adresse du club comme destination et ton adresse réelle comme départ : le bouton « Préparer mon trajet » ouvre l’itinéraire.`,
       },
       {
         title: 'Avant de pousser la porte.',
-        text: `Lisez la page Première séance : le déroulé, la tenue et le prêt de matériel y sont expliqués. Pour une question particulière, appelez directement le club au ${CLUB.phone}.`,
+        text: `Lis la page Première séance : le déroulé, la tenue et le prêt de matériel y sont expliqués. Pour une question particulière, appelle directement le club au ${CLUB.phone}.`,
       },
     ],
     facts: [
@@ -421,15 +422,15 @@ export const pages = [
       },
       {
         question: 'Comment joindre le club ?',
-        answer: `Par téléphone au ${CLUB.phone}, ${CLUB.hours} : un coach décroche. La page Contact de boxe-toulouse.com donne aussi le plan d’accès.`,
+        answer: `Par téléphone au ${CLUB.phone}, ${CLUB.hours} : un coach décroche. Ou par le formulaire de cette page : ta demande arrive directement au club.`,
       },
       {
         question: 'Comment se rendre au club depuis Blagnac ?',
-        answer: `En voiture par la rocade, ou en transports en commun jusqu’au ${CLUB.transit} du club. Le bouton « Préparer mon trajet » ouvre l’itinéraire depuis l’adresse de votre choix.`,
+        answer: `En voiture par la rocade, ou en transports en commun jusqu’au ${CLUB.transit} du club. Le bouton « Préparer mon trajet » ouvre l’itinéraire depuis l’adresse de ton choix.`,
       },
     ],
-    ctaLabel: 'Contacter le club des Minimes',
-    ctaUrl: CLUB.contact,
+    ctaLabel: 'Écrire au club',
+    ctaUrl: '/contact/#formulaire',
     related: ['club-boxe-blagnac', 'plannings', 'tarifs'],
     sources: [CLUB.contact, CLUB.trial],
   },

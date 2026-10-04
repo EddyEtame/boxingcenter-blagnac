@@ -1,7 +1,6 @@
 {
   "framework": "astro",
   "buildCommand": "npm run build",
-  "outputDirectory": "dist",
   "trailingSlash": true,
   "redirects": [
     { "source": "/:path*", "has": [{ "type": "host", "value": "www.boxingcenter-blagnac.fr" }], "destination": "https://boxingcenter-blagnac.fr/:path*", "permanent": true }

@@ -1,0 +1,95 @@
+# HANDOFF — boxingcenter-blagnac
+
+Document de reprise. Un agent qui prend la suite lit ce fichier en entier avant de toucher au code, puis `docs/PROJECT-STATE.md`, puis `docs/FACTS.md`. Les décisions ci-dessous sont celles d'Eddy ; aucune ne se rediscute sans lui.
+
+Dernière mise à jour : 4 octobre 2026, soir (session Claude, branche `claude/eager-fermat-zt2vah`).
+
+## 1. Ce qu'est ce site
+
+Site satellite SEO pour les habitants de Blagnac, qui les envoie vers le club réel **Boxing Center Toulouse Minimes** (boxe-toulouse.com, 12 rue de Fenouillet, 31200 Toulouse). Aucune salle n'existe à Blagnac et le site ne doit jamais le laisser croire. Le cahier des charges complet est dans `.research/brief.md` (dossier gitignoré ; si absent, le demander à Eddy : c'est le message « Cahier des charges simplifié — Site vitrine Boxing Center Blagnac »).
+
+Ce projet est **totalement distinct** du dépôt `Eddy-etame/club-de-boxe-blagnac`. Ne jamais les comparer, ne rien y copier, ne pas les traiter comme un même projet.
+
+Le niveau attendu est celui des autres sites d'Eddy : boxe-toulouse.com (Minimes), clubmma.fr (États-Unis), le satellite Colomiers (`Eddy-etame/boxing-center-colomiers`, dont `BLUEPRINT-FAMILLE.md` contient les lois de la famille de satellites). Le standard s'appelle « Baffled Bar » en interne : ne jamais l'écrire sur une surface publique.
+
+## 2. Directives d'Eddy en vigueur (registre, ne rien retirer)
+
+1. Les liens vers les sites des clubs ouvrent un **nouvel onglet** (voulu). Les liens internes restent dans l'onglet.
+2. Les **quinze requêtes du brief** doivent apparaître telles quelles sur leur page et dans son titre ; le build le vérifie (`src/data/search-intents.mjs`, `scripts/audit-build.mjs`). Prudence : jamais « situé à Blagnac », « notre salle à Blagnac », aucune adresse à Blagnac, aucune fiche Google Business à Blagnac.
+3. **Palette** : papier / encre / menthe, conservée (Eddy la juge bonne, la menthe renvoie à Blagnac). La règle de famille : un satellite porte la couleur de la ville de départ, pas celle du club de destination. Un **toggle** avec un accent dérivé des Minimes est fourni pour qu'Eddy décide en regardant ; voir §5.
+4. **Tutoiement** sur tout le site (sauf mentions légales). Respectueux, concret, jamais ado.
+5. **Navigation d'en-tête vers les pages de ce site** ; seul le CTA « Réserver mon essai » est externe.
+6. **Phrase « le club n'est pas dans Blagnac même »** : gardée, une fois, sur la page club (brief §7), nulle part ailleurs.
+7. **Attribution développeur** (Eddy Etame Etame) : conservée dans `meta author`, le graphe JSON-LD, `humans.txt`, `llms.txt`. Demandée par Eddy.
+8. **Prix** : un seul chiffre autorisé, « séance d'essai à 10 € », sourcé et daté, avec lien vers la page Tarifs des Minimes. Aucun autre prix, aucune durée de trajet, aucune distance.
+9. **Formulaire de contact** relayé vers le club via Inlet (le SaaS de formulaires d'Eddy), même mécanisme que Colomiers.
+10. **MMA** : les Minimes n'enseignent pas le MMA. Tant qu'Eddy n'a pas tranché avec son responsable, la page MMA, la fiche et l'accueil orientent vers Boxing Center Toulouse États-Unis (clubmma.fr), contact des Minimes en second lien.
+11. **Liens entrants** depuis les sites Minimes et États-Unis vers boxingcenter-blagnac.fr : à préparer sur une branche de chaque dépôt, à fusionner quand le domaine est en ligne.
+12. **Décoration générique** : tout élément décoratif visible sans fonction (flèche vers rien, « BC / 01 », astérisques, doodle) est retiré ; la révélation en fondu de chaque titre est retirée ; un mouvement doit porter une information.
+13. Mécanismes demandés par Eddy à l'agent précédent, à conserver : en-tête sticky, flou derrière le menu mobile, rectangle flottant « Le club des Minimes » (qui s'efface quand la fiche ou les coordonnées sont à l'écran), pages Plannings/Tarifs courtes, logo officiel non redessiné.
+14. **Pas de workflows, pas de sous-agents** : Eddy l'a dit explicitement. Tout à la main.
+15. Documenter chaque changement ici et dans `docs/PROJECT-STATE.md`, sans raisonnement, avec des faits et des chemins de fichiers.
+
+## 3. Où sont les choses
+
+| Besoin | Fichier |
+|---|---|
+| Faits du club, du club MMA, de l'éditeur, repères de l'accueil | `src/data/site.mjs` (`CLUB`, `MMA_CLUB`, `EDITEUR`, `proof`, `disciplines`, `home`) |
+| Contenu des neuf pages (titres, metas, H1, intro, sections, faits, FAQ, CTA, sources) | `src/data/pages.mjs` |
+| Requêtes du brief par page | `src/data/search-intents.mjs` |
+| Vignettes OG, attribution, pages légales, noms des sources | `src/data/seo.mjs` |
+| Photos (noms de fichiers, ALT, crédits, provenance) | `src/data/photos.mjs` ; fichiers dans `public/images/` |
+| Gabarit, head, JSON-LD, en-tête, pied de page | `src/layouts/Base.astro` |
+| Accueil | `src/pages/index.astro` ; pages du brief : `src/pages/[slug].astro` ; légales : `confidentialite.astro`, `mentions-legales.astro` |
+| Fiche de départ | `src/components/SessionCard.astro` + `src/scripts/site.ts` |
+| Rectangle flottant | `src/components/ClubPrompt.astro` + `src/scripts/site.ts` |
+| Styles | `src/styles/global.css` (couches `reset, base, layout, components, responsive`) |
+| Fichiers machine | `src/lib/discovery.mjs` (llms, humans), `src/pages/robots.txt.ts`, `sitemap.xml.ts` |
+| Aperçus Vercel non indexables | `src/lib/environment.mjs` |
+| Vignettes + icônes générées au build | `scripts/generate-social.mjs`, `scripts/favicons.mjs`, `scripts/social-fonts.mjs` |
+| Audit du build (échoue le build) | `scripts/audit-build.mjs` |
+| IndexNow | `scripts/submit-indexnow.mjs`, clé `public/indexnow-key.txt` |
+
+## 4. Comment vérifier (à faire avant chaque push)
+
+```sh
+npm ci
+npm run build        # test des polices, vignettes, favicons, pages, audit — doit finir par « Audit passed »
+npm run preview      # http://127.0.0.1:4321/
+```
+
+Puis ouvrir réellement : accueil, une page discipline, /mma-blagnac/, /plannings/, /contact/, /mentions-legales/, une 404, à 1440, 768 et 390 px. Console vide. Aucun débordement horizontal. Fiche de départ : changer la pratique met à jour le ticket ; MMA bascule la destination vers États-Unis. Menu mobile : ouverture, Échap, fermeture. Le rectangle flottant disparaît quand la fiche est à l'écran.
+
+Contrôle des phrases du brief (hors audit) : `grep -il "situé à blagnac\|notre salle" dist/*/index.html dist/index.html` doit ne rien retourner.
+
+## 5. État des chantiers
+
+Voir `docs/PROJECT-STATE.md` pour la passe du 4 octobre (mots-clés, liens, favicon, MMA, mentions légales, aperçus, lisibilité). Les chantiers suivants sont décrits au fur et à mesure dans ce fichier, section 6.
+
+## 6. Journal des chantiers (du plus récent au plus ancien)
+
+### 4 octobre 2026, soir — deuxième passe : tutoiement, formulaire, toggle, motion, liens
+
+**Ce qui a changé**
+
+1. **Tutoiement** sur toutes les pages publiques (`src/data/site.mjs`, `src/data/pages.mjs`, `src/pages/index.astro`, `src/layouts/Base.astro`, `src/components/SessionCard.astro`, `ClubPrompt.astro`, `src/pages/confidentialite.astro`, `merci.astro`). Les mentions légales restent au vouvoiement. Les titres, metas et phrases du brief sont inchangés (ils ne contiennent pas de pronom).
+2. **Navigation d'en-tête et menu mobile** vers les pages de ce site : Le club, Les pratiques (ancre `/#disciplines`), Plannings, Tarifs, Contact. Seul « Réserver mon essai · 10 € » est externe (page Première séance des Minimes). Tableau `nav` dans `Base.astro`.
+3. **Séance d'essai à 10 €** : `CLUB.trialPrice` dans `site.mjs` (source : pages Tarifs et Première séance des Minimes, 4 octobre 2026). Affiché dans le CTA d'en-tête, le hero, les repères de l'accueil (avec lien « Voir les tarifs du club » vers `CLUB.prices`), les CTA des pages discipline (`trialCta` dans `pages.mjs`), la page Tarifs et ses FAQ. Aucun autre montant.
+4. **Formulaire de contact** relayé vers le club : `src/components/ContactForm.astro` (rendu sur `/contact/#formulaire`), `src/pages/api/contact.ts` (fonction Vercel, `prerender = false`), `src/pages/merci.astro` (noindex). Mécanisme identique à Colomiers : POST natif → preuve de travail SHA-256 côté serveur → JSON vers Inlet → redirection 303. Pot de miel `_gotcha`, validation serveur (prénom, courriel, message), champ caché `fiche` (résumé de la fiche de départ). **À faire par Eddy : créer le formulaire dans Inlet et définir `INLET_FORM_ID` dans Vercel.** Sans la variable, l'API redirige vers `/contact/?erreur=config` et la page affiche le téléphone du club.
+5. **Adaptateur Vercel** (`@astrojs/vercel`, `astro.config.mjs`) : les pages restent statiques, seule `/api/contact/` est une fonction. La sortie est dans `.vercel/output/static` ; `scripts/audit-build.mjs` et `scripts/submit-indexnow.mjs` lisent ce dossier (constante `OUT`). `vercel.json` ne déclare plus `outputDirectory`. `astro preview` n'est pas utilisable avec cet adaptateur : servir `.vercel/output/static` avec `python3 -m http.server 4321` pour contrôler le rendu (la fonction ne tourne qu'une fois déployée).
+6. **Fiche de départ** : « Copier ma fiche » (presse-papiers sans destination) remplacé par « Envoyer ma fiche au club » : le résumé est posé dans `sessionStorage` (clé `bc-fiche`), la page Contact le lit, pré-remplit le message et la pratique, puis l'efface. Le sceau « BC » du ticket se pose (animation) quand le choix change. Le doodle « À vous de jouer » et l'astérisque sont retirés.
+7. **Décoration visible retirée** : flèche « Le premier geste s'apprend ensemble », « BC / 01 », astérisques du hero et de la section d'ouverture, mot « ENSEMBLE » en marge de la photo du club, slogan « À votre rythme » du pied de page. La révélation en fondu de chaque titre (`.will-reveal`) est retirée du CSS et du script.
+8. **Mouvements qui portent une information** : le trajet Blagnac → Minimes se trace (SVG `data-route-draw` dans le H2 de la section club, `IntersectionObserver`, une seule fois, immédiat en `prefers-reduced-motion` et sans JavaScript via `html:not(.js)`) ; le ticket se « tamponne » au changement de choix ; le hero garde sa révélation photo et l'arrivée du tampon ; les transitions de page natives (`@view-transition`) jouent maintenant que les liens internes restent dans l'onglet.
+9. **Variante de couleurs à l'essai** : toutes les couleurs sont des jetons (`:root` dans `global.css`, plus `--accent-text`, `--accent-dot`, `--accent-focus`, `--accent-soft`, `--accent-glow`, `--on-dark-*`, `--tint`, `--ink-shadow`). `:root[data-theme="minimes"]` redéfinit tout (encre marine `#0a1020`, or `#f5a623`, or sombre `#a66500` pour le texte). Bascule dans le pied de page (`.theme-switch`, boutons `data-theme-choice`), mémorisée dans `localStorage` (`bc-theme`), appliquée avant le premier rendu par un script inline dans `<head>`. Les icônes et vignettes restent dans la palette Blagnac : si Eddy retient la variante, régénérer `scripts/favicons.mjs` et `generate-social.mjs` avec les nouvelles couleurs, puis retirer la bascule.
+10. **Rectangle flottant** : s'efface aussi sur le formulaire de contact (`data-prompt-clear`).
+11. `.env.example` documente `INLET_FORM_ID`.
+
+**Vérification faite** : `npm run build` vert (audit : 12 pages indexables, 15 phrases du brief, vignettes, favicons). Pages servies depuis `.vercel/output/static` et ouvertes à 1440/768/390 px : console vide, aucun débordement. Sondes Playwright : tracé du trajet déclenché à l'arrivée, sceau posé au changement, « Envoyer ma fiche » pré-remplit le message et la pratique sur /contact/, `?erreur=config` affiche le message avec le téléphone, bascule de couleurs appliquée et conservée sur la page suivante, navigation d'en-tête interne.
+
+**Reste à faire**
+
+- Eddy : créer le formulaire Inlet, définir `INLET_FORM_ID` dans Vercel, tester un envoi réel jusqu'à la boîte du club.
+- Eddy : trancher la variante de couleurs (bouton du pied de page), puis retirer la bascule et, si « Minimes » est retenue, régénérer icônes et vignettes.
+- Eddy : décision MMA avec son responsable (voir §2, point 10).
+- Liens entrants depuis les sites Minimes et États-Unis : voir l'entrée suivante du journal.
+
