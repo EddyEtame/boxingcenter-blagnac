@@ -16,7 +16,7 @@ Le niveau attendu est celui des autres sites d'Eddy : boxe-toulouse.com (Minimes
 
 1. Les liens vers les sites des clubs ouvrent un **nouvel onglet** (voulu). Les liens internes restent dans l'onglet.
 2. Les **quinze requêtes du brief** doivent apparaître telles quelles sur leur page et dans son titre ; le build le vérifie (`src/data/search-intents.mjs`, `scripts/audit-build.mjs`). Prudence : jamais « situé à Blagnac », « notre salle à Blagnac », aucune adresse à Blagnac, aucune fiche Google Business à Blagnac.
-3. **Palette** : papier / encre / menthe, conservée (Eddy la juge bonne, la menthe renvoie à Blagnac). La règle de famille : un satellite porte la couleur de la ville de départ, pas celle du club de destination. Un **toggle** avec un accent dérivé des Minimes est fourni pour qu'Eddy décide en regardant ; voir §5.
+3. **Palette** : depuis le 5 octobre 2026, la palette **Minimes est celle par défaut** (encre marine `#0a1020`, or `#f5a623`, papier `#f4f1ea`, texte d'accent `#a66500`), décision d'Eddy. La palette Blagnac (papier, encre verte, menthe) reste disponible par le bouton « Couleurs » du pied de page (`data-theme="blagnac"`, mémorisé dans `localStorage` sous `bc-theme`). Icônes et vignettes sont générées dans la palette Minimes.
 4. **Tutoiement** sur tout le site (sauf mentions légales). Respectueux, concret, jamais ado.
 5. **Navigation d'en-tête vers les pages de ce site** ; seul le CTA « Réserver mon essai » est externe.
 6. **Phrase « le club n'est pas dans Blagnac même »** : gardée, une fois, sur la page club (brief §7), nulle part ailleurs.
@@ -71,10 +71,19 @@ Attend une action d'Eddy :
 2. Fusionner `claude/eager-fermat-zt2vah` dans `main` pour mettre à jour la production.
 3. Raccorder le domaine boxingcenter-blagnac.fr (DNS A observé : 213.186.33.5, parking OVH), puis ajouter la redirection `*.vercel.app` → domaine dans `vercel.json`, vérifier Search Console (propriété Domaine, TXT DNS), soumettre le sitemap, lancer `npm run indexnow -- --submit`.
 4. Fusionner les branches `claude/lien-blagnac` des dépôts Minimes et États-Unis une fois le domaine en ligne.
-5. Trancher la variante de couleurs (bouton du pied de page), puis retirer la bascule ; si « Minimes » est retenue, régénérer icônes et vignettes.
+5. Palette : Minimes par défaut (fait le 5 octobre). Dire s'il faut retirer le bouton « Couleurs » du pied de page ou le garder.
 6. Décision MMA avec son responsable (Minimes n'enseigne pas le MMA ; le site oriente vers États-Unis).
 
 ## 6. Journal des chantiers (du plus récent au plus ancien)
+
+### 5 octobre 2026 — palette Minimes par défaut
+
+- `src/styles/global.css` : le bloc `:root` porte désormais les valeurs Minimes ; l'ancien défaut devient `:root[data-theme="blagnac"]`. Les trois couleurs restées en dur (bordure des repères, voile du menu, ombre du tampon) sont passées en jetons.
+- `src/layouts/Base.astro` : `theme-color` `#0a1020` ; le script inline du `<head>` applique Blagnac seulement si `localStorage.bc-theme === 'blagnac'` ; bouton « Minimes » en premier et actif.
+- `src/scripts/site.ts` : logique de bascule inversée (défaut Minimes).
+- `scripts/favicons.mjs` et `scripts/generate-social.mjs` : couleurs Minimes ; icônes et quatorze vignettes régénérées.
+- Voix : vignettes, titre de la page Confidentialité et page 404 passés au tutoiement (restes de l'ancienne voix).
+- Vérifié : build vert ; Playwright confirme `--ink #0a1020`, `--mint #f5a623`, `theme-color #0a1020` par défaut sur bureau et mobile, bascule vers Blagnac conservée sur la page suivante puis retour à Minimes, console vide ; rendu de l'accueil, de l'icône et de la vignette d'accueil contrôlé.
 
 ### 4 octobre 2026, soir — liens entrants depuis les sites Minimes et États-Unis
 
