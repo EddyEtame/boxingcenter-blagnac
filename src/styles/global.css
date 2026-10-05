@@ -10,9 +10,9 @@
   button { cursor: pointer; }
 }
 @layer base {
-  :root { --paper: #f2f0e8; --ink: #192724; --muted: #52615a; --mint: #6ee3c8; --deep: #143e34; --line: #c3c8bd; --accent-text: #26785e; --accent-dot: #288461; --accent-focus: #196954; --accent-soft: #b7efdc; --accent-glow: #6ee3c840; --on-dark-muted: #cad5c9; --on-dark-dim: #6e7f72; --on-dark-line: #526159; --on-dark-soft: #b6c9bd; --on-dark-text: #bdccbf; --tint: #dfe4da; --ink-shadow: #19272430; --footer-link-line: #78968b; --ticket-rule: #87958c; --display: 'Barlow Condensed', 'Arial Narrow', sans-serif; --body: 'Manrope Variable', Arial, sans-serif; --pad: clamp(22px, 4.5vw, 88px); }
-  /* Variante à l'essai, décidée par Eddy en regardant : l'accent des Minimes (encre marine du réseau, or du club). Activée par le bouton du pied de page, mémorisée dans le navigateur. */
-  :root[data-theme="minimes"] { --paper: #f4f1ea; --ink: #0a1020; --muted: #4b5468; --mint: #f5a623; --deep: #111a30; --line: #cbc7bd; --accent-text: #a66500; --accent-dot: #c07a00; --accent-focus: #7d4f0a; --accent-soft: #fbd48a; --accent-glow: #f5a62340; --on-dark-muted: #c9ccd6; --on-dark-dim: #6b7390; --on-dark-line: #2a3350; --on-dark-soft: #b9bfd1; --on-dark-text: #c3c8d8; --tint: #e9e4d8; --ink-shadow: #0a102030; --footer-link-line: #7c86a8; --ticket-rule: #8c93a8; }
+  :root { --paper: #f4f1ea; --ink: #0a1020; --muted: #4b5468; --mint: #f5a623; --deep: #111a30; --line: #cbc7bd; --accent-text: #a66500; --accent-dot: #c07a00; --accent-focus: #7d4f0a; --accent-soft: #fbd48a; --accent-glow: #f5a62340; --on-dark-muted: #c9ccd6; --on-dark-dim: #6b7390; --on-dark-line: #2a3350; --on-dark-soft: #b9bfd1; --on-dark-text: #c3c8d8; --tint: #e9e4d8; --ink-shadow: #0a102030; --footer-link-line: #7c86a8; --ticket-rule: #8c93a8; --display: 'Barlow Condensed', 'Arial Narrow', sans-serif; --body: 'Manrope Variable', Arial, sans-serif; --pad: clamp(22px, 4.5vw, 88px); }
+  /* Palette par défaut : celle des Minimes (encre marine du réseau, or du club), choisie par Eddy le 5 octobre 2026. La palette Blagnac (papier, encre verte, menthe) reste disponible par le bouton du pied de page, mémorisée dans le navigateur. */
+  :root[data-theme="blagnac"] { --paper: #f2f0e8; --ink: #192724; --muted: #52615a; --mint: #6ee3c8; --deep: #143e34; --line: #c3c8bd; --accent-text: #26785e; --accent-dot: #288461; --accent-focus: #196954; --accent-soft: #b7efdc; --accent-glow: #6ee3c840; --on-dark-muted: #cad5c9; --on-dark-dim: #6e7f72; --on-dark-line: #526159; --on-dark-soft: #b6c9bd; --on-dark-text: #bdccbf; --tint: #dfe4da; --ink-shadow: #19272430; --footer-link-line: #78968b; --ticket-rule: #87958c; }
   html { scroll-behavior: smooth; scroll-padding-top: 125px; }
   body { background: var(--paper); color: var(--ink); font: 500 15px/1.65 var(--body); overflow-wrap: break-word; }
   ::selection { color: var(--ink); background: var(--mint); }
@@ -130,7 +130,7 @@
   .hero-description { margin: 28px 0 22px; font-size: 14px; line-height: 1.75; max-width: 385px; }
   .hero-note { margin-top: 16px; font-size: 11px; color: var(--muted); }
   .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 30px; }
-  .page-facts.home-facts { grid-template-columns: repeat(4,1fr); border-top: 1px solid #19272420; }
+  .page-facts.home-facts { grid-template-columns: repeat(4,1fr); border-top: 1px solid var(--ink-shadow); }
   .page-facts.home-facts dd { font-size: 23px; }
   .secondary-link { margin-top: 22px; }
   .page-action-links { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 30px; }
@@ -142,7 +142,7 @@
   .hero-main-photo { height: 450px; transform: rotate(2deg); animation: photo-arrive .85s cubic-bezier(.16,.8,.23,1) both; }
   .hero-main-photo img { height: 100%; object-position: 56% center; }
   .hero-main-photo figcaption { transform: rotate(-2deg); font-size: 10px; padding-top: 4px; text-align: right; }
-  .hero-stamp { position: absolute; top: 0; right: 22px; display: flex; flex-direction: column; gap: 2px; align-items: center; width: 220px; padding: 16px 12px; background: var(--mint); color: var(--ink); transform: rotate(-7deg); z-index: 3; border: 1px solid var(--ink); box-shadow: 3px 4px 0 #192724; }
+  .hero-stamp { position: absolute; top: 0; right: 22px; display: flex; flex-direction: column; gap: 2px; align-items: center; width: 220px; padding: 16px 12px; background: var(--mint); color: var(--ink); transform: rotate(-7deg); z-index: 3; border: 1px solid var(--ink); box-shadow: 3px 4px 0 var(--ink); }
   .hero-stamp { animation: stamp-arrive .65s .22s cubic-bezier(.2,.8,.2,1) both; }
   @keyframes photo-arrive { from { clip-path: inset(0 100% 0 0); transform: rotate(0); } to { clip-path: inset(0); transform: rotate(2deg); } }
   @keyframes stamp-arrive { from { opacity: 0; transform: translateY(-12px) rotate(-12deg); } to { opacity: 1; transform: translateY(0) rotate(-7deg); } }
@@ -378,7 +378,7 @@
     body:has(.mobile-menu[open]) { overflow: hidden; }
     body:has(.mobile-menu[open]) > main, body:has(.mobile-menu[open]) > .site-footer { filter: blur(7px); pointer-events: none; }
     body:has(.mobile-menu[open]) .club-prompt { display: none; }
-    body:has(.mobile-menu[open]) .menu-backdrop { display: block; position: fixed; inset: 0; z-index: 40; background: #19272440; cursor: pointer; }
+    body:has(.mobile-menu[open]) .menu-backdrop { display: block; position: fixed; inset: 0; z-index: 40; background: var(--ink-shadow); cursor: pointer; }
     .hero-topline { display: block; }
     .hero-coordinate { display: none; }
     .hero-main-photo { height: 370px; }

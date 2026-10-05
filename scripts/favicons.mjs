@@ -10,7 +10,8 @@ import { socialFont } from './social-fonts.mjs';
  * Produit : favicon.svg, favicon.ico (16/32/48), favicon-{32,96,192,512}.png,
  * apple-touch-icon.png (180) et site.webmanifest.
  */
-const ink = '#192724', mint = '#6ee3c8', paper = '#f2f0e8';
+// Palette Minimes (défaut du site depuis le 5 octobre 2026) : encre marine, or, papier.
+const ink = '#0a1020', mint = '#f5a623', paper = '#f4f1ea';
 
 export async function generateFavicons() {
   const font = await socialFont(800);

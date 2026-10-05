@@ -2,7 +2,7 @@
 
 Site vitrine pour les habitants de Blagnac, orienté vers **Boxing Center Toulouse Minimes**. Le lieu d’entraînement présenté est à Toulouse, au 12 rue de Fenouillet. Le site n’invente pas une salle à Blagnac.
 
-Direction originale : papier chaud, encre et menthe, typographie condensée, photographies réelles et fiche de départ interactive. Le visiteur choisit une pratique et ses disponibilités personnelles, reçoit un conseil de préparation, puis rejoint les informations officielles du club. La fiche ne réserve aucun créneau et n’envoie aucune donnée.
+Direction originale : palette Minimes par défaut (encre marine, or, papier chaud ; palette Blagnac papier, encre et menthe disponible en pied de page), typographie condensée, photographies réelles et fiche de départ interactive. Le visiteur choisit une pratique et ses disponibilités personnelles, reçoit un conseil de préparation, puis rejoint les informations officielles du club. La fiche ne réserve aucun créneau et n’envoie aucune donnée.
 
 ## Développement
 

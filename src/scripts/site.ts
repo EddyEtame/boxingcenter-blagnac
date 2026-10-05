@@ -136,18 +136,18 @@ if (route) {
   }
 }
 
-/* ---- La variante de couleurs à l'essai : un choix, mémorisé dans le navigateur ---- */
+/* ---- La palette : Minimes par défaut, Blagnac en alternative, mémorisée dans le navigateur ---- */
 const choices = document.querySelectorAll<HTMLButtonElement>('[data-theme-choice]');
 if (choices.length) {
   const themeColor = document.querySelector<HTMLMetaElement>('meta[name="theme-color"]');
   const apply = (theme: string) => {
-    if (theme === 'minimes') document.documentElement.dataset.theme = 'minimes'; else delete document.documentElement.dataset.theme;
-    if (themeColor) themeColor.content = theme === 'minimes' ? '#0a1020' : '#192724';
+    if (theme === 'blagnac') document.documentElement.dataset.theme = 'blagnac'; else delete document.documentElement.dataset.theme;
+    if (themeColor) themeColor.content = theme === 'blagnac' ? '#192724' : '#0a1020';
     choices.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.themeChoice === theme)));
     try { localStorage.setItem('bc-theme', theme); } catch { /* stockage indisponible */ }
   };
-  let current = 'blagnac';
-  try { current = localStorage.getItem('bc-theme') === 'minimes' ? 'minimes' : 'blagnac'; } catch { /* idem */ }
+  let current = 'minimes';
+  try { current = localStorage.getItem('bc-theme') === 'blagnac' ? 'blagnac' : 'minimes'; } catch { /* idem */ }
   choices.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.themeChoice === current)));
-  choices.forEach(button => button.addEventListener('click', () => apply(button.dataset.themeChoice || 'blagnac')));
+  choices.forEach(button => button.addEventListener('click', () => apply(button.dataset.themeChoice || 'minimes')));
 }

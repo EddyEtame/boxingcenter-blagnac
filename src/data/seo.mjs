@@ -26,7 +26,7 @@ export const sourceNames = {
   'https://mmatoulouse.com/activites/': 'Activités de Ramonville',
 };
 export const privacy = {
-  slug: 'confidentialite', title: 'Confidentialité — Votre visite depuis Blagnac',
+  slug: 'confidentialite', title: 'Confidentialité — Ta visite depuis Blagnac',
   description: 'Comprendre la fiche de départ, les liens vers le club et la confidentialité de votre visite sur boxingcenter-blagnac.fr.', image: 'team',
 };
 export const legal = {
@@ -41,20 +41,20 @@ export const notFound = { slug: '404', title: 'Page introuvable — Boxing Cente
 
 // Une intention, une composition et une promesse propres à chaque vignette.
 const cards = {
-  '': ['CLUB DE BOXE PROCHE DE BLAGNAC.', 'TROUVER VOTRE PRATIQUE.', 'Anglaise, fitness, enfants, femmes · MMA à Toulouse États-Unis.'],
-  'club-boxe-blagnac': ['VOTRE SALLE DE BOXE PROCHE DE BLAGNAC.', 'DÉCOUVRIR TOULOUSE MINIMES.', '12 rue de Fenouillet · métro B Barrière de Paris.'],
-  'boxe-anglaise-blagnac': ['BOXE ANGLAISE PRÈS DE BLAGNAC.', 'GARDE. APPUIS. DÉPLACEMENTS.', 'Le cours loisir pour apprendre à votre rythme.'],
+  '': ['CLUB DE BOXE PROCHE DE BLAGNAC.', 'TROUVE TA PRATIQUE.', 'Anglaise, fitness, enfants, femmes · MMA à Toulouse États-Unis.'],
+  'club-boxe-blagnac': ['TA SALLE DE BOXE PROCHE DE BLAGNAC.', 'DÉCOUVRIR TOULOUSE MINIMES.', '12 rue de Fenouillet · métro B Barrière de Paris.'],
+  'boxe-anglaise-blagnac': ['BOXE ANGLAISE PRÈS DE BLAGNAC.', 'GARDE. APPUIS. DÉPLACEMENTS.', 'Le cours loisir pour apprendre à ton rythme.'],
   'mma-blagnac': ['CLUB MMA PRÈS DE BLAGNAC.', 'CAGE. GRAPPLING. JJB. BOXE.', 'Boxing Center Toulouse États-Unis · 388 av. des États-Unis.'],
   'boxe-fitness-blagnac': ['BOXING FITNESS PRÈS DE BLAGNAC.', 'SE DÉFOULER, SANS COMBAT.', 'Boxing Camp encadré · cardio boxing au sac.'],
   'boxe-enfants-blagnac': ['BOXE ENFANTS PRÈS DE BLAGNAC.', 'APPRENDRE. GRANDIR. BOXER.', 'Baby Boxe dès 3 ans, enfants, ados · compétition jamais imposée.'],
   'boxe-femme-blagnac': ['BOXE FEMME PRÈS DE BLAGNAC.', 'ENTRE FEMMES, OU EN MIXTE.', 'Boxing Lady deux soirs par semaine à Toulouse Minimes.'],
-  plannings: ['LES PLANNINGS DE BOXE.', 'VOTRE DISCIPLINE. VOTRE CRÉNEAU.', 'Les horaires de la saison sur le site de Toulouse Minimes.'],
+  plannings: ['LES PLANNINGS DE BOXE.', 'TA DISCIPLINE. TON CRÉNEAU.', 'Les horaires de la saison sur le site de Toulouse Minimes.'],
   tarifs: ['LES TARIFS DE BOXE.', 'ESSAI. ADULTES. ÉCOLE DE BOXE.', 'Les montants et conditions sur le site des Minimes.'],
-  contact: ['DE BLAGNAC AUX MINIMES.', 'PRÉPARER VOTRE VENUE.', '12 rue de Fenouillet · 05 62 24 46 82.'],
-  confidentialite: ['VOS CHOIX RESTENT LES VÔTRES.', 'UNE FICHE QUE VOUS GARDEZ.', 'Vos choix restent dans votre navigateur.'],
+  contact: ['DE BLAGNAC AUX MINIMES.', 'PRÉPARE TA VENUE.', '12 rue de Fenouillet · 05 62 24 46 82.'],
+  confidentialite: ['TES CHOIX RESTENT LES TIENS.', 'UNE FICHE QUE TU GARDES.', 'Tes choix restent dans ton navigateur.'],
   'mentions-legales': ['MENTIONS LÉGALES.', 'ÉDITEUR ET HÉBERGEUR.', 'Les informations légales de boxingcenter-blagnac.fr.'],
   merci: ['MESSAGE REÇU.', 'ON TE RÉPOND.', 'Le club Boxing Center Toulouse Minimes a ta demande.'],
-  '404': ['UN PAS DE CÔTÉ.', 'RETROUVER VOTRE CHEMIN.', 'Les pratiques et les informations du club.'],
+  '404': ['UN PAS DE CÔTÉ.', 'RETROUVE TON CHEMIN.', 'Les pratiques et les informations du club.'],
 };
 export function socialFor(page) {
   const [title, promise, note] = cards[page.slug];
