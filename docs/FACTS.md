@@ -91,6 +91,10 @@ Ces images peuvent illustrer une activité du réseau lorsque le geste est cohé
 
 Les archives Fight Event fournies par le propriétaire sont des photos d’événement. Une scène de compétition ne constitue pas une preuve d’un cours hebdomadaire, d’un programme enfant ou d’une localisation. Ne pas modifier le décor pour faire passer une image d’une autre salle pour une salle Minimes ou Blagnac.
 
+### Illustrations dérivées ajoutées le 5 octobre 2026
+
+À la demande d’Eddy, sept nouvelles vues sont générées avec GPT Image 2.5 via Higgsfield depuis les photographies déjà sélectionnées, en conservant personnes et architecture comme références et en changeant angles, gestes et tenues. Les sources originales sont préservées. Chaque nouvelle vue est légendée « Illustration IA » et cite le crédit de sa photographie de référence ; elle ne prouve pas une séance effectivement photographiée ni une implantation à Blagnac. La référence du ring porte la fresque des Minimes ; les autres restent qualifiées comme illustrations du réseau ou d’un tournoi. Registre technique et prompts : `docs/image-generation.json` ; ALT et provenance : `src/data/photos.mjs`.
+
 ## Différenciation et SEO
 
 Chaque page répond à une question propre : choisir le club, comprendre une discipline, choisir un groupe, consulter le planning, comparer les conditions ou préparer une visite. Le contenu utile doit être présent dans le HTML, y compris sans JavaScript.

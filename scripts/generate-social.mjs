@@ -21,7 +21,7 @@ for (const page of entries) {
   if(current) lines.push(current);
   if(lines.length > 4) throw new Error(`Social title overflows: ${page.slug}`);
   const mma = page.slug === 'mma-blagnac';
-  const credit = p.credit === 'Boxing Center' ? 'Photographie : réseau Boxing Center' : `Photographie : © ${p.credit}`;
+  const credit = p.generated ? `Illustration IA · Réf. photo : ${p.referenceCredit}` : p.credit === 'Boxing Center' ? 'Photographie : réseau Boxing Center' : `Photographie : © ${p.credit}`;
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630">
     <rect width="1200" height="630" fill="#f4f1ea"/>
     <image href="data:image/png;base64,${logo}" x="42" y="28" width="200" height="94"/>

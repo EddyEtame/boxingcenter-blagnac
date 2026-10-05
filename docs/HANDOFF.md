@@ -2,7 +2,7 @@
 
 Document de reprise. Un agent qui prend la suite lit ce fichier en entier avant de toucher au code, puis `docs/PROJECT-STATE.md`, puis `docs/FACTS.md`. Les décisions ci-dessous sont celles d'Eddy ; aucune ne se rediscute sans lui.
 
-Dernière mise à jour : 4 octobre 2026, soir (session Claude, branche `claude/eager-fermat-zt2vah`).
+Dernière mise à jour : 5 octobre 2026 (passe images Codex, branche `main`).
 
 ## 1. Ce qu'est ce site
 
@@ -29,6 +29,7 @@ Le niveau attendu est celui des autres sites d'Eddy : boxe-toulouse.com (Minimes
 13. Mécanismes demandés par Eddy à l'agent précédent, à conserver : en-tête sticky, flou derrière le menu mobile, rectangle flottant « Le club des Minimes » (qui s'efface quand la fiche ou les coordonnées sont à l'écran), pages Plannings/Tarifs courtes, logo officiel non redessiné.
 14. **Pas de workflows, pas de sous-agents** : Eddy l'a dit explicitement. Tout à la main.
 15. Documenter chaque changement ici et dans `docs/PROJECT-STATE.md`, sans raisonnement, avec des faits et des chemins de fichiers.
+16. **Images (5 octobre)** : générer de nouvelles vues avec GPT Image via Higgsfield, à partir des mêmes personnes et lieux, avec d’autres angles et tenues ; vérifier le solde et économiser les crédits ; noms descriptifs et ALT ; pousser une fois terminé. Les vues sont identifiées comme illustrations IA, avec le crédit de la photographie de référence.
 
 ## 3. Où sont les choses
 
@@ -68,7 +69,7 @@ Fait et vérifié (journal §6) : mots-clés du brief, liens, favicon, MMA → �
 
 Attend une action d'Eddy :
 1. Créer le formulaire dans Inlet, définir `INLET_FORM_ID` dans Vercel, tester un envoi réel.
-2. Fusionner `claude/eager-fermat-zt2vah` dans `main` pour mettre à jour la production.
+2. Les changements de la session du 4 octobre sont déjà présents dans `main` (tête observée avant cette passe : `8c35804`). Vérifier le déploiement Vercel de `main` après le push des images.
 3. Raccorder le domaine boxingcenter-blagnac.fr (DNS A observé : 213.186.33.5, parking OVH), puis ajouter la redirection `*.vercel.app` → domaine dans `vercel.json`, vérifier Search Console (propriété Domaine, TXT DNS), soumettre le sitemap, lancer `npm run indexnow -- --submit`.
 4. Fusionner les branches `claude/lien-blagnac` des dépôts Minimes et États-Unis une fois le domaine en ligne.
 5. Palette : Minimes par défaut (fait le 5 octobre). Dire s'il faut retirer le bouton « Couleurs » du pied de page ou le garder.
@@ -84,6 +85,16 @@ Attend une action d'Eddy :
 - `scripts/favicons.mjs` et `scripts/generate-social.mjs` : couleurs Minimes ; icônes et quatorze vignettes régénérées.
 - Voix : vignettes, titre de la page Confidentialité et page 404 passés au tutoiement (restes de l'ancienne voix).
 - Vérifié : build vert ; Playwright confirme `--ink #0a1020`, `--mint #f5a623`, `theme-color #0a1020` par défaut sur bureau et mobile, bascule vers Blagnac conservée sur la page suivante puis retour à Minimes, console vide ; rendu de l'accueil, de l'icône et de la vignette d'accueil contrôlé.
+
+### 5 octobre 2026 — sept vues nouvelles, crédits contrôlés
+
+- **Génération** : GPT Image 2.5 via Higgsfield, sept résultats 2K issus des photos du dépôt à `8c35804`, mêmes personnes et décors pris pour références, autres angles/gestes/tenues. Une image pilote puis six sorties ; aucune régénération. Solde 232,75 → 225,75 : **7 crédits**. Prompts et identifiants dans `docs/image-generation.json`.
+- **Livraison** : 21 WebP 480/960/1600 dans `public/images/`, sept vues principales distinctes pour accueil/club/disciplines, sept OG actualisés. Originaux préservés. ALT, légendes « Illustration IA », références et crédits dans `src/data/photos.mjs` / `Picture.astro` ; sitemap, ALT sociaux, `humans.txt` et LLM synchronisés. Détail : `docs/IMAGE-REFRESH.md`.
+- **Légende de l’accueil** : le clip animé de la figure cachait la légende ; clip appliqué à l’image seule, rotation conservée (`global.css`).
+- **Validation locale** : `npm ci`, variantes, build vert et audit étendu (12 pages indexables, 15 requêtes, vues distinctes/provenance/dimensions). Douze pages à 1440/768/390 px ; console vide, images chargées, aucun débordement. Résultats et OG relus visuellement ; `git diff --check` réussi. Aucun test d’envoi Inlet ni confirmation du déploiement distant.
+- **Dépendances** : trois entrées élevées dans la chaîne Vercel/routing-utils/path-to-regexp constatées pendant l’installation, héritées de l’adaptateur précédent. Aucun changement de packages ; correction séparée à prévoir (détail dans `IMAGE-REFRESH.md`).
+- **Git** : push sur `main` autorisé explicitement par Eddy pour cette passe ; attribution Eddy-etame, aucun trailer d’assistant.
+- **Mise à jour distante intégrée** : `e8b9a76` / `72f65ac` reçu avant le push ; palette Minimes par défaut et tutoiement des vignettes conservés, sept OG régénérés en marine/or, sans coût Higgsfield supplémentaire.
 
 ### 4 octobre 2026, soir — liens entrants depuis les sites Minimes et États-Unis
 

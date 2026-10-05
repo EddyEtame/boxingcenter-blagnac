@@ -1,0 +1,99 @@
+{
+  "generatedOn": "2026-10-05",
+  "provider": "Higgsfield",
+  "model": "gpt_image_2_5",
+  "modelLabel": "GPT Image 2.5",
+  "parameters": {
+    "model": "gpt_image_2_5",
+    "variant": "flare",
+    "quality": "medium",
+    "resolution": "2k",
+    "aspect_ratio": "3:2",
+    "count": 1
+  },
+  "credits": {
+    "before": 232.75,
+    "after": 225.75,
+    "spent": 7
+  },
+  "referenceCommit": "8c3580494157cd2f2db0088e47879d413111e1a2",
+  "images": [
+    {
+      "key": "heroView",
+      "page": "/",
+      "filename": "club-boxe-blagnac-boxing-center-garde-angle-ia",
+      "sourceReference": "https://raw.githubusercontent.com/EddyEtame/boxingcenter-blagnac/8c3580494157cd2f2db0088e47879d413111e1a2/public/images/club-boxe-blagnac-boxing-center-1200.webp",
+      "referencePhoto": "hero",
+      "generationId": "dbd72e83-44dd-4327-a034-38470f71de3e",
+      "width": 2048,
+      "height": 1360,
+      "prompt": "Create ONE photorealistic editorial training illustration, landscape 3:2, suitable for a boxing club website. The provided image is a mandatory identity and environment reference, not merely a style reference. Preserve the same recognizable people, hair, faces, physiques and the same gym: its wall murals, ceiling structure, floors, ropes or bags, and spatial relationships. Only change the camera angle, a natural moment within the same drill and the specified clothing. Do not invent a new venue, new equipment, new people, new signs or a location in Blagnac. Natural existing gym lighting, realistic perspiration, textured fabric, documentary colour, accurate limbs and boxing equipment. Avoid glossy advertising poses, cinematic smoke, exaggerated muscles, background copy, borders and overlays. This is an AI illustration derived from the reference, not a claim of a real photo shoot. Do not reproduce the photographer signature or watermark on the NEW generated illustration; the source photograph is preserved separately and credited in the website.\nSpecific shot: Move the camera approximately 25 degrees toward the right, at shoulder height with a 50 mm lens, framing the same three practitioners from waist up. The curly-haired, short-bearded man remains the focal subject, now wearing a plain deep navy T-shirt, holding a balanced guard with two black gloves; his partner remains seen mostly from the back, now wearing a plain cream training shirt, practising a controlled light glove touch. Keep the long-haired man further back practising independently, in a plain dark olive T-shirt. Preserve the actual wooden mezzanine, fluorescent strips, cage to the left, red ropes and red/blue floor. Keep the subjects centrally within the middle 60 percent of the frame for a portrait crop; both main glove pairs must remain separate and anatomically credible."
+    },
+    {
+      "key": "clubView",
+      "page": "club-boxe-blagnac",
+      "filename": "salle-boxe-proche-blagnac-ring-coach-angle-ia",
+      "sourceReference": "https://raw.githubusercontent.com/EddyEtame/boxingcenter-blagnac/8c3580494157cd2f2db0088e47879d413111e1a2/public/images/salle-boxe-proche-blagnac-1600.webp",
+      "referencePhoto": "ring",
+      "generationId": "89295772-5745-4d9d-a151-51b7a4b041a1",
+      "width": 2048,
+      "height": 1360,
+      "prompt": "Create ONE photorealistic editorial training illustration, landscape 3:2, suitable for a boxing club website. The provided image is a mandatory identity and environment reference, not merely a style reference. Preserve the same recognizable people, hair, faces, physiques and the same gym: its wall murals, ceiling structure, floors, ropes or bags, and spatial relationships. Only change the camera angle, a natural moment within the same drill and the specified clothing. Do not invent a new venue, new equipment, new people, new signs or a location in Blagnac. Natural existing gym lighting, realistic perspiration, textured fabric, documentary colour, accurate limbs and boxing equipment. Avoid glossy advertising poses, cinematic smoke, exaggerated muscles, background copy, borders and overlays. This is an AI illustration derived from the reference, not a claim of a real photo shoot. Do not reproduce the photographer signature or watermark on the NEW generated illustration; the source photograph is preserved separately and credited in the website.\nSpecific shot: Move the camera one ring corner to the right, a waist-height three-quarter perspective, wider than the reference. Preserve the same central bearded tattooed coach and both trainees and the exact painted boxer mural and blue/white/red ring ropes. Coach in a plain charcoal grey athletic T-shirt and black shorts, olive tracksuit trainee now in a navy warm-up jacket and charcoal trousers, right-hand trainee in a plain burgundy T-shirt and light grey shorts. Show the coach calmly demonstrating a high guard while trainees watch, gloves down or guarded, no contact, with clearly separated bodies. Preserve the mural lettering when legible, otherwise keep it naturally out of focus; never fabricate lettering. Subjects in middle 65 percent, ring geometry visible.\nThe new camera position must be visibly different from the source photo: recompose the shot rather than copy the original crop. Preserve recognizable identity and architectural landmarks."
+    },
+    {
+      "key": "boxingView",
+      "page": "boxe-anglaise-blagnac",
+      "filename": "boxe-anglaise-blagnac-pattes-ours-angle-ia",
+      "sourceReference": "https://raw.githubusercontent.com/EddyEtame/boxingcenter-blagnac/8c3580494157cd2f2db0088e47879d413111e1a2/public/images/boxe-anglaise-blagnac-1600.webp",
+      "referencePhoto": "boxing",
+      "generationId": "854306af-b77c-4b31-bded-4f6510a7cee4",
+      "width": 2048,
+      "height": 1360,
+      "prompt": "Create ONE photorealistic editorial training illustration, landscape 3:2, suitable for a boxing club website. The provided image is a mandatory identity and environment reference, not merely a style reference. Preserve the same recognizable people, hair, faces, physiques and the same gym: its wall murals, ceiling structure, floors, ropes or bags, and spatial relationships. Only change the camera angle, a natural moment within the same drill and the specified clothing. Do not invent a new venue, new equipment, new people, new signs or a location in Blagnac. Natural existing gym lighting, realistic perspiration, textured fabric, documentary colour, accurate limbs and boxing equipment. Avoid glossy advertising poses, cinematic smoke, exaggerated muscles, background copy, borders and overlays. This is an AI illustration derived from the reference, not a claim of a real photo shoot. Do not reproduce the photographer signature or watermark on the NEW generated illustration; the source photograph is preserved separately and credited in the website.\nSpecific shot: The same close-haired short-bearded coach and same young trainee practise the same orange focus-mitt and blue-glove drill against the exact grey gym wall. New camera position over the trainee's right shoulder, a medium three-quarter view that shows the coach's recognizable face and both mitts, trainee partly in profile. Coach now wears a plain dark navy training T-shirt, trainee a plain light grey sleeveless athletic shirt. Show a gentle accurate straight blue-glove touch to an orange mitt, the other glove protecting the cheek. Include waist-up bodies and credible hands inside each glove, no collision of limbs, no extra people or fabricated room beyond the visible reference. Keep faces and gloves in central frame.\nThe new camera position must be visibly different from the source photo: recompose the shot rather than copy the original crop. Preserve recognizable identity and architectural landmarks."
+    },
+    {
+      "key": "fitnessView",
+      "page": "boxe-fitness-blagnac",
+      "filename": "boxe-fitness-blagnac-sac-garde-angle-ia",
+      "sourceReference": "https://raw.githubusercontent.com/EddyEtame/boxingcenter-blagnac/8c3580494157cd2f2db0088e47879d413111e1a2/public/images/boxe-fitness-blagnac-1600.webp",
+      "referencePhoto": "fitness",
+      "generationId": "5f60993b-fd7b-444b-a76f-a93ea5cba132",
+      "width": 2048,
+      "height": 1360,
+      "prompt": "Create ONE photorealistic editorial training illustration, landscape 3:2, suitable for a boxing club website. The provided image is a mandatory identity and environment reference, not merely a style reference. Preserve the same recognizable people, hair, faces, physiques and the same gym: its wall murals, ceiling structure, floors, ropes or bags, and spatial relationships. Only change the camera angle, a natural moment within the same drill and the specified clothing. Do not invent a new venue, new equipment, new people, new signs or a location in Blagnac. Natural existing gym lighting, realistic perspiration, textured fabric, documentary colour, accurate limbs and boxing equipment. Avoid glossy advertising poses, cinematic smoke, exaggerated muscles, background copy, borders and overlays. This is an AI illustration derived from the reference, not a claim of a real photo shoot. Do not reproduce the photographer signature or watermark on the NEW generated illustration; the source photograph is preserved separately and credited in the website.\nSpecific shot: The same ponytailed woman trains at the same black-and-red METAL hanging bag, on the same blue floor among the same bag rows. New camera position about 30 degrees to the left at chest height, waist-up three-quarter view of her balanced guard as she resets between punches, not a punch crossing her face. She now wears a plain light taupe athletic T-shirt and dark navy full-length training leggings, retaining the same burgundy gloves. Preserve her recognizable face and ponytail, the industrial ceiling and the background participants in their original relative area, softly out of focus. Bag occupies a third of the frame; woman's face and both glove shapes remain distinct and within the middle 65 percent. Realistic natural stance and ordinary comfortable sportswear.\nThe new camera position must be visibly different from the source photo: recompose the shot rather than copy the original crop. Preserve recognizable identity and architectural landmarks."
+    },
+    {
+      "key": "kidsView",
+      "page": "boxe-enfants-blagnac",
+      "filename": "cours-boxe-enfants-blagnac-garde-ring-angle-ia",
+      "sourceReference": "https://raw.githubusercontent.com/EddyEtame/boxingcenter-blagnac/8c3580494157cd2f2db0088e47879d413111e1a2/public/images/cours-boxe-enfants-blagnac-1600.webp",
+      "referencePhoto": "kids",
+      "generationId": "7bf5ef6b-c67e-44b8-a81a-b280ed2b858e",
+      "width": 2048,
+      "height": 1360,
+      "prompt": "Create ONE photorealistic editorial training illustration, landscape 3:2, suitable for a boxing club website. The provided image is a mandatory identity and environment reference, not merely a style reference. Preserve the same recognizable people, hair, faces, physiques and the same gym: its wall murals, ceiling structure, floors, ropes or bags, and spatial relationships. Only change the camera angle, a natural moment within the same drill and the specified clothing. Do not invent a new venue, new equipment, new people, new signs or a location in Blagnac. Natural existing gym lighting, realistic perspiration, textured fabric, documentary colour, accurate limbs and boxing equipment. Avoid glossy advertising poses, cinematic smoke, exaggerated muscles, background copy, borders and overlays. This is an AI illustration derived from the reference, not a claim of a real photo shoot. Do not reproduce the photographer signature or watermark on the NEW generated illustration; the source photograph is preserved separately and credited in the website.\nSpecific shot: The same two young boxers of exactly the same ages, proportions and identities are on the same ring, retaining their red and black protective headguards, gloves, the same referee and background observers, flags and painted walls. Camera from an adjacent ring corner at their shoulder height; a slightly closer medium-wide view, comfortably framed full bodies. Depict a calm educational drill with both children in guard and a small distance between them, NO punch landing or distress. Change the red-headguard child's training shirt to plain dark navy with matching trousers, and the black-headguard child's sleeveless sports top to plain forest green with dark shorts, keeping protective gear. Preserve exact reference room, flag arrangement and ring-rope colours. Faces unobstructed by ropes and naturally visible only as the helmets allow; do not invent face details obscured in the reference. No added spectators or tournament claims.\nThe new camera position must be visibly different from the source photo: recompose the shot rather than copy the original crop. Preserve recognizable identity and architectural landmarks."
+    },
+    {
+      "key": "womenView",
+      "page": "boxe-femme-blagnac",
+      "filename": "boxe-femme-blagnac-duo-technique-angle-ia",
+      "sourceReference": "https://raw.githubusercontent.com/EddyEtame/boxingcenter-blagnac/8c3580494157cd2f2db0088e47879d413111e1a2/public/images/boxe-femme-blagnac-1600.webp",
+      "referencePhoto": "women",
+      "generationId": "8483c993-30cd-4dc6-bbbd-f56c2de43266",
+      "width": 2048,
+      "height": 1360,
+      "prompt": "Create ONE photorealistic editorial training illustration, landscape 3:2, suitable for a boxing club website. The provided image is a mandatory identity and environment reference, not merely a style reference. Preserve the same recognizable people, hair, faces, physiques and the same gym: its wall murals, ceiling structure, floors, ropes or bags, and spatial relationships. Only change the camera angle, a natural moment within the same drill and the specified clothing. Do not invent a new venue, new equipment, new people, new signs or a location in Blagnac. Natural existing gym lighting, realistic perspiration, textured fabric, documentary colour, accurate limbs and boxing equipment. Avoid glossy advertising poses, cinematic smoke, exaggerated muscles, background copy, borders and overlays. This is an AI illustration derived from the reference, not a claim of a real photo shoot. Do not reproduce the photographer signature or watermark on the NEW generated illustration; the source photograph is preserved separately and credited in the website.\nSpecific shot: The exact same two adult women, one with short dark curly hair and one with a ponytail, practise their existing guarded partner drill beside the exact same chain-link fence and padded post. Move the camera around 25 degrees to the left for a new eye-level medium-wide perspective, with both recognizable faces visible in three-quarter profile. Curly-haired woman now wears a plain dark olive fitted long-sleeved athletic top and black leggings; ponytailed woman a plain navy athletic T-shirt and charcoal full-length leggings. Keep the same black/burgundy boxing gloves, exact fence geometry and timber-look mat area. Both in balanced relaxed guard, light technical glove-to-glove contact with visible separate gloves, no dramatic head strike, no new people or equipment. Real gym lighting, unposed expression, centrally framed.\nThe new camera position must be visibly different from the source photo: recompose the shot rather than copy the original crop. Preserve recognizable identity and architectural landmarks."
+    },
+    {
+      "key": "mmaView",
+      "page": "mma-blagnac",
+      "filename": "club-mma-blagnac-boxing-center-corde-angle-ia",
+      "sourceReference": "https://raw.githubusercontent.com/EddyEtame/boxingcenter-blagnac/8c3580494157cd2f2db0088e47879d413111e1a2/public/images/club-mma-blagnac-boxing-center-1600.webp",
+      "referencePhoto": "mma",
+      "generationId": "ad14ac62-04fe-474e-a732-8f2d5af43d87",
+      "width": 2048,
+      "height": 1360,
+      "prompt": "Create ONE photorealistic editorial training illustration, landscape 3:2, suitable for a boxing club website. The provided image is a mandatory identity and environment reference, not merely a style reference. Preserve the same recognizable people, hair, faces, physiques and the same gym: its wall murals, ceiling structure, floors, ropes or bags, and spatial relationships. Only change the camera angle, a natural moment within the same drill and the specified clothing. Do not invent a new venue, new equipment, new people, new signs or a location in Blagnac. Natural existing gym lighting, realistic perspiration, textured fabric, documentary colour, accurate limbs and boxing equipment. Avoid glossy advertising poses, cinematic smoke, exaggerated muscles, background copy, borders and overlays. This is an AI illustration derived from the reference, not a claim of a real photo shoot. Do not reproduce the photographer signature or watermark on the NEW generated illustration; the source photograph is preserved separately and credited in the website.\nSpecific shot: Show the exact same four main warm-up participants and trainer visible in the reference, in the exact same training hall with wooden rafters, the single plywood-protected support, rear chain-link cage and blue/red mats. Change camera position to the left side of the group at waist height, medium-wide documentary view during a brief pause between rope skips. Same right-hand dark-haired young man in a plain charcoal T-shirt and navy sports shorts, same central fair-haired trainee in a plain burgundy sleeveless sports top and black shorts, same partly-back-facing foreground trainer in a plain grey T-shirt. Preserve faces that are visible in the reference and avoid revealing invented features of the back-facing trainer. Ropes hang naturally from separate hands, no hovering, tangles or extra fingers. No grappling, no new cage, no ring, no new signs, no false Toulouse Etats-Unis lettering. Group within middle 65 percent so image can crop vertically.\nThe new camera position must be visibly different from the source photo: recompose the shot rather than copy the original crop. Preserve recognizable identity and architectural landmarks."
+    }
+  ]
+}

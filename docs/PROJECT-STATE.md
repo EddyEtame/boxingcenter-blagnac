@@ -2,6 +2,12 @@
 
 > Lire d’abord `docs/HANDOFF.md` : directives d’Eddy en vigueur, journal des chantiers, reste à faire. Ce fichier conserve l’historique des passes.
 
+## Passe du 5 octobre 2026 — renouvellement des images
+
+Sept vues GPT Image 2.5 via Higgsfield, issues des mêmes personnes/décors de référence avec de nouveaux angles, gestes et tenues ; 7 crédits utilisés sur 232,75, solde 225,75. Sept photos principales distinctes des cartes de l’accueil, 21 variantes WebP (1,55 Mio), ALT précis, légendes IA et crédits des références, sept vignettes sociales actualisées, sitemap et fichiers de découverte synchronisés. Les améliorations d’Eddy du 4 octobre sont conservées, ainsi que le choix de Minimes comme palette par défaut reçu sur GitHub (`e8b9a76` / `72f65ac`) avant le push. Les OG utilisent marine/or. Le clip animé de l’accueil a été corrigé pour laisser la légende visible.
+
+Validation : installation propre, préparation d’images et build réussi ; audit de 12 pages indexables / 15 requêtes plus contrôles des illustrations ; douze pages à 1440/768/390 px, console vide, aucun débordement, images chargées et recadrages relus. Prompts et coût : `docs/image-generation.json`. Compte rendu et point sur les trois alertes élevées héritées des dépendances Vercel : `docs/IMAGE-REFRESH.md`. Les contrôles locaux ne confirment pas le nouveau déploiement distant ; formulaire Inlet et domaine restent à vérifier séparément.
+
 ## Passe du 4 octobre 2026 (soir, suite) — tutoiement, formulaire, toggle, motion
 
 Détail complet dans `docs/HANDOFF.md`, journal du 4 octobre (deuxième passe). Résumé : tutoiement généralisé ; navigation d’en-tête vers les pages du site ; séance d’essai à 10 € (seul montant publié) ; formulaire de contact relayé via Inlet avec adaptateur Vercel (`INLET_FORM_ID` à définir) ; fiche de départ envoyée au formulaire ; décoration générique et fondus retirés ; trajet Blagnac → Minimes tracé et sceau du ticket ; variante de couleurs « Minimes » à l’essai, bascule dans le pied de page.

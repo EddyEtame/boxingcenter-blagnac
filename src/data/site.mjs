@@ -83,6 +83,7 @@ export const proof = [
 
 export const home = {
   slug: '',
+  image: 'heroView',
   // Balises recommandées par le cahier des charges (§17), reprises telles quelles.
   title: 'Club de boxe Blagnac — Boxing Center proche de Blagnac',
   description: 'Vous cherchez un club de boxe à Blagnac ? Boxing Center Toulouse Minimes accueille les débutants, loisirs, enfants, femmes et confirmés à proximité de Blagnac.',

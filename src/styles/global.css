@@ -139,12 +139,13 @@
   .legal-list dt { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; font-weight: 800; padding-top: 3px; }
   .legal-list dd { margin: 0; }
   .hero-visual { position: relative; padding-top: 29px; padding-left: 8%; padding-bottom: 84px; }
-  .hero-main-photo { height: 450px; transform: rotate(2deg); animation: photo-arrive .85s cubic-bezier(.16,.8,.23,1) both; }
-  .hero-main-photo img { height: 100%; object-position: 56% center; }
+  .hero-main-photo { height: 450px; transform: rotate(2deg); animation: photo-tilt .85s cubic-bezier(.16,.8,.23,1) both; }
+  .hero-main-photo img { height: 100%; object-position: 56% center; animation: photo-arrive .85s cubic-bezier(.16,.8,.23,1) both; }
   .hero-main-photo figcaption { transform: rotate(-2deg); font-size: 10px; padding-top: 4px; text-align: right; }
   .hero-stamp { position: absolute; top: 0; right: 22px; display: flex; flex-direction: column; gap: 2px; align-items: center; width: 220px; padding: 16px 12px; background: var(--mint); color: var(--ink); transform: rotate(-7deg); z-index: 3; border: 1px solid var(--ink); box-shadow: 3px 4px 0 var(--ink); }
   .hero-stamp { animation: stamp-arrive .65s .22s cubic-bezier(.2,.8,.2,1) both; }
-  @keyframes photo-arrive { from { clip-path: inset(0 100% 0 0); transform: rotate(0); } to { clip-path: inset(0); transform: rotate(2deg); } }
+  @keyframes photo-arrive { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0); } }
+  @keyframes photo-tilt { from { transform: rotate(0); } to { transform: rotate(2deg); } }
   @keyframes stamp-arrive { from { opacity: 0; transform: translateY(-12px) rotate(-12deg); } to { opacity: 1; transform: translateY(0) rotate(-7deg); } }
   .hero-stamp span { font-size: 10px; font-weight: 800; letter-spacing: .06em; }
   .hero-stamp strong { font: 800 41px/.95 var(--display); }

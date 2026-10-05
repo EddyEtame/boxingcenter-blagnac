@@ -1,5 +1,6 @@
 /**
- * Real Boxing Center photography. None of these files establishes a Blagnac venue.
+ * Boxing Center photography and explicitly labelled AI illustrations derived
+ * from it. Neither kind establishes a Blagnac venue.
  * File names follow the brief (§18): the local search phrase, in kebab-case.
  * ALT texts describe what is photographed AND carry the local phrase, the way the
  * brief asks ("Cours de boxe anglaise près de Blagnac"), without ever claiming that
@@ -91,5 +92,60 @@ export const photos = {
     },
   ),
 };
+
+// New camera views are illustrations, never documentary proof of a class or
+// room. Keep original photos/credits intact and credit the reference separately.
+const illustration = (name, referencePhoto, alt, caption) => entry(
+  name, `.research/generated-images/${name}.png`, 2048, 1360,
+  alt, `Illustration IA — ${caption}`, 'Boxing Center',
+  {
+    generated: true,
+    referencePhoto,
+    referenceCredit: photos[referencePhoto].credit,
+    model: 'GPT Image 2.5',
+    provider: 'Higgsfield',
+    generatedOn: '2026-10-05',
+    digitalSourceType: 'https://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia',
+    provenance: 'Illustration IA dérivée d’une photographie du réseau Boxing Center ; personnes et décor pris pour références, angle, tenue et geste réinterprétés. Ne représente pas une séance photographiée à Blagnac.',
+  },
+);
+
+Object.assign(photos, {
+  heroView: illustration(
+    'club-boxe-blagnac-boxing-center-garde-angle-ia', 'hero',
+    'Club de boxe proche de Blagnac : illustration IA de trois pratiquants Boxing Center en garde, en tenues crème, marine et olive.',
+    'Travail de garde inspiré du réseau Boxing Center.',
+  ),
+  clubView: illustration(
+    'salle-boxe-proche-blagnac-ring-coach-angle-ia', 'ring',
+    'Salle de boxe proche de Blagnac : illustration IA d’un coach montrant la garde à deux pratiquants sur un ring, devant la fresque des boxeurs.',
+    'Démonstration de garde inspirée du ring des Minimes.',
+  ),
+  boxingView: illustration(
+    'boxe-anglaise-blagnac-pattes-ours-angle-ia', 'boxing',
+    'Cours de boxe anglaise près de Blagnac : illustration IA d’un coach aux pattes d’ours orange face à un jeune boxeur ganté de bleu.',
+    'Travail aux pattes d’ours inspiré du réseau Boxing Center.',
+  ),
+  fitnessView: illustration(
+    'boxe-fitness-blagnac-sac-garde-angle-ia', 'fitness',
+    'Boxing fitness près de Blagnac : illustration IA d’une pratiquante en garde au sac, avec des gants bordeaux et une tenue taupe et marine.',
+    'Travail au sac inspiré du réseau Boxing Center.',
+  ),
+  kidsView: illustration(
+    'cours-boxe-enfants-blagnac-garde-ring-angle-ia', 'kids',
+    'Boxe enfants proche de Blagnac : illustration IA de deux jeunes boxeurs casqués en garde sur un ring, sous le regard d’un adulte.',
+    'Garde éducative inspirée d’un tournoi du réseau.',
+  ),
+  womenView: illustration(
+    'boxe-femme-blagnac-duo-technique-angle-ia', 'women',
+    'Cours de boxe femme près de Blagnac : illustration IA de deux pratiquantes échangeant un geste technique ganté, en tenues olive et marine.',
+    'Échange technique inspiré du réseau Boxing Center.',
+  ),
+  mmaView: illustration(
+    'club-mma-blagnac-boxing-center-corde-angle-ia', 'mma',
+    'Club MMA proche de Blagnac : illustration IA de pratiquants tenant leurs cordes pendant une pause, devant une cage et sur des tapis bleus et rouges.',
+    'Préparation physique inspirée d’une salle du réseau.',
+  ),
+});
 
 export default photos;

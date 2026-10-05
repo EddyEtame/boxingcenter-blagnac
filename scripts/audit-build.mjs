@@ -5,6 +5,7 @@ const OUT = existsSync('.vercel/output/static') ? '.vercel/output/static' : 'dis
 import { createHash } from 'node:crypto';
 import { pages } from '../src/data/pages.mjs';
 import { home, SITE, CLUB } from '../src/data/site.mjs';
+import { photos } from '../src/data/photos.mjs';
 import { searchIntents } from '../src/data/search-intents.mjs';
 import sharp from 'sharp';
 import { developer, privacy, legal, canonicalOf, socialFor } from '../src/data/seo.mjs';
@@ -73,6 +74,12 @@ for (const page of records) {
     assert(/width="\d+"/.test(match[0]) && /height="\d+"/.test(match[0]),`${file}: image dimensions missing`);
     const src=match[0].match(/src="([^"]+)"/)?.[1];
     if(src?.startsWith('/')) assert((await stat(`${OUT}${src}`).catch(()=>null))?.isFile(),`${file}: missing image ${src}`);
+    const photo = Object.values(photos).find(p => src?.startsWith(`${p.base}-`));
+    if (photo?.generated) {
+      assert(unescape(match[0]).includes(photo.alt), `${file}: generated-image ALT mismatch`);
+      assert(plain(html).includes(photo.caption) && html.includes('data-generated-image="true"'), `${file}: visible AI illustration label missing`);
+      assert(plain(html).includes(`Référence photo : ${photo.referenceCredit === 'Boxing Center' ? '' : '© '}${photo.referenceCredit}.`), `${file}: original photo reference credit missing`);
+    }
   }
   for(const match of html.matchAll(/href="([^"#]+)(?:#[^"]*)?"/g)) {
     const href=match[1];
@@ -88,6 +95,26 @@ for (const page of records) {
   assert(size.width===1200 && size.height===630,`${file}: OG must be 1200×630`);
   const hash=createHash('sha256').update(social).digest('hex');
   assert(!images.has(hash),`${file}: duplicate social image`); images.add(hash);
+}
+// Each photographic main page has its own view, distinct from the original
+// photographs used in the homepage's discipline cards and club story.
+const heroPages = [home, ...pages.filter(p => !['plannings','tarifs','contact'].includes(p.slug))];
+const heroHashes = new Set();
+for (const page of heroPages) {
+  const photo = photos[page.image];
+  assert(photo?.generated && photo.alt.includes('illustration IA'), `${page.slug || 'home'}: unique labelled illustration required`);
+  if (!photo) continue;
+  for (const variant of photo.variants) {
+    const buffer = await readFile(`${OUT}${variant.src}`);
+    const metadata = await sharp(buffer).metadata();
+    assert(metadata.width===variant.width && metadata.height===variant.height, `${variant.src}: responsive image dimensions mismatch`);
+    if (variant.width === photo.widths.at(-1)) {
+      const hash = createHash('sha256').update(buffer).digest('hex');
+      assert(!heroHashes.has(hash), `${page.slug || 'home'}: reused main-page illustration`);
+      heroHashes.add(hash);
+    }
+  }
+  assert(socialFor(page).alt.includes('illustration IA'), `${page.slug || 'home'}: social illustration provenance missing`);
 }
 const normalize = text => text.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[’']/g,' ').replace(/\s+/g,' ');
 for(const intent of searchIntents) {

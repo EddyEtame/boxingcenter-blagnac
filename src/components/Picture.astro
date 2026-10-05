@@ -6,7 +6,7 @@ if (!p) throw new Error(`Unknown photo: ${name}`);
 const widths = p.widths || [480, 960, 1600];
 const largest = widths[widths.length - 1];
 ---
-<figure class:list={['photo', className]}>
+<figure class:list={['photo', className]} data-generated-image={p.generated ? 'true' : undefined}>
   <img src={`${p.base}-${Math.min(960, largest)}.webp`} srcset={widths.map((w) => `${p.base}-${w}.webp ${w}w`).join(', ')} sizes={sizes} width={p.width || 1600} height={p.height || 1067} alt={p.alt} loading={eager ? 'eager' : 'lazy'} fetchpriority={eager ? 'high' : 'auto'} decoding="async" />
-  {caption && <figcaption>{p.caption} {p.credit !== 'Boxing Center' && <>© {p.credit}</>}</figcaption>}
+  {caption && <figcaption>{p.caption} {p.generated ? <>Référence photo : {p.referenceCredit !== 'Boxing Center' && '© '}{p.referenceCredit}.</> : p.credit !== 'Boxing Center' && <>© {p.credit}</>}</figcaption>}
 </figure>

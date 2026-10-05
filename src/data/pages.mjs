@@ -20,7 +20,7 @@ export const pages = [
     headline: ['Club de boxe', 'proche de Blagnac.'],
     context: 'Boxing Center Toulouse Minimes · pour les habitants de Blagnac',
     intro: 'Tu habites Blagnac et tu cherches un club de boxe à proximité ? Boxing Center Toulouse Minimes accueille les pratiquants de Blagnac qui veulent apprendre la boxe, progresser, se défouler ou reprendre une activité sportive dans un cadre sérieux. Le club propose des cours encadrés, une ambiance accessible et un accompagnement adapté aux débutants comme aux confirmés.',
-    image: 'ring',
+    image: 'clubView',
     sections: [
       {
         title: 'Salle de boxe Blagnac : la réponse s’appelle Toulouse Minimes.',
@@ -67,7 +67,7 @@ export const pages = [
     headline: ['Boxe anglaise', 'près de Blagnac.'],
     context: 'Boxing Center Toulouse Minimes · pour les habitants de Blagnac',
     intro: 'Boxe anglaise Blagnac : les cours ont lieu chez Boxing Center Toulouse Minimes, le club du réseau qui accueille les habitants de Blagnac. Garde, appuis, déplacements, jab : tu apprends les gestes avec un coach, en loisir, sans objectif de compétition imposé. Débutants, adolescents, adultes et femmes y sont les bienvenus.',
-    image: 'boxing',
+    image: 'boxingView',
     sections: [
       {
         title: 'Le geste avant la puissance.',
@@ -113,7 +113,7 @@ export const pages = [
     headline: ['Club MMA', 'près de Blagnac.'],
     context: 'Boxing Center Toulouse États-Unis · pour les habitants de Blagnac',
     intro: `Club MMA Blagnac : chez Boxing Center, le MMA se pratique à la salle de Toulouse États-Unis, ${MMA_CLUB.address.replace(', 31200 Toulouse', '')}, au nord de Toulouse. Cage officielle, grappling, jiu-jitsu brésilien, boxe et préparation physique dans le même club, avec un coach qualifié pour chaque discipline et des cours ouverts aux débutants.`,
-    image: 'mma',
+    image: 'mmaView',
     sections: [
       {
         title: 'Découvrir le MMA : debout, au sol, et tout ce qui relie les deux.',
@@ -161,7 +161,7 @@ export const pages = [
     headline: ['Boxe fitness', 'près de Blagnac.'],
     context: 'Boxing Center Toulouse Minimes · pour les habitants de Blagnac',
     intro: 'Boxe fitness Blagnac ou boxing fitness Blagnac : quel que soit le nom que tu cherches, la pratique se trouve chez Boxing Center Toulouse Minimes. Deux formats : le Boxing Camp, un cours collectif encadré au rythme soutenu, et le cardio boxing sans contact sur les sacs, en accès libre. Pour te défouler, améliorer ton cardio et te remettre en forme, sans combat.',
-    image: 'fitness',
+    image: 'fitnessView',
     sections: [
       {
         title: 'Le Boxing Camp : un cours encadré, une ambiance dynamique.',
@@ -207,7 +207,7 @@ export const pages = [
     headline: ['Boxe enfants', 'près de Blagnac.'],
     context: 'L’école de boxe de Toulouse Minimes · pour les enfants de Blagnac',
     intro: 'Boxe enfants Blagnac : l’école de boxe Boxing Center Toulouse Minimes accueille les enfants de Blagnac dès 3 ans, le mercredi et le samedi. Baby Boxe, boxe éducative, cours ados : un cadre sécurisé et encadré où l’on apprend la discipline, le respect, la coordination et la maîtrise de soi, et où la compétition n’est jamais obligatoire.',
-    image: 'kids',
+    image: 'kidsView',
     sections: [
       {
         title: 'La boxe éducative : on touche, on ne frappe pas.',
@@ -255,7 +255,7 @@ export const pages = [
     headline: ['Boxe femme', 'près de Blagnac.'],
     context: 'Boxing Center Toulouse Minimes · pour les habitantes de Blagnac',
     intro: 'Boxe femme Blagnac : chez Boxing Center Toulouse Minimes, le Boxing Lady est un cours 100 % féminin, deux soirs par semaine, et tous les autres cours te sont ouverts. Boxe féminine en loisir, remise en forme, cardio, confiance en soi, dépassement de soi : tu peux débuter sans aucune expérience et progresser dans un cadre accessible et encadré.',
-    image: 'women',
+    image: 'womenView',
     sections: [
       {
         title: 'Le Boxing Lady, entre femmes.',
