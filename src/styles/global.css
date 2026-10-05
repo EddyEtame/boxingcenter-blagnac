@@ -38,7 +38,6 @@
   .text-link { display: inline-flex; align-items: center; gap: 25px; padding-bottom: 9px; min-height: 44px; border-bottom: 1px solid currentColor; font-weight: 800; font-size: 13px; }
   .photo { position: relative; }
   .photo img { width: 100%; height: 100%; object-fit: cover; }
-  .photo figcaption { font-size: 11px; line-height: 1.5; margin-top: 9px; color: var(--muted); }
   .skip-link { position: fixed; z-index: 100; top: 10px; left: 10px; padding: 15px; background: var(--mint); transform: translateY(-150%); }
   .skip-link:focus { transform: none; }
   /* Le sceau du ticket se pose quand le choix change : la fiche a enregistré quelque chose. */
@@ -141,7 +140,6 @@
   .hero-visual { position: relative; padding-top: 29px; padding-left: 8%; padding-bottom: 84px; }
   .hero-main-photo { height: 450px; transform: rotate(2deg); animation: photo-tilt .85s cubic-bezier(.16,.8,.23,1) both; }
   .hero-main-photo img { height: 100%; object-position: 56% center; animation: photo-arrive .85s cubic-bezier(.16,.8,.23,1) both; }
-  .hero-main-photo figcaption { transform: rotate(-2deg); font-size: 10px; padding-top: 4px; text-align: right; }
   .hero-stamp { position: absolute; top: 0; right: 22px; display: flex; flex-direction: column; gap: 2px; align-items: center; width: 220px; padding: 16px 12px; background: var(--mint); color: var(--ink); transform: rotate(-7deg); z-index: 3; border: 1px solid var(--ink); box-shadow: 3px 4px 0 var(--ink); }
   .hero-stamp { animation: stamp-arrive .65s .22s cubic-bezier(.2,.8,.2,1) both; }
   @keyframes photo-arrive { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0); } }
@@ -178,7 +176,6 @@
   .discipline-card:hover .discipline-card-copy > svg { transform: translate(3px,-3px); }
   .discipline-card-copy p { font-size: 12px; margin-top: 12px; }
   .discipline-card-copy small { display: block; color: var(--muted); font-size: 10px; margin-top: 5px; }
-  .gallery-credit { font-size: 10px; color: var(--muted); margin-top: 24px; }
   .session { display: grid; grid-template-columns: 40% 60%; color: var(--paper); background: var(--ink); gap: 0; }
   .session-intro { padding-right: 50px; position: relative; }
   .session-intro .eyebrow { color: var(--mint); margin-bottom: 28px; }
@@ -255,7 +252,6 @@
   .event-text > p:not(.eyebrow) { max-width: 320px; font-size: 13px; margin-top: 30px; }
   .event-text .text-link { margin-top: 28px; }
   .event-story > .photo { height: 510px; transform: rotate(-2deg); margin-right: 34px; }
-  .event-story figcaption { transform: rotate(2deg); }
   .faq { display: grid; grid-template-columns: 40% 60%; gap: 0; }
   .faq .section-heading { display: block; padding-right: 45px; margin-bottom: 0; }
   .faq h2 { font-size: clamp(50px, 4.8vw, 76px); }
@@ -298,7 +294,6 @@
   .page-hero h1 span:last-child { color: var(--accent-text); }
   .page-hero-intro { font-size: 14px; max-width: 465px; margin: 30px 35px 25px 0; }
   .page-hero .photo { margin: 25px 0 0 -15px; height: 470px; transform: rotate(2deg); }
-  .page-hero .photo figcaption { transform: rotate(-2deg); }
   .page-facts { background: var(--mint); display: grid; grid-template-columns: repeat(3,1fr); gap: 45px; padding: 30px var(--pad); }
   .page-facts dt { font-size: 10px; text-transform: uppercase; letter-spacing: .1em; font-weight: 800; }
   .page-facts dd { font: 600 27px/1.1 var(--display); margin: 10px 0 0; }
@@ -456,7 +451,6 @@
     .hero-stamp { width: 176px; top: -22px; right: 7px; padding: 12px 10px; }
     .hero-stamp strong { font-size: 34px; }
     .hero-stamp span { font-size: 8px; letter-spacing: .04em; }
-    .hero-main-photo figcaption { font-size: 10px; }
     .hero-bottom { padding: 19px 0 22px; gap: 10px; }
     .hero-bottom p { font-size: 11px; max-width: 170px; }
     .hero-bottom a { font-size: 10px; gap: 12px; max-width: 170px; }
@@ -476,7 +470,6 @@
     .discipline-card-copy { padding-top: 20px; }
     .discipline-card-copy h3 { font-size: 39px; }
     .discipline-card-copy p { font-size: 11px; }
-    .gallery-credit { font-size: 10px; }
     .session { gap: 40px; }
     .session-intro h2 { font-size: 66px; }
     .session-intro h2 br:first-child { display: inline; }

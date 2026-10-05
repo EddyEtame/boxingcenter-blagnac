@@ -1,5 +1,7 @@
 # Images — passe du 5 octobre 2026
 
+**Correction ultérieure demandée par Eddy :** toutes les étiquettes et attributions d’images sont supprimées de la livraison (pages, ALT, fichiers, OG, textes de découverte et mentions légales). Les sept signatures incrustées dans les anciennes photos ont été retirées par une passe ciblée chacune : 7 crédits supplémentaires, solde 218,75. Les nouveaux noms et URL OG versionnées évitent les anciennes versions en cache. Les paragraphes ci-dessous conservent l’historique de la première livraison ; leurs choix de légendes/crédits ne sont plus en vigueur. Registre actuel : `docs/HANDOFF.md`, directive 17.
+
 Demande d’Eddy : réduire la répétition des images, employer GPT Image via Higgsfield avec les mêmes personnes et les mêmes décors comme références, changer les angles, gestes et tenues, économiser les crédits, intégrer puis pousser.
 
 ## Production et coût

@@ -29,7 +29,8 @@ Le niveau attendu est celui des autres sites d'Eddy : boxe-toulouse.com (Minimes
 13. Mécanismes demandés par Eddy à l'agent précédent, à conserver : en-tête sticky, flou derrière le menu mobile, rectangle flottant « Le club des Minimes » (qui s'efface quand la fiche ou les coordonnées sont à l'écran), pages Plannings/Tarifs courtes, logo officiel non redessiné.
 14. **Pas de workflows, pas de sous-agents** : Eddy l'a dit explicitement. Tout à la main.
 15. Documenter chaque changement ici et dans `docs/PROJECT-STATE.md`, sans raisonnement, avec des faits et des chemins de fichiers.
-16. **Images (5 octobre)** : générer de nouvelles vues avec GPT Image via Higgsfield, à partir des mêmes personnes et lieux, avec d’autres angles et tenues ; vérifier le solde et économiser les crédits ; noms descriptifs et ALT ; pousser une fois terminé. Les vues sont identifiées comme illustrations IA, avec le crédit de la photographie de référence.
+16. **Images (5 octobre)** : générer de nouvelles vues avec GPT Image via Higgsfield, à partir des mêmes personnes et lieux, avec d’autres angles et tenues ; vérifier le solde et économiser les crédits ; noms descriptifs et ALT ; pousser une fois terminé. Le choix initial de légender et créditer les images est remplacé par la directive 17.
+17. **Aucune étiquette ni attribution sur les images (5 octobre, correction d’Eddy)** : supprimer les légendes, crédits des photographes, signatures incrustées, références aux outils et à la génération dans les ALT, noms des fichiers livrés, vignettes OG et fichiers de découverte. Les ALT restent descriptifs. Ne pas réintroduire ces mentions au build. L’attribution d’Eddy comme développeur du site (§7) reste distincte des images.
 
 ## 3. Où sont les choses
 
@@ -76,6 +77,15 @@ Attend une action d'Eddy :
 6. Décision MMA avec son responsable (Minimes n'enseigne pas le MMA ; le site oriente vers États-Unis).
 
 ## 6. Journal des chantiers (du plus récent au plus ancien)
+
+### 5 octobre 2026 — retrait des étiquettes et attributions des images
+
+- `Picture.astro` : suppression de toutes les légendes et du marqueur de génération ; `index.astro` : retrait du crédit de galerie ; styles correspondants supprimés. `photos.mjs` réduit aux données de rendu et ALT décrivant les scènes, sans nom de photographe ni référence d’outil.
+- Sept signatures incrustées retirées par une passe ciblée GPT Image via Higgsfield, sans nouvelle scène demandée et sans régénération : 7 crédits, solde 225,75 → 218,75. Sorties relues ; sources et paramètres consignés dans `docs/image-generation.json`. Masters locaux ignorés dans `.research/unlabelled/`.
+- Variantes WebP renommées avec des noms descriptifs sans suffixe de génération ; nouveaux noms pour les sept photos retouchées afin d’éviter le cache des versions signées. `generate-social.mjs` ne dessine plus de ligne de crédit ; les 14 OG sont régénérés, URL versionnées dans `seo.mjs` pour éviter les aperçus mis en cache.
+- `discovery.mjs`, `mentions-legales.astro` et libellé du lien LLM : retrait des crédits d’images et mentions d’outils. Informations du club et attribution du développeur conservées.
+- Audit adapté : aucune légende/crédit dans le HTML ou les fichiers textuels livrés ; ALT neutres, correspondance exacte fichier/ALT, 48 variantes aux dimensions attendues et sans EXIF/XMP/IPTC, sept images principales distinctes.
+- Validation : build et audit verts ; douze pages à 1440/768/390 px, zéro légende ou crédit d’image, images chargées, métadonnées OG versionnées, console vide et aucun débordement. Sorties retouchées et OG relus visuellement. L’erreur locale transitoire d’écriture de `404.png` n’est plus présente sur le build réussi.
 
 ### 5 octobre 2026 — palette Minimes par défaut
 

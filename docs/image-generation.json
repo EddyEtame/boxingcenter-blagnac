@@ -21,7 +21,7 @@
     {
       "key": "heroView",
       "page": "/",
-      "filename": "club-boxe-blagnac-boxing-center-garde-angle-ia",
+      "filename": "club-boxe-blagnac-boxing-center-garde-angle",
       "sourceReference": "https://raw.githubusercontent.com/EddyEtame/boxingcenter-blagnac/8c3580494157cd2f2db0088e47879d413111e1a2/public/images/club-boxe-blagnac-boxing-center-1200.webp",
       "referencePhoto": "hero",
       "generationId": "dbd72e83-44dd-4327-a034-38470f71de3e",
@@ -32,7 +32,7 @@
     {
       "key": "clubView",
       "page": "club-boxe-blagnac",
-      "filename": "salle-boxe-proche-blagnac-ring-coach-angle-ia",
+      "filename": "salle-boxe-proche-blagnac-ring-coach-angle",
       "sourceReference": "https://raw.githubusercontent.com/EddyEtame/boxingcenter-blagnac/8c3580494157cd2f2db0088e47879d413111e1a2/public/images/salle-boxe-proche-blagnac-1600.webp",
       "referencePhoto": "ring",
       "generationId": "89295772-5745-4d9d-a151-51b7a4b041a1",
@@ -43,7 +43,7 @@
     {
       "key": "boxingView",
       "page": "boxe-anglaise-blagnac",
-      "filename": "boxe-anglaise-blagnac-pattes-ours-angle-ia",
+      "filename": "boxe-anglaise-blagnac-pattes-ours-angle",
       "sourceReference": "https://raw.githubusercontent.com/EddyEtame/boxingcenter-blagnac/8c3580494157cd2f2db0088e47879d413111e1a2/public/images/boxe-anglaise-blagnac-1600.webp",
       "referencePhoto": "boxing",
       "generationId": "854306af-b77c-4b31-bded-4f6510a7cee4",
@@ -54,7 +54,7 @@
     {
       "key": "fitnessView",
       "page": "boxe-fitness-blagnac",
-      "filename": "boxe-fitness-blagnac-sac-garde-angle-ia",
+      "filename": "boxe-fitness-blagnac-sac-garde-angle",
       "sourceReference": "https://raw.githubusercontent.com/EddyEtame/boxingcenter-blagnac/8c3580494157cd2f2db0088e47879d413111e1a2/public/images/boxe-fitness-blagnac-1600.webp",
       "referencePhoto": "fitness",
       "generationId": "5f60993b-fd7b-444b-a76f-a93ea5cba132",
@@ -65,7 +65,7 @@
     {
       "key": "kidsView",
       "page": "boxe-enfants-blagnac",
-      "filename": "cours-boxe-enfants-blagnac-garde-ring-angle-ia",
+      "filename": "cours-boxe-enfants-blagnac-garde-ring-angle",
       "sourceReference": "https://raw.githubusercontent.com/EddyEtame/boxingcenter-blagnac/8c3580494157cd2f2db0088e47879d413111e1a2/public/images/cours-boxe-enfants-blagnac-1600.webp",
       "referencePhoto": "kids",
       "generationId": "7bf5ef6b-c67e-44b8-a81a-b280ed2b858e",
@@ -76,7 +76,7 @@
     {
       "key": "womenView",
       "page": "boxe-femme-blagnac",
-      "filename": "boxe-femme-blagnac-duo-technique-angle-ia",
+      "filename": "boxe-femme-blagnac-duo-technique-angle",
       "sourceReference": "https://raw.githubusercontent.com/EddyEtame/boxingcenter-blagnac/8c3580494157cd2f2db0088e47879d413111e1a2/public/images/boxe-femme-blagnac-1600.webp",
       "referencePhoto": "women",
       "generationId": "8483c993-30cd-4dc6-bbbd-f56c2de43266",
@@ -87,7 +87,7 @@
     {
       "key": "mmaView",
       "page": "mma-blagnac",
-      "filename": "club-mma-blagnac-boxing-center-corde-angle-ia",
+      "filename": "club-mma-blagnac-boxing-center-corde-angle",
       "sourceReference": "https://raw.githubusercontent.com/EddyEtame/boxingcenter-blagnac/8c3580494157cd2f2db0088e47879d413111e1a2/public/images/club-mma-blagnac-boxing-center-1600.webp",
       "referencePhoto": "mma",
       "generationId": "ad14ac62-04fe-474e-a732-8f2d5af43d87",
@@ -95,5 +95,94 @@
       "height": 1360,
       "prompt": "Create ONE photorealistic editorial training illustration, landscape 3:2, suitable for a boxing club website. The provided image is a mandatory identity and environment reference, not merely a style reference. Preserve the same recognizable people, hair, faces, physiques and the same gym: its wall murals, ceiling structure, floors, ropes or bags, and spatial relationships. Only change the camera angle, a natural moment within the same drill and the specified clothing. Do not invent a new venue, new equipment, new people, new signs or a location in Blagnac. Natural existing gym lighting, realistic perspiration, textured fabric, documentary colour, accurate limbs and boxing equipment. Avoid glossy advertising poses, cinematic smoke, exaggerated muscles, background copy, borders and overlays. This is an AI illustration derived from the reference, not a claim of a real photo shoot. Do not reproduce the photographer signature or watermark on the NEW generated illustration; the source photograph is preserved separately and credited in the website.\nSpecific shot: Show the exact same four main warm-up participants and trainer visible in the reference, in the exact same training hall with wooden rafters, the single plywood-protected support, rear chain-link cage and blue/red mats. Change camera position to the left side of the group at waist height, medium-wide documentary view during a brief pause between rope skips. Same right-hand dark-haired young man in a plain charcoal T-shirt and navy sports shorts, same central fair-haired trainee in a plain burgundy sleeveless sports top and black shorts, same partly-back-facing foreground trainer in a plain grey T-shirt. Preserve faces that are visible in the reference and avoid revealing invented features of the back-facing trainer. Ropes hang naturally from separate hands, no hovering, tangles or extra fingers. No grappling, no new cage, no ring, no new signs, no false Toulouse Etats-Unis lettering. Group within middle 65 percent so image can crop vertically.\nThe new camera position must be visibly different from the source photo: recompose the shot rather than copy the original crop. Preserve recognizable identity and architectural landmarks."
     }
-  ]
+  ],
+  "unlabelledImageUpdate": {
+    "date": "2026-10-05",
+    "credits": {
+      "before": 225.75,
+      "after": 218.75,
+      "spent": 7
+    },
+    "images": [
+      {
+        "key": "hero",
+        "filename": "club-boxe-blagnac-boxing-center-pratique-1200.webp",
+        "index": 0,
+        "source": ".research/unlabelled/hero.png",
+        "width": 2048,
+        "height": 1360,
+        "job_id": "c1085dc9-5aa9-4bb2-acd4-0d1e9040f4c6",
+        "sourceReference": "https://raw.githubusercontent.com/EddyEtame/boxingcenter-blagnac/b0b8ffa60b58031c8c2c60b9222c5d842d41cfad/public/images/club-boxe-blagnac-boxing-center-1200.webp"
+      },
+      {
+        "key": "ring",
+        "filename": "salle-boxe-proche-blagnac-cours-1600.webp",
+        "index": 1,
+        "source": ".research/unlabelled/ring.png",
+        "width": 2048,
+        "height": 1360,
+        "job_id": "d3f8d756-17cc-43e6-92dd-acea7430f46c",
+        "sourceReference": "https://raw.githubusercontent.com/EddyEtame/boxingcenter-blagnac/b0b8ffa60b58031c8c2c60b9222c5d842d41cfad/public/images/salle-boxe-proche-blagnac-1600.webp"
+      },
+      {
+        "key": "fitness",
+        "filename": "boxe-fitness-blagnac-sac-1600.webp",
+        "index": 2,
+        "source": ".research/unlabelled/fitness.png",
+        "width": 2592,
+        "height": 1536,
+        "job_id": "232e3f3b-877d-48bc-ad76-b29f0be4215d",
+        "sourceReference": "https://raw.githubusercontent.com/EddyEtame/boxingcenter-blagnac/b0b8ffa60b58031c8c2c60b9222c5d842d41cfad/public/images/boxe-fitness-blagnac-1600.webp"
+      },
+      {
+        "key": "women",
+        "filename": "boxe-femme-blagnac-technique-1600.webp",
+        "index": 3,
+        "source": ".research/unlabelled/women.png",
+        "width": 2592,
+        "height": 1536,
+        "job_id": "e5a44fe0-0a27-4d47-9a7d-7681206ba292",
+        "sourceReference": "https://raw.githubusercontent.com/EddyEtame/boxingcenter-blagnac/b0b8ffa60b58031c8c2c60b9222c5d842d41cfad/public/images/boxe-femme-blagnac-1600.webp"
+      },
+      {
+        "key": "mma",
+        "filename": "club-mma-blagnac-boxing-center-echauffement-1600.webp",
+        "index": 4,
+        "source": ".research/unlabelled/mma.png",
+        "width": 2048,
+        "height": 1360,
+        "job_id": "c9accf75-d832-415b-88af-0be897e00c9a",
+        "sourceReference": "https://raw.githubusercontent.com/EddyEtame/boxingcenter-blagnac/b0b8ffa60b58031c8c2c60b9222c5d842d41cfad/public/images/club-mma-blagnac-boxing-center-1600.webp"
+      },
+      {
+        "key": "team",
+        "filename": "cours-boxe-collectif-blagnac-entrainement-1600.webp",
+        "index": 5,
+        "source": ".research/unlabelled/team.png",
+        "width": 2048,
+        "height": 1360,
+        "job_id": "ffa62a01-0452-4bfb-b7aa-44a8efd9c6de",
+        "sourceReference": "https://raw.githubusercontent.com/EddyEtame/boxingcenter-blagnac/b0b8ffa60b58031c8c2c60b9222c5d842d41cfad/public/images/cours-boxe-collectif-blagnac-1600.webp"
+      },
+      {
+        "key": "event",
+        "filename": "fight-event-4-ring-1600.webp",
+        "index": 6,
+        "source": ".research/unlabelled/event.png",
+        "width": 2048,
+        "height": 1360,
+        "job_id": "fd25032b-63c8-4a93-9a9f-0f26b8df150b",
+        "sourceReference": "https://raw.githubusercontent.com/EddyEtame/boxingcenter-blagnac/b0b8ffa60b58031c8c2c60b9222c5d842d41cfad/public/images/fight-event-4-1600.webp"
+      }
+    ],
+    "prompt": "Edit the supplied photograph with extreme fidelity. The ONLY permitted change is removing the photographer copyright/signature watermark at the very bottom right, including its copyright symbol and entire artist name. Reconstruct only that small bottom-right patch with the nearby authentic floor, ring apron or other local background texture. Preserve the exact people, recognizable faces, hair, bodies, gloves, poses, clothing colours, all gym architecture, ring ropes, walls, equipment, flags, existing sports branding and signs, composition, framing, lighting and photographic colour. Do not move or reimagine any subject. Do not crop or zoom. Match the original aspect ratio and make all regions outside the watermark patch look unchanged. Do not add any signature, watermark, credit, AI label, caption, border or overlay. Keep the Boxing Center/sports logos that already occur in the photographed scene.",
+    "parameters": {
+      "model": "gpt_image_2_5",
+      "variant": "flare",
+      "quality": "medium",
+      "resolution": "2k",
+      "aspect_ratio": "auto",
+      "count": 1
+    }
+  }
 }

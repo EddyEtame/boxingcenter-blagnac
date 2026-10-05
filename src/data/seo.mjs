@@ -61,7 +61,7 @@ export function socialFor(page) {
   const photo = photos[page.image || 'hero'];
   return {
     title, promise, note,
-    url: `${SITE}/social/${page.slug || 'accueil'}.png`,
+    url: `${SITE}/social/${page.slug || 'accueil'}.png?v=20261005-2`,
     alt: `${title} ${promise} ${note} ${photo.alt} Logo officiel Boxing Center.`,
   };
 }

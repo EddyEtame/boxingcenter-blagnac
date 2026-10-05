@@ -21,7 +21,6 @@ for (const page of entries) {
   if(current) lines.push(current);
   if(lines.length > 4) throw new Error(`Social title overflows: ${page.slug}`);
   const mma = page.slug === 'mma-blagnac';
-  const credit = p.generated ? `Illustration IA · Réf. photo : ${p.referenceCredit}` : p.credit === 'Boxing Center' ? 'Photographie : réseau Boxing Center' : `Photographie : © ${p.credit}`;
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630">
     <rect width="1200" height="630" fill="#f4f1ea"/>
     <image href="data:image/png;base64,${logo}" x="42" y="28" width="200" height="94"/>
@@ -31,7 +30,6 @@ for (const page of entries) {
     <rect x="680" y="36" width="480" height="56" fill="#f5a623"/>
     ${socialText(labelFont, mma ? 'MMA · RÉSEAU BOXING CENTER' : 'BOXING CENTER · TOULOUSE MINIMES', { x:704, y:72, size:23, fill:'#0a1020', width:432 })}
     <image href="data:image/png;base64,${photo.toString('base64')}" x="680" y="126" width="480" height="330" preserveAspectRatio="xMidYMid meet"/>
-    ${socialText(labelFont, credit, { x:680, y:479, size:12, fill:'#c9ccd6', width:480 })}
     <path d="M42 516h560" stroke="#cbc7bd"/>
     ${socialText(labelFont, 'BLAGNAC', { x:42, y:554, size:21, fill:'#0a1020', width:84 })}
     <path d="M128 546h22m-6-6 6 6-6 6" fill="none" stroke="#0a1020" stroke-width="1.5"/>

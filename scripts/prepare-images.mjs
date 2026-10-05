@@ -73,14 +73,14 @@ for (const [key, photo] of Object.entries(photos)) {
   }
   for (const variant of photo.variants) {
     const filename = path.join(root, 'public', variant.src);
-    // Resize the entire frame; do not crop faces or the photographer's watermark.
+    // Resize the entire frame without cropping the subjects.
     // Sharp strips EXIF and other embedded metadata by default.
     const result = await sharp(input).rotate().resize({ width: variant.width, withoutEnlargement: true })
       .webp({ quality: 84, effort: 5 }).toFile(filename);
-    records.push({ key, file: variant.src, width: result.width, height: result.height, bytes: result.size, credit: photo.credit });
+    records.push({ key, file: variant.src, width: result.width, height: result.height, bytes: result.size });
   }
-  console.log(`${key}: ${photo.variants.map((v) => `${v.width}w`).join(', ')} · ${photo.credit}`);
+  console.log(`${key}: ${photo.variants.map((v) => `${v.width}w`).join(', ')}`);
 }
 await mkdir(path.join(root, '.research', 'photo-curation'), { recursive: true });
 await writeFile(path.join(root, '.research', 'photo-curation', 'optimized-images.json'), JSON.stringify(records, null, 2));
-console.log(`${records.length} responsive WebP files generated; visual watermarks preserved.`);
+console.log(`${records.length} responsive WebP files generated.`);

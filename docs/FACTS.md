@@ -85,6 +85,8 @@ L’identifiant public de l’entité Minimes, vérifié dans le JSON-LD actuel,
 
 ## Provenance des images
 
+Mise à jour du 5 octobre 2026, après la passe de génération : Eddy demande explicitement aucune légende, attribution de photographe ou référence de génération sur les images livrées, dans les ALT et dans les vignettes. Les sept signatures incrustées ont été retirées. Les références historiques ci-dessous restent internes ; elles ne doivent pas réintroduire une attribution publique. Les visuels ne constituent toujours pas une preuve de salle physique à Blagnac.
+
 Les sources locales `bc-minimes/src/routes.mjs` et `bc-minimes/public/assets/js/data-galerie.js` indiquent explicitement que le pool de photos de salle et de cours vient de Portet, en attendant des photos Minimes. Cela comprend les dérivés récents dans `/assets/img/photos/`.
 
 Ces images peuvent illustrer une activité du réseau lorsque le geste est cohérent. Elles ne prouvent ni un lieu à Blagnac ni l’intérieur exact des Minimes. Les ALT de `src/data/photos.mjs` décrivent les photographies effectivement sélectionnées. Le ring dont le mur porte « Toulouse Minimes Boxing Club » est qualifié comme tel ; les autres scènes restent au niveau du réseau ou de l’événement identifié.

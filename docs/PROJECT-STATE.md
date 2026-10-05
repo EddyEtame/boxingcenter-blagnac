@@ -2,6 +2,12 @@
 
 > Lire d’abord `docs/HANDOFF.md` : directives d’Eddy en vigueur, journal des chantiers, reste à faire. Ce fichier conserve l’historique des passes.
 
+## Correction du 5 octobre 2026 — aucune étiquette ni attribution sur les images
+
+Eddy demande explicitement le retrait de toutes les légendes et attributions d’images. Les pages, ALT, noms des variantes, vignettes et fichiers de découverte ne publient plus de référence de génération ou de photographe. Sept signatures incrustées retirées avec une seule passe chacune : 7 crédits, solde Higgsfield 218,75. Photos retouchées renommées et URL OG versionnées pour éviter les versions signées/étiquetées en cache. L’attribution d’Eddy comme développeur est conservée. Ce résultat remplace les choix de légendes décrits dans la passe précédente. Détails et paramètres : `docs/HANDOFF.md`, `docs/image-generation.json`.
+
+Build et audit réussis ; 36 contrôles de pages/largeurs (1440/768/390 px) sans légende, crédit d’image, erreur console ou débordement. ALT descriptifs, images chargées et nouvelles URL OG confirmées ; visuels retouchés et vignettes relus.
+
 ## Passe du 5 octobre 2026 — renouvellement des images
 
 Sept vues GPT Image 2.5 via Higgsfield, issues des mêmes personnes/décors de référence avec de nouveaux angles, gestes et tenues ; 7 crédits utilisés sur 232,75, solde 225,75. Sept photos principales distinctes des cartes de l’accueil, 21 variantes WebP (1,55 Mio), ALT précis, légendes IA et crédits des références, sept vignettes sociales actualisées, sitemap et fichiers de découverte synchronisés. Les améliorations d’Eddy du 4 octobre sont conservées, ainsi que le choix de Minimes comme palette par défaut reçu sur GitHub (`e8b9a76` / `72f65ac`) avant le push. Les OG utilisent marine/or. Le clip animé de l’accueil a été corrigé pour laisser la légende visible.
